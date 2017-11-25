@@ -11,47 +11,52 @@
 " **************************************************************************** "
 
 """""""""""""""""""""""""""""""""""""shortcut"""""""""""""""""""""""""""""""""""
-"<leader>			,
-"<F3>				relative number
-"<F4>				show line actual
-"<F5>				create session
-"<leader><F5>		create session and quit
+"leader key:		,
 
-"mainn				create a main (insert only)
-"testt				create a test file (insert only)
-"{{					{ } auto (insert only)
-"<CR>				normal mode only : go to insert mode with a <CR>
+"<F[x]> command:
+"<F1>				42header
+"<F3>				enable/disable relative number
+"<F4>				show actual line
+"<F5>				create session (mksession)
+"<leader><F5>		create session (mksession) and quit
 
-":plugin			install and update plugin
-":ww				check norm in the file
-":norm				norm the file
+"abreviate:
+"- mainn			create a main
+"testt				create a test file
+"{{					open and close { }
 
-"<leader>h			help
-"<leader><tab>		move tab to next
-"<leader><S-tab>	move tab to last
-"<leader>v			reload vimrc
-"<leader>;			make the ';' at the end of line in the header
-"<leader>g			open/close nerdtree
-"<leader>z			open zsh in the current buffer (bug)
-"<leader>b			open bash in the current buffer
-"<leader>mm			disable mouse
-"<leader>ma			enable mouse
-"<leader>c			copy mode (reload vimrc to quit : <leader>v)
-"<leader>y			copy from vim
-"<leader>p			paste in vim
-"<leader>ff			highlight function
-"<leader>fx			select all prototypes
-"<leader>f[x]		select prototype (f1 one function f2 two...)
-"<leader>fc[yYdD]	select function (yank Yank_add del Del_add)
-"<leader>/			comment region (visual only)
-"<leader>\			uncomment region (visual only)
-"<leader>na			make norm and remove comment
-"<leader>nn			make norm in the file <leader>nn
-"<leader>nc			remove comment (not with ///)
-"<leader>ndd		remove all lines with //dd
-"<leader>d[x]		remove between the 2 <d5> ... </d5>
-"<leader>b[x]		create block //<d[x]> (visual mode only)
-"<leader>[([{'"]	create block (ex (test)) (visual mode exept {)
+"command:
+"- :Plugin			install and update plugin
+"- :WW				check the norm in the file (only on 42 imac)
+"- :Norm			norm the file
+
+"<leader> + ...
+"h					open help
+"<tab>				move tab to the right
+"<S-tab>			move tab to the left
+
+"v					reload vimrc
+"g					open/close file navigator
+"z					open zsh in the current buffer
+"b					open bash in the current buffer
+"mm					disable mouse
+"ma					enable mouse
+"y					copy from vim
+"p					paste in vim
+
+";					put the ';' at the end of prototypes in .h files
+"				!!! add check type of the file
+"ff					highlight function prototypes (not static function)
+"yff				copy all prototypes (not static) in buffer a ("ap to paste)
+"/					comment region (visual only)
+"\					uncomment region (visual only)
+"d/d				remove comment (not with ///)
+"dld				remove all lines with //dd
+"d[x]d				remove between the 2 balise <d5> ... </d5>
+"<[x]				create block //<d[x]> (visual mode only)
+"				!!! add mode to remove all balise of the same type
+"[([{'"]			create block (ex (test)) (visual mode only exept for '{')
+"nn					make norm in the file
 
 "<C-w><right>		move to buffer right
 "<C-w><left>		move to buffer left

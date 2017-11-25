@@ -109,7 +109,7 @@
 
 """""""""""""""""""""""""""""""""""""Source"""""""""""""""""""""""""""""""""""""
 let mapleader = ","
-let g:help_vim_file='~/.vim/vim_help_file'
+let g:help_vim_file='~/.vim/sergeVim/vim_help_file'
 source ~/.vim/sergeVim/basic_function.vim
 source ~/.vim/sergeVim/plugin.vim
 source ~/.vim/sergeVim/abreviate.vim
