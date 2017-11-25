@@ -22,7 +22,7 @@ function! Create42Header()
 endfunction
 
 function! Create42Header_if_exist()
-	let first_line_visible = line('w0') + 4
+	let first_line_visible = line('w0') "+ g:visible_line_around_cursor
 	let line_before = line('.')
 	let col_before = col('.')
 	:normal gg
@@ -47,7 +47,7 @@ function! Create42Header_if_exist()
 endfunction
 
 function! Create42Header_create()
-	let first_line_visible = line('w0') + 4
+	let first_line_visible = line('w0') "+ g:visible_line_around_cursor
 	let line_before = line('.')
 	let col_before = col('.')
 	let user = $USER
@@ -59,11 +59,11 @@ function! Create42Header_create()
 	"	%:r:t srcs/main
 	let filename = expand('%:t')
 	let time_act = strftime('%Y\/%m\/%d %H:%M:%S')
-	if user == ''
-		user = 'tnicolas'
+	if user == '' || user == 'tim'
+		let user = g:username42
 	endif
 	if mail == ''
-		let mail = 'marvin@42.fr'
+		let mail = g:mail42
 	endif
 	:normal gg
 	exe ':1 s/^/\/\* ' . repeat('*', 74) . ' \*\/\r'
@@ -105,7 +105,7 @@ autocmd BufWriteCmd *	:write
 autocmd BufWriteCmd * elseif &modified
 autocmd BufWriteCmd * 	:write
 function! Create42Header_update()
-	let first_line_visible = line('w0') + 4
+	let first_line_visible = line('w0') "+ g:visible_line_around_cursor
 	let line_before = line('.')
 	let col_before = col('.')
 	:normal gg

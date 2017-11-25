@@ -54,14 +54,10 @@ Plugin 'wkentaro/conque.vim'
 
 call vundle#end()
 
-"taille de la fenetre nerdtree
-let g:NERDTreeWinSize=27
-
-"plugin shortcut
 "	nerdtree
 "		open/close nerdtree <leader>g
-nmap <leader>g :call NavFichier()<CR><C-w>=
 let g:state_NerdTree = 0
+nmap <leader>g :call NavFichier()<CR><C-w>=
 function! NavFichier()
 	if (g:state_NerdTree == 0)
 		:NERDTree
