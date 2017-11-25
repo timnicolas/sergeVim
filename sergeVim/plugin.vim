@@ -16,7 +16,11 @@
 "	:source ~/.vimrc
 "	:PluginInstall
 ":plugin to install plugin
-cmap plugin<CR> :source ~/.vimrc<CR>:PluginInstall<CR>
+command Plugin call Plugin_install_()
+function! PLugin_install_()
+	:source ~/.vimrc
+	:PluginInstall
+endfunction
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
@@ -51,11 +55,7 @@ Plugin 'wkentaro/conque.vim'
 call vundle#end()
 
 "taille de la fenetre nerdtree
-if (g:computer == 0)
-	let g:NERDTreeWinSize=27
-elseif (g:computer == 1)
-	let g:NERDTreeWinSize=27
-endif
+let g:NERDTreeWinSize=27
 
 "plugin shortcut
 "	nerdtree

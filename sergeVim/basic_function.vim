@@ -65,7 +65,6 @@ nmap <leader><F5> :wa<CR>:mksession!<CR>:wqa<CR>
 command W w
 command WQ wq
 command Wq wq
-command X x
 command WA wa
 command Wa wa
 command WQA wqa
@@ -151,7 +150,7 @@ imap <S-down> <C-o>:+5<CR>
 """""""""""""""""""""""""""""""""""""other""""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""Ugo""""""""""""""""""""""""""""""""""""""""
-command ugo echo 'pas normal'
-command goinfre normal ggdG
-command cleanstars %s/*//g
+command Ugo echo 'pas normal'
+command Goinfre normal ggdG
+command Cleanstars %s/*//g
 """""""""""""""""""""""""""""""""""""Ugo""""""""""""""""""""""""""""""""""""""""
