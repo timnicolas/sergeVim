@@ -1,9 +1,10 @@
 #!/bin/sh
-echo "update git repository"
-find . -iname ".vim_backup" --delete
-mkdir ~/.vim-backup
-cp ~/.vim ~/.vim_backup
+echo "update vim config"
+git pull
+mkdir -p ~/.vim-backup
+cp -r ~/.vim ~/.vim_backup
 cp ~/.vimrc ~/.vimrc_backup
-git add -A
-git commit -m "update git repository"
-git push
+cp vimrc ~/.vimrc
+mkdir -p ~/.vim
+cp -r sergeVim ~/.vim
+vim 'source ~/.vimrc' '+PluginInstall' '+q' '+q'
