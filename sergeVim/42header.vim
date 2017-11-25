@@ -22,7 +22,9 @@ function! Create42Header()
 endfunction
 
 function! Create42Header_if_exist()
+	let first_line_visible = line('w0') + 4
 	let line_before = line('.')
+	let col_before = col('.')
 	:normal gg
 	let is_header =  search('\/\* \*\{74} \*\/\n
 				\\/\*\s\+\*\/\n
@@ -36,13 +38,18 @@ function! Create42Header_if_exist()
 				\\/\*   Updated: 20\d\d\/\d\d\/\d\d \d\d:\d\d:\d\d
 				\ by \w\+\s\+###   #\{8}\.fr\s\+\*\/\n
 				\\/\*\s\+\*\/\n
-				\\/\* \*\{74} \*\/\n', 'c')
+				\\/\* \*\{74} \*\/\n', 'c', line('0'))
+	exe ':' . first_line_visible
+	:normal zt
 	exe ':' . line_before
+	exe ':normal ' . col_before . '|'
 	return is_header
 endfunction
 
 function! Create42Header_create()
+	let first_line_visible = line('w0') + 4
 	let line_before = line('.')
+	let col_before = col('.')
 	let user = $USER
 	let mail = $MAIL
 	"expand for srcs/main.c
@@ -86,7 +93,10 @@ function! Create42Header_create()
 	exe ':11 s/^/\/\* ' . repeat('*', 74) . ' \*\/\r\r'
 	"echo '\/\* \*\*\* \*\/\n'
 	let line_before += 12
+	exe ':' . first_line_visible
+	:normal zt
 	exe ':' . line_before
+	exe ':normal ' . col_before . '|'
 endfunction
 
 autocmd BufWriteCmd * if &modified && Create42Header_if_exist() == 1
@@ -95,10 +105,15 @@ autocmd BufWriteCmd *	:write
 autocmd BufWriteCmd * elseif &modified
 autocmd BufWriteCmd * 	:write
 function! Create42Header_update()
+	let first_line_visible = line('w0') + 4
 	let line_before = line('.')
+	let col_before = col('.')
 	:normal gg
 	let time_act = strftime('%Y\/%m\/%d %H:%M:%S')
 	exe ':9 s/\d\d\d\d\/\d\d\/\d\d \d\d:\d\d:\d\d/' . time_act
+	exe ':' . first_line_visible
+	:normal zt
 	exe ':' . line_before
+	exe ':normal ' . col_before . '|'
 endfunction
 """""""""""""""""""""""""""""""""""""42header"""""""""""""""""""""""""""""""""""
