@@ -1,5 +1,6 @@
 # sergeVim
-sergeVim est une config vim faite pour 42 avec des outils pour mettre a la norme et un generateur de header (pour l'utiliser en dehors de 42 il faut modifier dans ~/.vim/sergeVim/param.vim les variables username et email ou modifier les variables PATH USER et EMAIL).
+sergeVim est une config vim faite pour 42 avec des outils pour mettre a la norme et un generateur de header.
+Pour utiliser le header en dehors de 42 il faut modifier les variables PATH USER et MAIL (export USER=name).
 
 ## Installation
 serveVim est très simple a installer:
