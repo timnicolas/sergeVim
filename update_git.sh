@@ -1,7 +1,7 @@
 #!/bin/sh
 echo "update git repository"
-mkdir ~/.vim-backup
-cp sergeVim ~/.vim_backup
+mkdir -p ~/.vim-backup
+cp -r sergeVim ~/.vim_backup
 cp vimrc ~/.vimrc_backup
 cp ~/.vimrc .
 cp -r ~/.vim/sergeVim .
