@@ -1,7 +1,6 @@
 # sergeVim
-=====
+
 # installation
-=====
   git clone https://github.com/tarama78/sergeVim
 
   ./install.sh
