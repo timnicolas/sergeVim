@@ -110,10 +110,10 @@
 """""""""""""""""""""""""""""""""""""Source"""""""""""""""""""""""""""""""""""""
 let mapleader = ","
 let g:help_vim_file='~/.vim/vim_help_file'
-source sergeVim/basic_function.vim
-source sergeVim/plugin.vim
-source sergeVim/abreviate.vim
-source sergeVim/function.vim
-source sergeVim/42header.vim
-source sergeVim/norm.vim
+source .vim/sergeVim/basic_function.vim
+source .vim/sergeVim/plugin.vim
+source .vim/sergeVim/abreviate.vim
+source .vim/sergeVim/function.vim
+source .vim/sergeVim/42header.vim
+source .vim/sergeVim/norm.vim
 """""""""""""""""""""""""""""""""""""Source"""""""""""""""""""""""""""""""""""""
