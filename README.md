@@ -2,10 +2,10 @@
 sergeVim est une config vim faite pour 42 avec des outils pour mettre a la norme et un generateur de header (pour l'utiliser en dehors de 42 il faut modifier dans ~/.vim/sergeVim/param.vim les variables username et email)
 
 ## installation
-  git clone https://github.com/tarama78/sergeVim && cd sergeVim && ./install.sh
+>  git clone https://github.com/tarama78/sergeVim && cd sergeVim && ./install.sh
   
 pour mettre a jour sergeVim:
-  ./update_vim.sh
+>  ./update_vim.sh
 
 ## racourcis
 """""""""""""""""""""""""""""""""""""shortcut"""""""""""""""""""""""""""""""""""
