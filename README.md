@@ -13,6 +13,7 @@ SergeVim est sans cesse mis a jour. N'hesitez pas a mettre le mettre a jour en e
 
 ## Parametre
 Vous pouvez parametrer votre sergeVim en modifiant les variables du fichier `~/.vim/sergeVim/param.vim`. Lorsque vous mettez sergeVim a jour vos parametres ne seronts pas modifié.
+
 Pour reinitialiser vos parametres il faut utiliser l'option `--param` quand vous mettez a jour.
 >`./update_vim.sh --param`
 
