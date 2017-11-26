@@ -11,5 +11,8 @@ Entrez la commande suivante dans le shell et attendez que sergeVim soit install√
 SergeVim est sans cesse mis a jour. N'hesitez pas a mettre le mettre a jour en enttrant la commande ci dessous.
 >`./update_vim.sh`
 
+## Parametre
+Vous pouvez parametrer votre sergeVim en modifiant les variables du fichier `~/.vim/sergeVim/param.vim`. Lorsque vous mettez sergeVim a jour vos parametres ne seronts pas modifier saut si vous mettez l'option `--param` : `./update_vim.sh --param`. Dans ce cas la vos parametres seront reinitialis√©s.
+
 ## Aide
 Pour obtenir de l'aide tappez `,h` en mode normal dans vim. Cela ouvrira un fichier d'aide dans un nouvel onglet avec tout les racourcis dedant.
