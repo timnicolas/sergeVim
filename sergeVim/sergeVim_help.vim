@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/11/26 12:07:06 by tnicolas          #+#    #+#              "
-"    Updated: 2017/11/26 20:44:23 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/11/26 22:49:00 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -26,24 +26,27 @@
 "leader key:		,
 
 "<F[x]> command:
-"<F1>				42header
-"<F2>				sergaVim header
 "<F3>				enable/disable relative number
 "<F4>				show actual line
 "<F5>				create session (mksession)
 "<leader><F5>		create session (mksession) and quit
+
+"header
+"<F1>				42header
+":Header			create the 42header
+"<F2>				sergaVim header
+":SergeHeader		create the sergeHeader
+":EmptyHeader		create a empty header
 
 "abreviate:
 "mainn				create a main
 "testt				create a test file
 "{{					open and close { }
 
-"command: (:bufdo command > make command in all open files ex :bufdo Header)
+"norm
 ":WW				check the norm in the file (only on 42 imac)
-":Norm				norm the file
-":Header			create the 42header
-":EmptyHeader		create a empty header
-":SergeHeader		create the sergeHeader
+":Norm				make norm in the file
+"nn					make norm in the file
 
 "<leader> + ... (ex: [normal mode] ',h' open the help)
 "h					open help
@@ -70,7 +73,6 @@
 "<[x]				create block //<d[x]> (visual mode only)
 "				!!! add mode to remove all balise of the same type
 "[([{'"]			create block (ex (test)) (visual mode only exept for '{')
-"nn					make norm in the file
 
 "<C-w><right>		move to buffer right
 "<C-w><left>		move to buffer left
@@ -104,4 +106,6 @@
 ":tabnew			new tab
 ":tabclose			close tab
 ":bd				close buffer
+
+":bufdo[command]	make command in all buffer (ex :bufdo Header)
 """""""""""""""""""""""""""""""""""""defaut_shortcut""""""""""""""""""""""""""""
