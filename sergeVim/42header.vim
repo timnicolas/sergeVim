@@ -32,7 +32,7 @@ autocmd BufWriteCmd *	call Create42Header_update()
 autocmd BufWriteCmd *	:write
 autocmd BufWriteCmd * elseif &modified
 autocmd BufWriteCmd *	:write
-a
+
 "create a header if we need it
 function! Create42Header()
 	let is_header = Create42Header_if_exist()
