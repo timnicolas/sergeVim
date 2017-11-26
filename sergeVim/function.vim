@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/11/26 11:57:34 by tnicolas          #+#    #+#              "
-"    Updated: 2017/11/26 13:10:42 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/11/26 19:47:01 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -102,12 +102,40 @@ nmap <leader>{ o}<Esc><up>O{<Esc>=2<down><down>
 
 """""""""""""""""""""""""""""""""""""comment""""""""""""""""""""""""""""""""""""
 "<leader>/			comment region
-vmap <leader>/ :s/^\(\s*\/\/\)\@!/\/\//g<CR>:silent!/dsfahfdkljhfklahsflahsf<CR>
-nmap <leader>/ :silent!s/^\(\/\/\)\@!/\/\//g<CR>:silent!/dsfahfdkljhfklahsff<CR>
+vmap <leader>/ :call SergeCommentRegion()<CR>
+nmap <leader>/ :call SergeCommentRegion()<CR>
+function! SergeCommentRegion() range
+	let comment = '#'
+	if expand('%:e') == 'c' || expand('%:e') == 'h' || expand('%:e') == 'cpp'
+		let comment = '\/\/'
+	elseif expand('%:e') == 'vim' || expand('%:t') == '.vimrc'
+		let comment = '"'
+	elseif expand('%:t') == '.emacs'
+		let comment = ';'
+	endif
+	exe ':silent!' . a:firstline . ',' . a:lastline . 's/^\(\s*' .
+				\l:comment . '\)\@!/' . l:comment . '/g'
+	:silent!/dsfahfdkljhfklahsflahsf
+endfunction
+
 "<leader>\			uncomment region
-vmap <leader>\ :s/^\/\///g<CR>:silent!/fhgshgdfkjghsdkfjlhgls<CR>
-nmap <leader>\ :silent!s/^\/\///g<CR>:silent!s/\t\/\//\t/g<CR>
-			\:silent!/fhgshgdfkjghsdkfjlhgls<CR>
+vmap <leader>\ :call SergeDecommentRegion()<CR>
+nmap <leader>\ :call SergeDecommentRegion()<CR>
+function! SergeDecommentRegion() range
+	let comment = '#'
+	if expand('%:e') == 'c' || expand('%:e') == 'h' || expand('%:e') == 'cpp'
+		let comment = '\/\/'
+	elseif expand('%:e') == 'vim' || expand('%:t') == '.vimrc'
+		let comment = '"'
+	elseif expand('%:t') == '.emacs'
+		let comment = ';'
+	endif
+	exe ':silent!' . a:firstline . ',' . a:lastline . 's/^' . l:comment . '//g'
+	exe ':silent!' . a:firstline . ',' . a:lastline . 's/\s\+\zs' . l:comment .
+				\'\ze//g'
+	:silent!/dsfahfdkljhfklahsflahsf
+endfunction
+
 "	remove comment (not with ///) <leader>d/d
 nmap <leader>d/d :call NormRemoveComment()<CR>
 function! NormRemoveComment()

@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/11/26 11:55:07 by tnicolas          #+#    #+#              "
-"    Updated: 2017/11/26 18:10:41 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/11/26 20:45:33 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -23,8 +23,12 @@
 " **************************************************************************** "
 
 """""""""""""""""""""""""""""""""""""42header"""""""""""""""""""""""""""""""""""
-"create 42 header <C-c><C-h> or :Header
-nmap <C-c><C-h> :call Create42Header()<CR>
+if g:enable_42_header == 0
+	finish
+endif
+"create 42 header <F1> or :Header
+nmap <F1> :call Create42Header()<CR>
+imap <F1> <esc>:call Create42Header()<CR>
 command Header exe ':call Create42Header()'
 "update date if the file is modified
 autocmd BufWriteCmd * if &modified && Create42Header_if_exist() == 1
@@ -45,7 +49,7 @@ endfunction
 
 "check if the header exist
 function! Create42Header_if_exist()
-	let first_line_visible = line('w0') + 4
+	let first_line_visible = line('w0') + g:min_number_line_ar_cur
 	let line_before = line('.')
 	let col_before = col('.')
 	let begin = '# '
@@ -91,7 +95,7 @@ endfunction
 
 "create a header
 function! Create42Header_create()
-	let first_line_visible = line('w0') + 4
+	let first_line_visible = line('w0') + g:min_number_line_ar_cur
 	let line_before = line('.')
 	let col_before = col('.')
 	let user = $USER
@@ -165,12 +169,76 @@ endfunction
 
 "update date in header
 function! Create42Header_update()
-	let first_line_visible = line('w0') + 4
+	let first_line_visible = line('w0') + g:min_number_line_ar_cur
 	let line_before = line('.')
 	let col_before = col('.')
+	let user = $USER
+	if user == '' || user == 'tim'
+		let user = g:username42
+	endif
 	:normal gg
 	let time_act = strftime('%Y\/%m\/%d %H:%M:%S')
 	exe ':9 s/\d\d\d\d\/\d\d\/\d\d \d\d:\d\d:\d\d/' . time_act
+	exe ':9 s/by \zs\w\+\s\+\ze/' . l:user . repeat(' ', 17 - strlen(l:user))
+	exe ':' . first_line_visible
+	:normal zt
+	exe ':' . line_before
+	exe ':normal ' . col_before . '|'
+endfunction
+
+"create a empty header :EmptyHeader
+command EmptyHeader exe ':call CreateEmptyHeader()'
+function! CreateEmptyHeader()
+	let first_line_visible = line('w0') + g:min_number_line_ar_cur
+	let line_before = line('.')
+	let col_before = col('.')
+	let user = $USER
+	let mail = $MAIL
+	let begin = '# '
+	let end = ' #'
+	let size_c = 1
+	if expand('%:e') == 'c' || expand('%:e') == 'h' || expand('%:e') == 'cpp'
+		let begin = '\/\*'
+		let end = '\*\/'
+		let size_c = 2
+	elseif expand('%:e') == 'vim' || expand('%:t') == '.vimrc'
+		let begin = '" '
+		let end = ' "'
+		let size_c = 1
+	elseif expand('%:t') == '.emacs'
+		let begin = '; '
+		let end = ' ;'
+		let size_c = 1
+	endif
+	"expand for srcs/main.c
+	"	%:t main.c
+	"	%:e c
+	"	%:r srcs/main.c
+	"	%:r:t srcs/main
+	let filename = expand('%:t')
+	let time_act = strftime('%Y\/%m\/%d %H:%M:%S')
+	if user == '' || user == 'tim'
+		let user = g:username42
+	endif
+	if mail == ''
+		let mail = g:mail42
+	endif
+	exe ': 1 s/^/' . l:begin . repeat(' ', size_c - 1) .
+				\repeat('*', 78 - 2 * size_c) . repeat(' ', size_c - 1) .
+				\l:end . '\r'
+	exe ':2 s/^/' . l:begin . repeat(' ', 76) . l:end . '\r'
+	exe ':3 s/^/' . l:begin . repeat(' ', 76) . l:end . '\r'
+	exe ':4 s/^/' . l:begin . repeat(' ', 76) . l:end . '\r'
+	exe ':5 s/^/' . l:begin . repeat(' ', 76) . l:end . '\r'
+	exe ':6 s/^/' . l:begin . repeat(' ', 76) . l:end . '\r'
+	exe ':7 s/^/' . l:begin . repeat(' ', 76) . l:end . '\r'
+	exe ':8 s/^/' . l:begin . repeat(' ', 76) . l:end . '\r'
+	exe ':9 s/^/' . l:begin . repeat(' ', 76) . l:end . '\r'
+	exe ':10 s/^/' . l:begin . repeat(' ', 76) . l:end . '\r'
+	exe ':11 s/^/' . l:begin . repeat(' ', size_c - 1) .
+				\repeat('*', 78 - 2 * size_c) . repeat(' ', size_c - 1) .
+				\l:end . '\r\r'
+	let line_before += 12
 	exe ':' . first_line_visible
 	:normal zt
 	exe ':' . line_before

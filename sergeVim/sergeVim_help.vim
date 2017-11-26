@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/11/26 12:07:06 by tnicolas          #+#    #+#              "
-"    Updated: 2017/11/26 12:38:08 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/11/26 20:44:23 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -27,22 +27,25 @@
 
 "<F[x]> command:
 "<F1>				42header
+"<F2>				sergaVim header
 "<F3>				enable/disable relative number
 "<F4>				show actual line
 "<F5>				create session (mksession)
 "<leader><F5>		create session (mksession) and quit
 
 "abreviate:
-"- mainn			create a main
+"mainn				create a main
 "testt				create a test file
 "{{					open and close { }
 
-"command:
-"- :Plugin			install and update plugin
-"- :WW				check the norm in the file (only on 42 imac)
-"- :Norm			norm the file
+"command: (:bufdo command > make command in all open files ex :bufdo Header)
+":WW				check the norm in the file (only on 42 imac)
+":Norm				norm the file
+":Header			create the 42header
+":EmptyHeader		create a empty header
+":SergeHeader		create the sergeHeader
 
-"<leader> + ...
+"<leader> + ... (ex: [normal mode] ',h' open the help)
 "h					open help
 "<tab>				move tab to the right
 "<S-tab>			move tab to the left
@@ -57,7 +60,6 @@
 "p					paste in vim
 
 ";					put the ';' at the end of prototypes in .h files
-"				!!! add check type of the file
 "ff					highlight function prototypes (not static function)
 "yff				copy all prototypes (not static) in buffer a ("ap to paste)
 "/					comment region (visual only)
@@ -91,3 +93,15 @@
 "	//</d[x]> end
 "	//d[x] line
 """""""""""""""""""""""""""""""""""""info"""""""""""""""""""""""""""""""""""""""
+
+"""""""""""""""""""""""""""""""""""""defaut_shortcut""""""""""""""""""""""""""""
+"split: (splits are usefull if you open many files in vim)
+":vs				vertical split
+":sp				horizontal split
+":bn				buffer next
+":bp				buffer previous
+":b [name]			buffer [name]
+":tabnew			new tab
+":tabclose			close tab
+":bd				close buffer
+"""""""""""""""""""""""""""""""""""""defaut_shortcut""""""""""""""""""""""""""""
