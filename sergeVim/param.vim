@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/11/26 11:57:59 by tnicolas          #+#    #+#              "
-"    Updated: 2017/11/26 18:32:31 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/11/26 19:20:26 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -26,6 +26,15 @@
 "defaut username and mail for the header
 let g:username42='tnicolas'
 let g:mail42='marvin@42.fr'
+
+"min number of line around cursor
+let g:min_number_line_ar_cur = 4
+"enable or diable mouse
+let g:enable_mouse=1
+"highlight search
+let g:highlight_search=1
+"enable 42header (<F1> or :Header)
+let g:enable_42_header=1
 """""""""""""""""""""""""""""""""""""param""""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""plugin"""""""""""""""""""""""""""""""""""""

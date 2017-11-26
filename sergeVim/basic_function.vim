@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/11/26 11:57:09 by tnicolas          #+#    #+#              "
-"    Updated: 2017/11/26 12:37:33 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/11/26 19:14:34 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -32,8 +32,13 @@ set cindent "indent for c files
 set smartindent "autoindent
 syn on "coloration syntax
 set number "number of line
-set so=4 "show 4 line around cursor
-set mouse=a "mouse on
+"min line visible around cursor
+exe 'set so=' . g:min_number_line_ar_cur
+if g:enable_mouse == 1
+	set mouse=a "mouse on
+else
+	set mouse=
+endif
 set tabstop=4 "tab size
 set shiftwidth=4 "tab size
 set noexpandtab "no replace tab to space
@@ -47,7 +52,11 @@ set cmdheight=1 "size of command bar
 set colorcolumn=81 "column 81 in red
 set autowrite "auto save when change buffer
 set clipboard=unnamed "to copy and paste
-set hlsearch "highlight search
+if g:highlight_search == 1
+	set hlsearch "highlight search
+else
+	set nohlsearch
+endif
 
 "help <leader>h
 nmap <leader>h :execute "tabnew ".g:help_vim_file<CR>

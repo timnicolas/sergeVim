@@ -1,12 +1,12 @@
 " **************************************************************************** "
 "                                                                              "
 "                                                         :::      ::::::::    "
-"    42header.vim                                       :+:      :+:    :+:    "
+"    sergeVimHeader.vim                                 :+:      :+:    :+:    "
 "                                                     +:+ +:+         +:+      "
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
-"    Created: 2017/11/26 11:55:07 by tnicolas          #+#    #+#              "
-"    Updated: 2017/11/26 19:46:20 by tnicolas         ###   ########.fr        "
+"    Created: 2017/11/26 19:08:21 by tnicolas          #+#    #+#              "
+"    Updated: 2017/11/26 19:25:08 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -22,33 +22,24 @@
 "                                                                              "
 " **************************************************************************** "
 
-"""""""""""""""""""""""""""""""""""""42header"""""""""""""""""""""""""""""""""""
-if g:enable_42_header == 0
-	finish
-endif
-"create 42 header <F1> or :Header
-nmap <F1> :call Create42Header()<CR>
-imap <F1> <esc>:call Create42Header()<CR>
-command Header exe ':call Create42Header()'
-"update date if the file is modified
-autocmd BufWriteCmd * if &modified && Create42Header_if_exist() == 1
-autocmd BufWriteCmd *	call Create42Header_update()
-autocmd BufWriteCmd *	:write
-autocmd BufWriteCmd * elseif &modified
-autocmd BufWriteCmd *	:write
+"""""""""""""""""""""""""""""""""""""SergeHeader""""""""""""""""""""""""""""""""
+"create sergeVim header <F2> or :SergeHeader
+nmap <F2> :call CreateSergeHeader()<CR>
+imap <F2> <esc>:calc CreateSergeHeader()<CR>
+command SergeHeader exe ':call CreateSergeHeader()'
 
 "create a header if we need it
-function! Create42Header()
-	let is_header = Create42Header_if_exist()
+function! CreateSergeHeader()
+	let is_header = CreateSergeHeader_if_exist()
 	if is_header == 0
-		call Create42Header_create()
+		call CreateSergeHeader_create()
 	else
 		echo 'you already have a header'
 	endif
 endfunction
 
 "check if the header exist
-function! Create42Header_if_exist()
+function! CreateSergeHeader_if_exist()
 	let first_line_visible = line('w0') + g:min_number_line_ar_cur
 	let line_before = line('.')
 	let col_before = col('.')
@@ -72,18 +63,6 @@ function! Create42Header_if_exist()
 	let is_header =  search(l:begin . '\s*\*\{' . (78 - 2 * l:size_c) . '}\s*'
 				\. l:end . '\n
 				\' . l:begin . '\s\+' . l:end . '\n
-				\' . l:begin . '\s\+:::\s\+:\{8}\s\+' . l:end . '\n
-				\' . l:begin . '\s\+\w\+.\w* \+:+:\s\+:+:\s\+:+:\s\+' . l:end
-				\. '\n
-				\' . l:begin . '\s\++:+ +:+\s\++:+\s\+' . l:end . '\n
-				\' . l:begin . '\s\+By: \w\+ <.\+> \++#+  +:+ \{7}+#+ \{8}' .
-				\l:end . '\n
-				\' . l:begin . '\s\++#+#+#+#+#+\s\++#+\s\+' . l:end . '\n
-				\' . l:begin . '\s\+Created: 20\d\d\/\d\d\/\d\d \d\d:\d\d:\d\d
-				\ by \w\+\s\+#+#\s\+#+#\s\+' . l:end . '\n
-				\' . l:begin . '\s\+Updated: 20\d\d\/\d\d\/\d\d \d\d:\d\d:\d\d
-				\ by \w\+\s\+###\s\+#\{8}\.fr\s\+' . l:end . '\n
-				\' . l:begin . '\s\+' . l:end . '\n
 				\' . l:begin . '\s*\*\{' . (78 - 2 * l:size_c) . '}\s*'
 				\. l:end . '\n', 'c', line('0'))
 	exe ':' . first_line_visible
@@ -94,7 +73,7 @@ function! Create42Header_if_exist()
 endfunction
 
 "create a header
-function! Create42Header_create()
+function! CreateSergeHeader_create()
 	let first_line_visible = line('w0') + g:min_number_line_ar_cur
 	let line_before = line('.')
 	let col_before = col('.')
@@ -166,23 +145,4 @@ function! Create42Header_create()
 	exe ':' . line_before
 	exe ':normal ' . col_before . '|'
 endfunction
-
-"update date in header
-function! Create42Header_update()
-	let first_line_visible = line('w0') + g:min_number_line_ar_cur
-	let line_before = line('.')
-	let col_before = col('.')
-	let user = $USER
-	if user == '' || user == 'tim'
-		let user = g:username42
-	endif
-	:normal gg
-	let time_act = strftime('%Y\/%m\/%d %H:%M:%S')
-	exe ':9 s/\d\d\d\d\/\d\d\/\d\d \d\d:\d\d:\d\d/' . time_act
-	exe ':9 s/by \zs\w\+\s\+\ze/' . l:user . repeat(' ', 17 - strlen(l:user))
-	exe ':' . first_line_visible
-	:normal zt
-	exe ':' . line_before
-	exe ':normal ' . col_before . '|'
-endfunction
-"""""""""""""""""""""""""""""""""""""42header"""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""SergeHeader""""""""""""""""""""""""""""""""
