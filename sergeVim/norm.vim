@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/11/26 11:57:46 by tnicolas          #+#    #+#              "
-"    Updated: 2017/11/26 12:37:45 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/11/26 12:56:04 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -32,12 +32,14 @@ command Ww !echo "--------------------------------------------------------"
 			\&& norminette % &&
 			\echo "--------------------------------------------------------"<CR>
 
-"	make norm in the file <leader>nn
+"	make norm in the file <leader>nn :Norm
 nmap <leader>nn :call NormFile()<CR>
+command Norm exe ':call NormFile()'
 function! NormFile()
 	let i = 0
 	let max = 15
 	:normal gg=G
+	:call Create42Header()
 	"remove space beetween () ex : ( ( = ((
 	while i < max
 		let i += 1
@@ -72,6 +74,8 @@ function! NormFile()
 	"	test extra whitespace while (
 	:silent! 12, $ s/while(/while (/g
 	:silent! 12, $ s/while\s\s\+(/while (/g
+	"	remove space before ;
+	:silent! 12, $ s/\s\+;/;/g
 	"	test extra whitespace return ( and return ;
 	:silent! 12, $ s/return(/return (/g
 	:silent! 12, $ s/return\s\s\+(/return (/g

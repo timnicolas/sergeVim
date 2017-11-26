@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/11/26 11:57:34 by tnicolas          #+#    #+#              "
-"    Updated: 2017/11/26 12:38:15 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/11/26 13:10:42 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -24,7 +24,24 @@
 
 """""""""""""""""""""""""""""""""""""function"""""""""""""""""""""""""""""""""""
 "';' auto in header width <leader>;
-nmap <leader>; :% s/)\n/);\r/g<CR>:silent! /cgvhadgfhadgfjksahfjkdhfjkdshfHL<CR>
+nmap <leader>; :call PointVirgule()<CR>
+function! PointVirgule()
+	let first_line_visible = line('w0') + 4
+	let line_before = line('.')
+	let col_before = col('.')
+	if expand('%.e') == 'h'
+		:% s/)\n/);\r/g
+	elseif search(';\s*\n', 'n', line('.')) == line_before
+		exe ':' . line_before . 's/;\s*\n/\r'
+	else
+		exe ':' . line_before . 's/\s*\n/;\r'
+	endif
+	:silent! /cgvhadgfhadgfjksahfjkdhfjkdshfHL
+	exe ':' . first_line_visible
+	:normal zt
+	exe ':' . line_before
+	exe ':normal ' . col_before . '|'
+endfunction
 "imap <leader>; <C-o>:% s/)\n/);\r/g<CR>
 
 "highlight prototypes <leader>ff

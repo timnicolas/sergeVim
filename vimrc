@@ -37,10 +37,10 @@
 "testt				create a test file
 "{{					open and close { }
 
-"command:
-"- :Plugin			install and update plugin
-"- :WW				check the norm in the file (only on 42 imac)
-"- :Norm			norm the file
+"command: (:bufdo command > make command in all open files ex :bufdo Header)
+":WW				check the norm in the file (only on 42 imac)
+":Norm				norm the file
+":Header			create the 42header
 
 "<leader> + ...
 "h					open help
@@ -57,7 +57,6 @@
 "p					paste in vim
 
 ";					put the ';' at the end of prototypes in .h files
-"				!!! add check type of the file
 "ff					highlight function prototypes (not static function)
 "yff				copy all prototypes (not static) in buffer a ("ap to paste)
 "/					comment region (visual only)

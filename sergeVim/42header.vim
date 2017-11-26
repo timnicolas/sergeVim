@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/11/26 11:55:07 by tnicolas          #+#    #+#              "
-"    Updated: 2017/11/26 12:37:21 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/11/26 13:12:53 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -23,8 +23,9 @@
 " **************************************************************************** "
 
 """""""""""""""""""""""""""""""""""""42header"""""""""""""""""""""""""""""""""""
-"create 42 header <C-c><C-h>
+"create 42 header <C-c><C-h> or :Header
 nmap <C-c><C-h> :call Create42Header()<CR>
+command Header exe ':call Create42Header()'
 "update date if the file is modified
 autocmd BufWriteCmd * if &modified && Create42Header_if_exist() == 1
 autocmd BufWriteCmd *	call Create42Header_update()
