@@ -12,4 +12,4 @@ SergeVim est sans cesse mis a jour. N'hesitez pas a mettre le mettre a jour en e
 >`./update_vim.sh`
 
 ## Aide
-Pour obtenir de l'aide tappez `,h` en mode normal dans vim. cela ouvrira un fichier d'aide dans un nouvel onglet.
+Pour obtenir de l'aide tappez `,h` en mode normal dans vim. Cela ouvrira un fichier d'aide dans un nouvel onglet avec tout les racourcis dedant.
