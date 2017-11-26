@@ -1,7 +1,7 @@
 #!/bin/sh
-echo "\x1b[35m"
+echo -n "\x1b[35m"
 cat sergeheader
-echo "\x1b[0m"
+echo -n "\x1b[0m"
 echo "update git repository"
 mkdir -p ~/.vim-backup
 cp -r sergeVim ~/.vim_backup
