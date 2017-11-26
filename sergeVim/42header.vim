@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/11/26 11:55:07 by tnicolas          #+#    #+#              "
-"    Updated: 2017/11/26 15:44:55 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/11/26 18:10:41 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -32,7 +32,7 @@ autocmd BufWriteCmd *	call Create42Header_update()
 autocmd BufWriteCmd *	:write
 autocmd BufWriteCmd * elseif &modified
 autocmd BufWriteCmd *	:write
-
+a
 "create a header if we need it
 function! Create42Header()
 	let is_header = Create42Header_if_exist()

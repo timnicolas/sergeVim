@@ -6,7 +6,7 @@
 #    By: tnicolas <tnicolas@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/26 15:20:39 by tnicolas          #+#    #+#              #
-#    Updated: 2017/11/26 16:02:53 by tnicolas         ###   ########.fr        #
+#    Updated: 2017/11/26 18:09:15 by tnicolas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,6 +25,6 @@ mkdir -p ~/.vim/sergeVim
 if [ "$1" == "--param" ]; then
 	cp -r sergeVim ~/.vim
 else
-	cp -r `find sergeVim \( -iname "*" -a -not -iname "*param*" \) | grep "/"` ~/.vim
+	cp -r `find sergeVim \( -iname "*" -a -not -iname "*param*" \) | grep "/"` ~/.vim/sergeVim
 fi
 vim 'source ~/.vimrc' '+PluginInstall' '+q' '+q'
