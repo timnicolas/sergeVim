@@ -6,7 +6,7 @@
 #    By: tnicolas <tnicolas@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/26 15:20:33 by tnicolas          #+#    #+#              #
-#    Updated: 2017/11/26 15:41:34 by tnicolas         ###   ########.fr        #
+#    Updated: 2017/11/26 15:50:14 by tnicolas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,11 @@ mkdir -p ~/.vim-backup
 cp -r sergeVim ~/.vim_backup
 cp vimrc ~/.vimrc_backup
 cp ~/.vimrc vimrc
-cp -r `find ~/.vim/sergeVim \( -iname "*" -a -not -iname "*param*" \) | grep "/"` sergeVim
+if [ "$1" == "--param" ]; then
+	cp -r ~/.vim/sergeVim .
+else
+	cp -r `find ~/.vim/sergeVim \( -iname "*" -a -not -iname "*param*" \) | grep "/"` sergeVim
+fi
 git add -A
 git commit -m "update git repository"
 git push

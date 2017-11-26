@@ -1,12 +1,12 @@
 " **************************************************************************** "
 "                                                                              "
 "                                                         :::      ::::::::    "
-"    param.vim                                          :+:      :+:    :+:    "
+"    abreviate.vim                                      :+:      :+:    :+:    "
 "                                                     +:+ +:+         +:+      "
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
-"    Created: 2017/11/26 11:57:59 by tnicolas          #+#    #+#              "
-"    Updated: 2017/11/26 15:51:30 by tnicolas         ###   ########.fr        "
+"    Created: 2017/11/26 11:56:59 by tnicolas          #+#    #+#              "
+"    Updated: 2017/11/26 12:37:27 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -22,25 +22,35 @@
 "                                                                              "
 " **************************************************************************** "
 
-"""""""""""""""""""""""""""""""""""""param""""""""""""""""""""""""""""""""""""""
-"defaut username and mail for the header
-let g:username42='tnicolas'
-let g:mail42='marvin@42.fr'
-"""""""""""""""""""""""""""""""""""""param""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""abreviate""""""""""""""""""""""""""""""""""
+"main auto with mainn
+ab mainn int<tab><tab><tab><tab>main(int ac, char **av)<CR>
+			\{<CR>
+			\<CR>
+			\return(0);<CR>
+			\}<esc>4=<up>2<down>i
 
-"""""""""""""""""""""""""""""""""""""plugin"""""""""""""""""""""""""""""""""""""
-"activer ou desactiver un plugin
-"	NERDTree (navigateur de fichier)
-let g:_enableNERDTree=0
-"	lightline (barre colore en bas de l'ecran)
-let g:_enablelightline=1
-"	colorizer (les couleurs se colorent #00FF00 #120499)
-let g:_enablecolorizer=1
-"	syntastic (correction code)
-let g:_enablesyntastic=1
-"	conque (utilisation du terminale dans un buffer)
-let g:_enableconque=1
+"test file with testt
+ab testt //<d0><CR><left><left><del><del>
+			\#include <stdio.h><CR>
+			\#include <stdlib.h><CR>
+			\#include <unistd.h><CR>
+			\#include <limits.h><CR>
+			\#include <string.h><CR>
+			\#include <ctype.h><CR>
+			\<CR>
+			\int<tab><tab><tab><tab>main(int ac, char **av)<CR>
+			\{<CR>
+			\int<tab><tab><tab>i;<CR>
+			\<CR>
+			\(void)ac;<CR>
+			\(void)av;<CR>
+			\(void)i;<CR>
+			\<CR>
+			\<tab>return (0);<CR>
+			\}<CR>
+			\//</d0><esc>18=<up>15<down>i
 
-"taille de la fenetre nerdtree
-let g:NERDTreeWinSize=27
-"""""""""""""""""""""""""""""""""""""plugin"""""""""""""""""""""""""""""""""""""
+"{{
+imap {{ {<CR>}<up><CR>
+"""""""""""""""""""""""""""""""""""""abreviate""""""""""""""""""""""""""""""""""
