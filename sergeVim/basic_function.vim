@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/11/26 11:57:09 by tnicolas          #+#    #+#              "
-"    Updated: 2017/11/26 19:14:34 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/11/26 19:54:54 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -57,6 +57,7 @@ if g:highlight_search == 1
 else
 	set nohlsearch
 endif
+set incsearch "highlight when typing command (not only after)
 
 "help <leader>h
 nmap <leader>h :execute "tabnew ".g:help_vim_file<CR>

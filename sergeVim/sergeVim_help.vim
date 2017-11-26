@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/11/26 12:07:06 by tnicolas          #+#    #+#              "
-"    Updated: 2017/11/26 19:07:11 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/11/26 20:44:23 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -34,7 +34,7 @@
 "<leader><F5>		create session (mksession) and quit
 
 "abreviate:
-"- mainn			create a main
+"mainn				create a main
 "testt				create a test file
 "{{					open and close { }
 
@@ -42,8 +42,10 @@
 ":WW				check the norm in the file (only on 42 imac)
 ":Norm				norm the file
 ":Header			create the 42header
+":EmptyHeader		create a empty header
+":SergeHeader		create the sergeHeader
 
-"<leader> + ...
+"<leader> + ... (ex: [normal mode] ',h' open the help)
 "h					open help
 "<tab>				move tab to the right
 "<S-tab>			move tab to the left

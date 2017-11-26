@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/11/26 19:08:21 by tnicolas          #+#    #+#              "
-"    Updated: 2017/11/26 19:25:08 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/11/26 21:22:11 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -32,9 +32,15 @@ command SergeHeader exe ':call CreateSergeHeader()'
 function! CreateSergeHeader()
 	let is_header = CreateSergeHeader_if_exist()
 	if is_header == 0
-		call CreateSergeHeader_create()
+		let is42_header = Create42Header_if_exist()
+		if is42_header == 0
+			call CreateSergeHeader_create(1)
+		else
+			:12s/^/\r
+			call CreateSergeHeader_create(13)
+		endif
 	else
-		echo 'you already have a header'
+		echo 'you already have a sergeVim header'
 	endif
 endfunction
 
@@ -60,11 +66,7 @@ function! CreateSergeHeader_if_exist()
 		let size_c = 1
 	endif
 	:normal gg
-	let is_header =  search(l:begin . '\s*\*\{' . (78 - 2 * l:size_c) . '}\s*'
-				\. l:end . '\n
-				\' . l:begin . '\s\+' . l:end . '\n
-				\' . l:begin . '\s*\*\{' . (78 - 2 * l:size_c) . '}\s*'
-				\. l:end . '\n', 'c', line('0'))
+	let is_header =  search('\/\* \*\{74} \*\/\n\/\* \s\+__\s\+___\s\+\*\/\n\/\*\s\+\\ \\\s\+\/ (_)\s\+\*\/\n\/\*\s\+___  ___ _ __ __ _  __\\ \\  \/ \/ _ _ __ ___\s\+\*\/\n\/\*\s\+\/ __|\/ _ \\ .__\/ _\` |\/ _ \\ \\\/ \/ | | ._ ` _ \\\s\+\*\/\n\/\*\s\+\\__ \\  __\/ | | (_| |  __\/\\  \/  | | | | | | |\s\+\*\/\n\/\*\s\+|___\/\\___|_|  \\__, |\\___| \\\/   |_|_| |_| |_|\s\+\*\/\n\/\*\s\+__\/ |\s\+\*\/\n\/\*\s\+|___\/\s\+\*\/\n\/\*\s\+\*\/\n\/\* \*\{74} \*\/\n', 'c', line('0'))
 	exe ':' . first_line_visible
 	:normal zt
 	exe ':' . line_before
@@ -73,10 +75,11 @@ function! CreateSergeHeader_if_exist()
 endfunction
 
 "create a header
-function! CreateSergeHeader_create()
+function! CreateSergeHeader_create(line_size)
 	let first_line_visible = line('w0') + g:min_number_line_ar_cur
 	let line_before = line('.')
 	let col_before = col('.')
+	let line_s = a:line_size
 	let user = $USER
 	let mail = $MAIL
 	let begin = '# '
@@ -108,37 +111,47 @@ function! CreateSergeHeader_create()
 	if mail == ''
 		let mail = g:mail42
 	endif
-	:normal gg
-	exe ':1 s/^/' . l:begin . repeat(' ', size_c - 1) .
+"	exe ':' . l:line_s . 's/^/\r'
+"	let l:line_s += 1
+	exe ':' . l:line_s . 's/^/' . l:begin . repeat(' ', size_c - 1) .
 				\repeat('*', 78 - 2 * size_c) . repeat(' ', size_c - 1) .
 				\l:end . '\r'
-	exe ':2 s/^/' . l:begin . repeat(' ', 76) . l:end . '\r'
-	let line42 = ':::' . repeat(' ', 6) . '::::::::' . repeat(' ', 3)
-	exe ':3 s/^/' . l:begin . repeat(' ', 56) . line42 . l:end . '\r'
-	let line42 = ':+:' . repeat(' ', 6) . ':+:' . repeat(' ', 4) . ':+:' .
-				\repeat(' ', 3)
-	exe ':4 s/^/' . l:begin . repeat(' ', 3) . filename .
-				\repeat(' ', 51 - strlen(filename)) .  line42 . l:end . '\r'
-	let line42 = '+:+ +:+' . repeat(' ', 9) . '+:+' . repeat(' ', 5)
-	exe ':5 s/^/' . l:begin . repeat(' ', 52) . line42 . l:end . '\r'
-	let line42 = '+#+  +:+' . repeat(' ', 7) . '+#+' . repeat(' ', 8)
-	exe ':6 s/^/' . l:begin . repeat(' ', 3) . 'By: ' . user . ' <' . mail . '>'
-				\. repeat(' ', 40 - strlen(user) - strlen(mail)) .
-				\line42 . l:end . '\r'
-	let line42 = '+#+#+#+#+#+' . repeat(' ', 3) . '+#+' . repeat(' ', 11)
-	exe ':7 s/^/' . l:begin . repeat(' ', 48) . line42 . l:end . '\r'
-	let line42 = '#+#' . repeat(' ', 4) . '#+#' . repeat(' ', 13)
-	exe ':8 s/^/' . l:begin . repeat(' ', 3) . 'Created: ' . time_act . ' by '
-				\. user . repeat(' ', 39 - strlen(time_act) - strlen(user)) .
-				\line42 . l:end . '\r'
-	let line42 = '###' . repeat(' ', 3) . '########.fr' . repeat(' ', 7)
-	exe ':9 s/^/' . l:begin . repeat(' ', 3) . 'Updated: ' . time_act . ' by '
-				\. user .  repeat(' ', 38 - strlen(time_act) - strlen(user)) .
-				\line42 . l:end . '\r'
-	exe ':10 s/^/' . l:begin . repeat(' ', 76) . l:end . '\r'
-	exe ':11 s/^/' . l:begin . repeat(' ', size_c - 1) .
+	let l:line_s += 1
+	let l:lineH = repeat(' ', 37) . '__' . repeat(' ', 6) . '___' .
+				\repeat(' ', 28)
+	exe ':' . l:line_s . 's/^/' . l:begin . l:lineH . l:end . '\r'
+	let l:line_s += 1
+	let l:lineH = repeat(' ', 37) . '\\ \\' . repeat(' ', 4) . '\/ (_)' .
+				\repeat(' ', 27)
+	exe ':' . l:line_s . 's/^/' . l:begin . l:lineH . l:end . '\r'
+	let l:line_s += 1
+	let l:lineH = repeat(' ', 16) . '___  ___ _ __ __ _  __\\ \\  \/ \/ _ _ __ ___' .
+				\repeat(' ', 19)
+	exe ':' . l:line_s . 's/^/' . l:begin . l:lineH . l:end . '\r'
+	let l:line_s += 1
+	let l:lineH = repeat(' ', 15) . '\/ __|\/ _ \\ ' . "'" . '__\/ _` |\/ _ \\ \\\/ \/ | | ' . "'" . '_ ` _ \\' .
+				\repeat(' ', 18)
+	exe ':' . l:line_s . 's/^/' . l:begin . l:lineH . l:end . '\r'
+	let l:line_s += 1
+	let l:lineH = repeat(' ', 15) . '\\__ \\  __\/ | | (_| |  __\/\\  \/  | | | | | | |' .
+				\repeat(' ', 17)
+	exe ':' . l:line_s . 's/^/' . l:begin . l:lineH . l:end . '\r'
+	let l:line_s += 1
+	let l:lineH = repeat(' ', 15) . '|___\/\\___|_|  \\__, |\\___| \\\/' . repeat(' ', 3) . '|_|_| |_| |_|' .
+				\repeat(' ', 17)
+	exe ':' . l:line_s . 's/^/' . l:begin . l:lineH . l:end . '\r'
+	let l:line_s += 1
+	let l:lineH = repeat(' ', 30) . '__\/ |' . repeat(' ', 41)
+	exe ':' . l:line_s . 's/^/' . l:begin . l:lineH . l:end . '\r'
+	let l:line_s += 1
+	let l:lineH = repeat(' ', 29) . '|___\/' . repeat(' ', 42)
+	exe ':' . l:line_s . 's/^/' . l:begin . l:lineH . l:end . '\r'
+	let l:line_s += 1
+	exe ':' . l:line_s . 's/^/' . l:begin . repeat(' ', 76) . l:end . '\r'
+	let l:line_s += 1
+	exe ':' . l:line_s . 's/^/' . l:begin . repeat(' ', size_c - 1) .
 				\repeat('*', 78 - 2 * size_c) . repeat(' ', size_c - 1) .
-				\l:end . '\r\r'
+				\l:end . '\r'
 	let line_before += 12
 	exe ':' . first_line_visible
 	:normal zt
