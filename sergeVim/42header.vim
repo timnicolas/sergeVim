@@ -1,13 +1,13 @@
 " **************************************************************************** "
-"																			   "
-"														  :::	   ::::::::    "
-"	 42header.vim										:+:		 :+:	:+:    "
-"													  +:+ +:+		  +:+	   "
-"	 By: tnicolas <marvin@42.fr>					+#+  +:+	   +#+		   "
-"												  +#+#+#+#+#+	+#+			   "
-"	 Created: 2017/09/05 16:54:52 by tnicolas		   #+#	  #+#			   "
-"	 Updated: 2017/09/05 16:54:52 by tnicolas		  ###	########.fr		   "
-"																			   "
+"                                                                              "
+"                                                         :::      ::::::::    "
+"    42header.vim                                       :+:      :+:    :+:    "
+"                                                     +:+ +:+         +:+      "
+"    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
+"                                                 +#+#+#+#+#+   +#+            "
+"    Created: 2017/11/26 11:55:07 by tnicolas          #+#    #+#              "
+"    Updated: 2017/11/26 11:56:36 by tnicolas         ###   ########.fr        "
+"                                                                              "
 " **************************************************************************** "
 
 """""""""""""""""""""""""""""""""""""42header"""""""""""""""""""""""""""""""""""
@@ -22,23 +22,43 @@ function! Create42Header()
 endfunction
 
 function! Create42Header_if_exist()
-	let first_line_visible = line('w0') "+ g:visible_line_around_cursor
+	let first_line_visible = line('w0') + 4
 	let line_before = line('.')
 	let col_before = col('.')
+	let begin = '# '
+	let end = ' #'
+	let size_c = 1
+	if expand('%:e') == 'c' || expand('%:e') == 'h' || expand('%:e') == 'cpp'
+		let begin = '\/\*'
+		let end = '\*\/'
+		let size_c = 2
+	elseif expand('%:e') == 'vim' || expand('%:t') == '.vimrc'
+		let begin = '" '
+		let end = ' "'
+		let size_c = 1
+	elseif expand('%:t') == '.emacs'
+		let begin = '; '
+		let end = ' ;'
+		let size_c = 1
+	endif
 	:normal gg
-	let is_header =  search('\/\* \*\{74} \*\/\n
-				\\/\*\s\+\*\/\n
-				\\/\*\s\+:::\s\+:\{8}   \*\/\n
-				\\/\*   \w\+.\w* \+:+:\s\+:+:\s\+:+:   \*\/\n
-				\\/\*\s\++:+ +:+\s\++:+\s\+\*\/\n
-				\\/\*   By: \w\+ <.\+> \++#+  +:+ \{7}+#+ \{8}\*\/\n
-				\\/\*\s\++#+#+#+#+#+   +#+\s\+\*\/\n
-				\\/\*   Created: 20\d\d\/\d\d\/\d\d \d\d:\d\d:\d\d
-				\ by \w\+\s\+#+#\s\+#+#\s\+\*\/\n
-				\\/\*   Updated: 20\d\d\/\d\d\/\d\d \d\d:\d\d:\d\d
-				\ by \w\+\s\+###   #\{8}\.fr\s\+\*\/\n
-				\\/\*\s\+\*\/\n
-				\\/\* \*\{74} \*\/\n', 'c', line('0'))
+	let is_header =  search(l:begin . '\s*\*\{' . (78 - 2 * l:size_c) . '}\s*'
+				\. l:end . '\n
+				\' . l:begin . '\s\+' . l:end . '\n
+				\' . l:begin . '\s\+:::\s\+:\{8}\s\+' . l:end . '\n
+				\' . l:begin . '\s\+\w\+.\w* \+:+:\s\+:+:\s\+:+:\s\+' . l:end
+				\. '\n
+				\' . l:begin . '\s\++:+ +:+\s\++:+\s\+' . l:end . '\n
+				\' . l:begin . '\s\+By: \w\+ <.\+> \++#+  +:+ \{7}+#+ \{8}' .
+				\l:end . '\n
+				\' . l:begin . '\s\++#+#+#+#+#+\s\++#+\s\+' . l:end . '\n
+				\' . l:begin . '\s\+Created: 20\d\d\/\d\d\/\d\d \d\d:\d\d:\d\d
+				\ by \w\+\s\+#+#\s\+#+#\s\+' . l:end . '\n
+				\' . l:begin . '\s\+Updated: 20\d\d\/\d\d\/\d\d \d\d:\d\d:\d\d
+				\ by \w\+\s\+###\s\+#\{8}\.fr\s\+' . l:end . '\n
+				\' . l:begin . '\s\+' . l:end . '\n
+				\' . l:begin . '\s*\*\{' . (78 - 2 * l:size_c) . '}\s*'
+				\. l:end . '\n', 'c', line('0'))
 	exe ':' . first_line_visible
 	:normal zt
 	exe ':' . line_before
@@ -47,11 +67,27 @@ function! Create42Header_if_exist()
 endfunction
 
 function! Create42Header_create()
-	let first_line_visible = line('w0') "+ g:visible_line_around_cursor
+	let first_line_visible = line('w0') + 4
 	let line_before = line('.')
 	let col_before = col('.')
 	let user = $USER
 	let mail = $MAIL
+	let begin = '# '
+	let end = ' #'
+	let size_c = 1
+	if expand('%:e') == 'c' || expand('%:e') == 'h' || expand('%:e') == 'cpp'
+		let begin = '\/\*'
+		let end = '\*\/'
+		let size_c = 2
+	elseif expand('%:e') == 'vim' || expand('%:t') == '.vimrc'
+		let begin = '" '
+		let end = ' "'
+		let size_c = 1
+	elseif expand('%:t') == '.emacs'
+		let begin = '; '
+		let end = ' ;'
+		let size_c = 1
+	endif
 	"expand for srcs/main.c
 	"	%:t main.c
 	"	%:e c
@@ -66,32 +102,36 @@ function! Create42Header_create()
 		let mail = g:mail42
 	endif
 	:normal gg
-	exe ':1 s/^/\/\* ' . repeat('*', 74) . ' \*\/\r'
-	exe ':2 s/^/\/\* ' . repeat(' ', 74) . ' \*\/\r'
-	let line42 = ':::      ::::::::   '
-	exe ':3 s/^/\/\* ' . repeat(' ', 55) . line42 . '\*\/\r'
-	let line42 = ':+:      :+:    :+:   '
-	exe ':4 s/^/\/\*   ' . filename . repeat(' ', 51 - strlen(filename)) .
-				\line42 . '\*\/\r'
-	let line42 = '+:+ +:+         +:+     '
-	exe ':5 s/^/\/\*' . repeat(' ', 52) . line42 . '\*\/\r'
-	let line42 = '+#+  +:+       +#+' . repeat(' ', 8)
-	exe ':6 s/^/\/\*   By: ' . user . ' <' . mail . '>' .
-				\repeat(' ', 40 - strlen(user) - strlen(mail)) .
-				\line42 . '\*\/\r'
-	let line42 = '+#+#+#+#+#+   +#+' . repeat(' ', 11)
-	exe ':7 s/^/\/\*' . repeat(' ', 48) . line42 . '\*\/\r'
-	let line42 = '#+#    #+#' . repeat(' ', 13)
-	exe ':8 s/^/\/\*   Created: ' . time_act . ' by ' . user .
-				\repeat(' ', 39 - strlen(time_act) - strlen(user)) .
-				\line42 . '\*\/\r'
-	let line42 = '###   ########.fr' . repeat(' ', 7)
-	exe ':9 s/^/\/\*   Updated: ' . time_act . ' by ' . user .
-				\repeat(' ', 38 - strlen(time_act) - strlen(user)) .
-				\line42 . '\*\/\r'
-	exe ':10 s/^/\/\* ' . repeat(' ', 74) . ' \*\/\r'
-	exe ':11 s/^/\/\* ' . repeat('*', 74) . ' \*\/\r\r'
-	"echo '\/\* \*\*\* \*\/\n'
+	exe ':1 s/^/' . l:begin . repeat(' ', size_c - 1) .
+				\repeat('*', 78 - 2 * size_c) . repeat(' ', size_c - 1) .
+				\l:end . '\r'
+	exe ':2 s/^/' . l:begin . repeat(' ', 76) . l:end . '\r'
+	let line42 = ':::' . repeat(' ', 6) . '::::::::' . repeat(' ', 3)
+	exe ':3 s/^/' . l:begin . repeat(' ', 56) . line42 . l:end . '\r'
+	let line42 = ':+:' . repeat(' ', 6) . ':+:' . repeat(' ', 4) . ':+:' .
+				\repeat(' ', 3)
+	exe ':4 s/^/' . l:begin . repeat(' ', 3) . filename .
+				\repeat(' ', 51 - strlen(filename)) .  line42 . l:end . '\r'
+	let line42 = '+:+ +:+' . repeat(' ', 9) . '+:+' . repeat(' ', 5)
+	exe ':5 s/^/' . l:begin . repeat(' ', 52) . line42 . l:end . '\r'
+	let line42 = '+#+  +:+' . repeat(' ', 7) . '+#+' . repeat(' ', 8)
+	exe ':6 s/^/' . l:begin . repeat(' ', 3) . 'By: ' . user . ' <' . mail . '>'
+				\. repeat(' ', 40 - strlen(user) - strlen(mail)) .
+				\line42 . l:end . '\r'
+	let line42 = '+#+#+#+#+#+' . repeat(' ', 3) . '+#+' . repeat(' ', 11)
+	exe ':7 s/^/' . l:begin . repeat(' ', 48) . line42 . l:end . '\r'
+	let line42 = '#+#' . repeat(' ', 4) . '#+#' . repeat(' ', 13)
+	exe ':8 s/^/' . l:begin . repeat(' ', 3) . 'Created: ' . time_act . ' by '
+				\. user . repeat(' ', 39 - strlen(time_act) - strlen(user)) .
+				\line42 . l:end . '\r'
+	let line42 = '###' . repeat(' ', 3) . '########.fr' . repeat(' ', 7)
+	exe ':9 s/^/' . l:begin . repeat(' ', 3) . 'Updated: ' . time_act . ' by '
+				\. user .  repeat(' ', 38 - strlen(time_act) - strlen(user)) .
+				\line42 . l:end . '\r'
+	exe ':10 s/^/' . l:begin . repeat(' ', 76) . l:end . '\r'
+	exe ':11 s/^/' . l:begin . repeat(' ', size_c - 1) .
+				\repeat('*', 78 - 2 * size_c) . repeat(' ', size_c - 1) .
+				\l:end . '\r\r'
 	let line_before += 12
 	exe ':' . first_line_visible
 	:normal zt
@@ -103,9 +143,9 @@ autocmd BufWriteCmd * if &modified && Create42Header_if_exist() == 1
 autocmd BufWriteCmd *	call Create42Header_update()
 autocmd BufWriteCmd *	:write
 autocmd BufWriteCmd * elseif &modified
-autocmd BufWriteCmd * 	:write
+autocmd BufWriteCmd *	:write
 function! Create42Header_update()
-	let first_line_visible = line('w0') "+ g:visible_line_around_cursor
+	let first_line_visible = line('w0') + 4
 	let line_before = line('.')
 	let col_before = col('.')
 	:normal gg

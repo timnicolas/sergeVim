@@ -1,13 +1,13 @@
 " **************************************************************************** "
-"																			   "
-"														  :::	   ::::::::    "
-"	 basic_function.vim									:+:		 :+:	:+:    "
-"													  +:+ +:+		  +:+	   "
-"	 By: tnicolas <marvin@42.fr>					+#+  +:+	   +#+		   "
-"												  +#+#+#+#+#+	+#+			   "
-"	 Created: 2017/09/05 16:54:52 by tnicolas		   #+#	  #+#			   "
-"	 Updated: 2017/09/05 16:54:52 by tnicolas		  ###	########.fr		   "
-"																			   "
+"                                                                              "
+"                                                         :::      ::::::::    "
+"    basic_function.vim                                 :+:      :+:    :+:    "
+"                                                     +:+ +:+         +:+      "
+"    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
+"                                                 +#+#+#+#+#+   +#+            "
+"    Created: 2017/11/26 11:57:09 by tnicolas          #+#    #+#              "
+"    Updated: 2017/11/26 11:57:18 by tnicolas         ###   ########.fr        "
+"                                                                              "
 " **************************************************************************** "
 
 """""""""""""""""""""""""""""""""""""basic function"""""""""""""""""""""""""""""
@@ -24,6 +24,7 @@ set so=4 "show 4 line around cursor
 set mouse=a "mouse on
 set tabstop=4 "tab size
 set shiftwidth=4 "tab size
+set noexpandtab "no replace tab to space
 set omnifunc=syntaxcomplete#Complete "autocompletion (<C-n>)
 set showcmd "see command
 "set rulerformat=%27(%{strftime('%a\ %e\ %b\ %I:%M\ %p')}\ %2l,%-2(%c%V%)\ %P%)

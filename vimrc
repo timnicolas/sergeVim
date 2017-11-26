@@ -120,7 +120,7 @@
 
 """""""""""""""""""""""""""""""""""""Source"""""""""""""""""""""""""""""""""""""
 let mapleader = ","
-let g:help_vim_file='~/.vim/sergeVim_help.vim'
+let g:help_vim_file='~/.vim/sergeVim/sergeVim_help.vim'
 source ~/.vim/sergeVim/param.vim
 source ~/.vim/sergeVim/basic_function.vim
 source ~/.vim/sergeVim/plugin.vim
