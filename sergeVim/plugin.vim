@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/11/26 11:58:30 by tnicolas          #+#    #+#              "
-"    Updated: 2017/11/26 12:38:00 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/11/26 15:33:29 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -39,22 +39,32 @@ Plugin 'gmarik/Vundle.vim'
 
 "Le plugin est hébergé à https://github.com/itchyny/lightline.vim
 "pour la barre en bas de couleur
-Plugin 'itchyny/lightline.vim'
+if g:_enablelightline == 1
+	Plugin 'itchyny/lightline.vim'
+endif
 
 "gestionaire de fichier
-Plugin 'scrooloose/nerdtree'
+if g:_enableNERDTree == 1
+	Plugin 'scrooloose/nerdtree'
+endif
 
 "pour colorer les nom de couleur ex #FFFFFF #00FF00
-Plugin 'vim-scripts/colorizer'
+if g:_enablecolorizer == 1
+	Plugin 'vim-scripts/colorizer'
+endif
 
 "correction des erreurs de code
-Plugin 'vim-syntastic/syntastic'
+if g:_enablesyntastic == 1
+	Plugin 'vim-syntastic/syntastic'
+endif
 
 "pour avoir des info sur le prog (variable, import...)
 "Plugin 'majutsushi/tagbar'
 
 "pour ouvrir un terminal ds un buffer vim
-Plugin 'wkentaro/conque.vim'
+if g:_enableconque == 1
+	Plugin 'wkentaro/conque.vim'
+endif
 
 "autocompletion
 "Plugin 'Valloric/YouCompleteMe'
@@ -68,21 +78,25 @@ call vundle#end()
 
 "	nerdtree
 "		open/close nerdtree <leader>g
-let g:state_NerdTree = 0
-nmap <leader>g :call NavFichier()<CR><C-w>=
-function! NavFichier()
-	if (g:state_NerdTree == 0)
-		:NERDTree
-		let g:state_NerdTree = 1
-	else
-		:NERDTreeClose
-		let g:state_NerdTree = 0
-	endif
-endfunction
+if g:_enableNERDTree == 1
+	let g:state_NerdTree = 0
+	nmap <leader>g :call NavFichier()<CR><C-w>=
+	function! NavFichier()
+		if (g:state_NerdTree == 0)
+			:NERDTree
+			let g:state_NerdTree = 1
+		else
+			:NERDTreeClose
+			let g:state_NerdTree = 0
+		endif
+	endfunction
+endif
 
 "	Conque
 "		open zsh <leader>z
-nmap <leader>z :ConqueTerm zsh<CR><up><down>
-"		open bash <leader>b
-nmap <leader>b :ConqueTerm bash<CR><up><down>
+if g:_enableconque == 1
+	nmap <leader>z :ConqueTerm zsh<CR><up><down>
+	"		open bash <leader>b
+	nmap <leader>b :ConqueTerm bash<CR><up><down>
+endif
 """""""""""""""""""""""""""""""""""""plugin"""""""""""""""""""""""""""""""""""""

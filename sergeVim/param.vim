@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/11/26 11:57:59 by tnicolas          #+#    #+#              "
-"    Updated: 2017/11/26 12:37:54 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/11/26 15:33:56 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -23,10 +23,24 @@
 " **************************************************************************** "
 
 """""""""""""""""""""""""""""""""""""param""""""""""""""""""""""""""""""""""""""
-"taille de la fenetre nerdtree
-let g:NERDTreeWinSize=27
-
 "defaut username and mail for the header
 let g:username42='tnicolas'
 let g:mail42='marvin@42.fr'
 """""""""""""""""""""""""""""""""""""param""""""""""""""""""""""""""""""""""""""
+
+"""""""""""""""""""""""""""""""""""""plugin"""""""""""""""""""""""""""""""""""""
+"activer ou desactiver un plugin
+"	NERDTree (navigateur de fichier)
+let g:_enableNERDTree=1
+"	lightline (barre colore en bas de l'ecran)
+let g:_enablelightline=1
+"	colorizer (les couleurs se colorent #00FF00 #120499)
+let g:_enablecolorizer=1
+"	syntastic (correction code)
+let g:_enablesyntastic=1
+"	conque (utilisation du terminale dans un buffer)
+let g:_enableconque=1
+
+"taille de la fenetre nerdtree
+let g:NERDTreeWinSize=27
+"""""""""""""""""""""""""""""""""""""plugin"""""""""""""""""""""""""""""""""""""
