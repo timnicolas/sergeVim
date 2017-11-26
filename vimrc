@@ -37,7 +37,7 @@
 "testt				create a test file
 "{{					open and close { }
 
-"command: (:bufdo command > make command in all open files ex :bufdo Header)
+"command:  (:bufdo command > make command in all open files ex :bufdo Header)
 ":WW				check the norm in the file (only on 42 imac)
 ":Norm				norm the file
 ":Header			create the 42header
