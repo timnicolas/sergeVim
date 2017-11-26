@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/11/26 19:08:21 by tnicolas          #+#    #+#              "
-"    Updated: 2017/11/26 22:40:25 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/11/26 23:38:33 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -36,7 +36,7 @@ function! CreateSergeHeader()
 		if is42_header == 0
 			call CreateSergeHeader_create(1)
 		else
-			:12s/^/\r
+			:11s/\n/\r\r
 			call CreateSergeHeader_create(13)
 		endif
 	else
@@ -75,7 +75,7 @@ function! CreateSergeHeader_if_exist()
 				\| \\\/   |_|_| |_| |_|\s\+\*\/\n\/\*\s\+__\/ |\s\+\*\/\n
 				\\/\*\s\+|___\/\s\+\*\/\n\/\*\s\+\*\/\n\/\* \*\{74} \*\/\n',
 				\'c', line('0'))
-
+") "this line is here to debug color in vim
 	exe ':' . first_line_visible
 	:normal zt
 	exe ':' . line_before
@@ -120,8 +120,6 @@ function! CreateSergeHeader_create(line_size)
 	if mail == ''
 		let mail = g:mail42
 	endif
-"	exe ':' . l:line_s . 's/^/\r'
-"	let l:line_s += 1
 	exe ':' . l:line_s . 's/^/' . l:begin . repeat(' ', size_c - 1) .
 				\repeat('*', 78 - 2 * size_c) . repeat(' ', size_c - 1) .
 				\l:end . '\r'

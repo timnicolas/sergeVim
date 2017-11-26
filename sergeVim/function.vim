@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/11/26 11:57:34 by tnicolas          #+#    #+#              "
-"    Updated: 2017/11/26 19:47:01 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/11/26 23:15:05 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -184,14 +184,17 @@ nmap <leader>d8d :call RemoveBalisePart(8)<CR>
 nmap <leader>d9d :call RemoveBalisePart(9)<CR>
 function! RemoveBalisePart(n_part)
 	call NormRemoveDeleteLineComment(a:n_part)
-	exe '/\/\/<d' . a:n_part . '>'
-	let first_line = line('.')
-	exe '/\/\/<\/d' . a:n_part . '>'
-	let end_line = line('.')
-	exe first_line
-	while first_line <= end_line
-		:normal! dd
-		let first_line += 1
+	while search('\/\/<d' . a:n_part . '>', 'c', line('0')) != 0 "&&
+				\search('\/\/<\/d' . a:n_part . '>', 'c', line('0')) != 0
+		exe '/\/\/<d' . a:n_part . '>'
+		let first_line = line('.')
+		exe '/\/\/<\/d' . a:n_part . '>'
+		let end_line = line('.')
+		exe first_line
+		while first_line <= end_line
+			:normal! dd
+			let first_line += 1
+		endwhile
 	endwhile
 endfunction
 """""""""""""""""""""""""""""""""""""comment""""""""""""""""""""""""""""""""""""

@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/11/26 11:55:07 by tnicolas          #+#    #+#              "
-"    Updated: 2017/11/26 22:44:41 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/11/26 23:58:01 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -86,6 +86,15 @@ function! Create42Header_if_exist()
 				\' . l:begin . '\s\+' . l:end . '\n
 				\' . l:begin . '\s*\*\{' . (78 - 2 * l:size_c) . '}\s*'
 				\. l:end . '\n', 'c', line('0'))
+	if line('.') > 1
+		let linedown = line('.') - 1
+		if search('^' . repeat('\n', linedown) . '\/\* *', 'c', line('0')) == 1
+			:normal gg
+			exe ':normal! d'. linedown . 'd'
+		else
+			echo 'header not a the top of the file'
+		endif
+	endif
 	exe ':' . first_line_visible
 	:normal zt
 	exe ':' . line_before
