@@ -1,4 +1,7 @@
 #!/bin/sh
+echo "\x1b[33m"
+cat sergeheader
+echo "\x1b[0m"
 echo "update vim config"
 git pull
 mkdir -p ~/.vim-backup

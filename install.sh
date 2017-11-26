@@ -1,8 +1,11 @@
 #!/bin/sh
+echo "\x1b[32m"
+cat sergeheader
+echo "\x1b[0m"
 cp ~/.vimrc ~/.vimrc_old_config
 cp vimrc ~/.vimrc
 if [ -d "~/.vim" ]; then
-  rm -rf ~/.vim
+	rm -rf ~/.vim
 fi
 mkdir -p ~/.vim
 cp -r sergeVim ~/.vim
