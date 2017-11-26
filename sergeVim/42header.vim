@@ -6,12 +6,33 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/11/26 11:55:07 by tnicolas          #+#    #+#              "
-"    Updated: 2017/11/26 11:56:36 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/11/26 12:37:21 by tnicolas         ###   ########.fr        "
+"                                                                              "
+" **************************************************************************** "
+
+" **************************************************************************** "
+"                                      __      ___                             "
+"                                      \ \    / (_)                            "
+"                 ___  ___ _ __ __ _  __\ \  / / _ _ __ ___                    "
+"                / __|/ _ \ '__/ _` |/ _ \ \/ / | | '_ ` _ \                   "
+"                \__ \  __/ | | (_| |  __/\  /  | | | | | | |                  "
+"                |___/\___|_|  \__, |\___| \/   |_|_| |_| |_|                  "
+"                               __/ |                                          "
+"                              |___/                                           "
 "                                                                              "
 " **************************************************************************** "
 
 """""""""""""""""""""""""""""""""""""42header"""""""""""""""""""""""""""""""""""
+"create 42 header <C-c><C-h>
 nmap <C-c><C-h> :call Create42Header()<CR>
+"update date if the file is modified
+autocmd BufWriteCmd * if &modified && Create42Header_if_exist() == 1
+autocmd BufWriteCmd *	call Create42Header_update()
+autocmd BufWriteCmd *	:write
+autocmd BufWriteCmd * elseif &modified
+autocmd BufWriteCmd *	:write
+
+"create a header if we need it
 function! Create42Header()
 	let is_header = Create42Header_if_exist()
 	if is_header == 0
@@ -21,6 +42,7 @@ function! Create42Header()
 	endif
 endfunction
 
+"check if the header exist
 function! Create42Header_if_exist()
 	let first_line_visible = line('w0') + 4
 	let line_before = line('.')
@@ -66,6 +88,7 @@ function! Create42Header_if_exist()
 	return is_header
 endfunction
 
+"create a header
 function! Create42Header_create()
 	let first_line_visible = line('w0') + 4
 	let line_before = line('.')
@@ -139,11 +162,7 @@ function! Create42Header_create()
 	exe ':normal ' . col_before . '|'
 endfunction
 
-autocmd BufWriteCmd * if &modified && Create42Header_if_exist() == 1
-autocmd BufWriteCmd *	call Create42Header_update()
-autocmd BufWriteCmd *	:write
-autocmd BufWriteCmd * elseif &modified
-autocmd BufWriteCmd *	:write
+"update date in header
 function! Create42Header_update()
 	let first_line_visible = line('w0') + 4
 	let line_before = line('.')
