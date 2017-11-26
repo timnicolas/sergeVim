@@ -6,13 +6,13 @@
 #    By: tnicolas <tnicolas@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/26 15:19:15 by tnicolas          #+#    #+#              #
-#    Updated: 2017/11/26 15:20:30 by tnicolas         ###   ########.fr        #
+#    Updated: 2017/11/26 18:16:02 by tnicolas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 #!/bin/sh
 echo "\x1b[32m"
-cat sergeheader
+cat sergeHeader
 echo "\x1b[0m"
 cp ~/.vimrc ~/.vimrc_old_config
 cp vimrc ~/.vimrc

@@ -6,13 +6,13 @@
 #    By: tnicolas <tnicolas@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/26 15:20:39 by tnicolas          #+#    #+#              #
-#    Updated: 2017/11/26 18:09:15 by tnicolas         ###   ########.fr        #
+#    Updated: 2017/11/26 18:15:52 by tnicolas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 #!/bin/sh
 echo "\x1b[33m"
-cat sergeheader
+cat sergeHeader
 echo "\x1b[0m"
 echo "update vim config"
 git pull
