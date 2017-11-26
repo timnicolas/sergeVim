@@ -19,4 +19,7 @@ Pour reinitialiser vos parametres il faut utiliser l'option `--param` quand vous
 
 
 ## Aide
-Pour obtenir de l'aide tappez `,h` en mode normal dans vim. Cela ouvrira un fichier d'aide dans un nouvel onglet avec tout les racourcis dedant.
+Pour obtenir de l'aide tappez `,h` en mode normal dans vim. Cela ouvrira un fichier d'aide dans un nouvel onglet avec tout les racourcis ajouté sur sergeVim.
+
+## Des questions ?
+Si vous etes a 42 vous pouvez me contacter sur slack: `tnicolas`
