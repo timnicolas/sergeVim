@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/11/26 11:57:59 by tnicolas          #+#    #+#              "
-"    Updated: 2017/11/26 16:05:04 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/11/26 16:05:55 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -34,7 +34,7 @@ let g:mail42='marvin@42.fr'
 let g:_enableNERDTree=1
 "	lightline (barre colore en bas de l'ecran)
 let g:_enablelightline=1
-"	colorizer (les couleurs se colorent #00FF00 #120499)
+"	colorizer (les couleurs se colorent #FF0000 #120499)
 let g:_enablecolorizer=1
 "	syntastic (correction code)
 let g:_enablesyntastic=1
