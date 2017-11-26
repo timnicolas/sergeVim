@@ -6,7 +6,7 @@
 #    By: tnicolas <tnicolas@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/26 15:20:33 by tnicolas          #+#    #+#              #
-#    Updated: 2017/11/26 16:02:41 by tnicolas         ###   ########.fr        #
+#    Updated: 2017/11/26 16:10:05 by tnicolas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ cp ~/.vimrc vimrc
 if [ "$1" == "--param" ]; then
 	cp -r ~/.vim/sergeVim .
 else
-	cp -r `find ~/.vim/sergeVim \( -iname "*" -a -not -iname "*param*" \) | grep "/"` .
+	cp -r `find ~/.vim/sergeVim \( -iname "*" -a -not -iname "*param*" \) | grep "sergeVim/"` sergeVim
 fi
 git add -A
 git commit -m "update git repository"
