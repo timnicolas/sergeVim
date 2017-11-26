@@ -1,13 +1,13 @@
 " **************************************************************************** "
-"																			   "
-"														  :::	   ::::::::    "
-"	 .vimrc												:+:		 :+:	:+:    "
-"													  +:+ +:+		  +:+	   "
-"	 By: tnicolas <marvin@42.fr>					+#+  +:+	   +#+		   "
-"												  +#+#+#+#+#+	+#+			   "
-"	 Created: 2017/09/05 16:54:52 by tnicolas		   #+#	  #+#			   "
-"	 Updated: 2017/09/05 16:54:52 by tnicolas		  ###	########.fr		   "
-"																			   "
+"                                                                              "
+"                                                         :::      ::::::::    "
+"    .vimrc                                             :+:      :+:    :+:    "
+"                                                     +:+ +:+         +:+      "
+"    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
+"                                                 +#+#+#+#+#+   +#+            "
+"    Created: 2017/11/26 11:55:26 by tnicolas          #+#    #+#              "
+"    Updated: 2017/11/26 11:55:26 by tnicolas         ###   ########.fr        "
+"                                                                              "
 " **************************************************************************** "
 
 """""""""""""""""""""""""""""""""""""shortcut"""""""""""""""""""""""""""""""""""
@@ -107,9 +107,20 @@
 "<bar>				the '|' character, which otherwise needs to be escaped '\|'
 """""""""""""""""""""""""""""""""""""key""""""""""""""""""""""""""""""""""""""""
 
+"""""""""""""""""""""""""""""""""""""variable"""""""""""""""""""""""""""""""""""
+"g:varname			The variable is global
+"s:varname			The variable is local to the current script file
+"w:varname			The variable is local to the current editor window
+"t:varname			The variable is local to the current editor tab
+"b:varname			The variable is local to the current editor buffer
+"l:varname			The variable is local to the current function
+"a:varname			The variable is a parameter of the current function
+"v:varname			The variable is one that Vim predefines
+"""""""""""""""""""""""""""""""""""""variable"""""""""""""""""""""""""""""""""""
+
 """""""""""""""""""""""""""""""""""""Source"""""""""""""""""""""""""""""""""""""
 let mapleader = ","
-let g:help_vim_file='~/.vim/vim_help_file'
+let g:help_vim_file='~/.vim/sergeVim_help.vim'
 source ~/.vim/sergeVim/param.vim
 source ~/.vim/sergeVim/basic_function.vim
 source ~/.vim/sergeVim/plugin.vim
