@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/11/26 11:57:59 by tnicolas          #+#    #+#              "
-"    Updated: 2017/11/26 18:31:31 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/11/26 18:32:31 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -31,7 +31,7 @@ let g:mail42='marvin@42.fr'
 """""""""""""""""""""""""""""""""""""plugin"""""""""""""""""""""""""""""""""""""
 "activer ou desactiver un plugin
 "	NERDTree (navigateur de fichier)
-let g:_enableNERDTree=0
+let g:_enableNERDTree=1
 "	lightline (barre colore en bas de l'ecran)
 let g:_enablelightline=1
 "	colorizer (les couleurs se colorent #FF00FF #120499)
