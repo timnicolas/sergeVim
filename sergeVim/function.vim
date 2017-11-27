@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/11/26 11:57:34 by tnicolas          #+#    #+#              "
-"    Updated: 2017/11/27 13:19:12 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/11/27 13:58:53 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -96,8 +96,19 @@ vmap <leader>( <Esc>`<i(<Esc>`>a<right>)<Esc>
 vmap <leader>[ <Esc>`<i[<Esc>`>a<right>]<Esc>
 vmap <leader>' <Esc>`<i'<Esc>`>a<right>'<Esc>
 vmap <leader>" <Esc>`<i"<Esc>`>a<right>"<Esc>
-vmap <leader>{ <Esc>`<O{<Esc>==`>o}<Esc>==<up>
 nmap <leader>{ o}<Esc><up>O{<Esc>=2<down><down>
+"vmap <leader>{ <Esc>`<O{<Esc>==`>o}<Esc>==<up>
+vmap <leader>{ 
+function! PutAcolade() range
+	exe ':' . a:firstline
+	:normal O
+	exe ':' . line('.') . 's/^\s*/{'
+	exe ':' . a:lastline
+	:normal o
+	exe ':' . line('.') . 's/^\s*/}'
+	let rangeIndent = a:lastline - a:firstline
+	exe ':normal =' . l:rangeIndent . '<up>'
+endfunction
 vmap <leader>* <Esc>`<i/*<Esc>`><right>a<right>*/<Esc>
 nmap <leader>* o*/<Esc><up>O/*<Esc>=2<down><down>
 """""""""""""""""""""""""""""""""""""function"""""""""""""""""""""""""""""""""""
