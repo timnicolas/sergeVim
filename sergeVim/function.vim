@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/11/26 11:57:34 by tnicolas          #+#    #+#              "
-"    Updated: 2017/11/26 23:15:05 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/11/27 13:19:12 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -98,6 +98,8 @@ vmap <leader>' <Esc>`<i'<Esc>`>a<right>'<Esc>
 vmap <leader>" <Esc>`<i"<Esc>`>a<right>"<Esc>
 vmap <leader>{ <Esc>`<O{<Esc>==`>o}<Esc>==<up>
 nmap <leader>{ o}<Esc><up>O{<Esc>=2<down><down>
+vmap <leader>* <Esc>`<i/*<Esc>`><right>a<right>*/<Esc>
+nmap <leader>* o*/<Esc><up>O/*<Esc>=2<down><down>
 """""""""""""""""""""""""""""""""""""function"""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""comment""""""""""""""""""""""""""""""""""""

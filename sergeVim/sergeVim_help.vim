@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/11/26 12:07:06 by tnicolas          #+#    #+#              "
-"    Updated: 2017/11/26 23:01:10 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/11/27 13:15:09 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -72,7 +72,8 @@
 "d[x]d				remove between the 2 balise <d5> ... </d5>
 "<[x]				create block //<d[x]> (visual mode only)
 "				!!! add mode to remove all balise of the same type
-"[([{'"]			create block (ex (test)) (visual mode only exept for '{')
+"[([{'"*]			create block (ex (test)) (visual mode only exept for '{')
+"						* create multiline comment
 
 "<C-w><right>		move to buffer right
 "<C-w><left>		move to buffer left
