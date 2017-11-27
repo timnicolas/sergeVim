@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/11/26 11:57:59 by tnicolas          #+#    #+#              "
-"    Updated: 2017/11/26 19:20:26 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/11/27 16:18:33 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -52,4 +52,14 @@ let g:_enableconque=1
 
 "taille de la fenetre nerdtree
 let g:NERDTreeWinSize=27
+"pour supprimer les erreurs syntastic preciser tout les dossiers a header
+let g:syntastic_c_include_dirs = [
+			\'../includes',
+			\'includes',
+			\'../lib/includes',
+			\'lib/includes',
+			\'includes',
+			\'libft/includes/',
+			\'../libft/includes/'
+			\]
 """""""""""""""""""""""""""""""""""""plugin"""""""""""""""""""""""""""""""""""""
