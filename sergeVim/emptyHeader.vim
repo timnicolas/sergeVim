@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/11/26 22:43:54 by tnicolas          #+#    #+#              "
-"    Updated: 2017/11/26 23:46:09 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/11/27 11:22:17 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -61,6 +61,9 @@ function! CreateEmptyHeader()
 		let mail = g:mail42
 	endif
 	let line_s = line_before + 1
+	if line_s > line('$')
+		let line_s = line('$')
+	endif
 	exe ':' . l:line_s . 's/^/' . l:begin . repeat(' ', size_c - 1) .
 				\repeat('*', 78 - 2 * size_c) . repeat(' ', size_c - 1) .
 				\l:end . '\r'
