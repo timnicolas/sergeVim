@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/11/26 22:43:54 by tnicolas          #+#    #+#              "
-"    Updated: 2017/11/27 11:22:17 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/11/28 09:37:58 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -24,7 +24,7 @@
 
 """""""""""""""""""""""""""""""""""""emptyHeader""""""""""""""""""""""""""""""""
 "create a empty header :EmptyHeader
-command EmptyHeader exe ':call CreateEmptyHeader()'
+command! EmptyHeader exe ':call CreateEmptyHeader()'
 function! CreateEmptyHeader()
 	let first_line_visible = line('w0') + g:min_number_line_ar_cur
 	let line_before = line('.')

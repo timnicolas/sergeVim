@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/11/26 19:08:21 by tnicolas          #+#    #+#              "
-"    Updated: 2017/11/26 23:38:33 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/11/28 09:38:10 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -26,7 +26,7 @@
 "create sergeVim header <F2> or :SergeHeader
 nmap <F2> :call CreateSergeHeader()<CR>
 imap <F2> <esc>:calc CreateSergeHeader()<CR>
-command SergeHeader exe ':call CreateSergeHeader()'
+command! SergeHeader exe ':call CreateSergeHeader()'
 
 "create a header if we need it
 function! CreateSergeHeader()

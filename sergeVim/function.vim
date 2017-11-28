@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/11/26 11:57:34 by tnicolas          #+#    #+#              "
-"    Updated: 2017/11/27 15:03:27 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/11/28 09:23:47 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -187,30 +187,34 @@ vmap <leader><8 <Esc>`<O//<d8><Esc>==`>o//</d8><Esc>==<up>
 vmap <leader><9 <Esc>`<O//<d9><Esc>==`>o//</d9><Esc>==<up>
 
 "comment <d[x]> <leader></[x]
-nmap <leader></0 :call CommentBalisePart(0)<CR>
-nmap <leader></1 :call CommentBalisePart(1)<CR>
-nmap <leader></2 :call CommentBalisePart(2)<CR>
-nmap <leader></3 :call CommentBalisePart(3)<CR>
-nmap <leader></4 :call CommentBalisePart(4)<CR>
-nmap <leader></5 :call CommentBalisePart(5)<CR>
-nmap <leader></6 :call CommentBalisePart(6)<CR>
-nmap <leader></7 :call CommentBalisePart(7)<CR>
-nmap <leader></8 :call CommentBalisePart(8)<CR>
-nmap <leader></9 :call CommentBalisePart(9)<CR>
-function! CommentBalisePart(n_part)
-	while search('\/\/<d' . a:n_part . '>', 'c', line('0')) != 0 "&&
-				\search('\/\/<\/d' . a:n_part . '>', 'c', line('0')) != 0
-		exe '/\/\/<d' . a:n_part . '>'
-		let first_line = line('.')
-		exe '/\/\/<\/d' . a:n_part . '>'
-		let end_line = line('.')
-		exe first_line
-		while line('.') < end_line
-			:+1
-			call SergeCommentRegion()
-		endwhile
-	endwhile
-endfunction
+"nmap <leader></0 :call CommentBalisePart(0)<CR>
+"nmap <leader></1 :call CommentBalisePart(1)<CR>
+"nmap <leader></2 :call CommentBalisePart(2)<CR>
+"nmap <leader></3 :call CommentBalisePart(3)<CR>
+"nmap <leader></4 :call CommentBalisePart(4)<CR>
+"nmap <leader></5 :call CommentBalisePart(5)<CR>
+"nmap <leader></6 :call CommentBalisePart(6)<CR>
+"nmap <leader></7 :call CommentBalisePart(7)<CR>
+"nmap <leader></8 :call CommentBalisePart(8)<CR>
+"nmap <leader></9 :call CommentBalisePart(9)<CR>
+"function! CommentBalisePart(n_part)
+"	let lastline = -1
+"	while search('\/\/<d' . a:n_part . '>', 'c', line('0')) != 0 "&&
+"				\search('\/\/<\/d' . a:n_part . '>', 'c', line('0')) != 0 &&
+"				\l:lastline < line('.')
+"		:+1
+"		let lastline = line('.')
+"		exe '/\/\/<d' . a:n_part . '>'
+"		let first_line = line('.')
+"		exe '/\/\/<\/d' . a:n_part . '>'
+"		let end_line = line('.')
+"		exe first_line
+"		while line('.') < end_line
+"			:+1
+"			call SergeCommentRegion()
+"		endwhile
+"	endwhile
+"endfunction
 
 "remove <d[x]> <leader>d[x]d
 nmap <leader>d0d :call RemoveBalisePart(0)<CR>

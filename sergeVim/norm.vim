@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/11/26 11:57:46 by tnicolas          #+#    #+#              "
-"    Updated: 2017/11/26 12:56:04 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/11/28 09:38:33 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -25,16 +25,16 @@
 """""""""""""""""""""""""""""""""""""norm"""""""""""""""""""""""""""""""""""""""
 "norm
 "	norm in the file :WW
-command WW !echo "--------------------------------------------------------"
+command! WW !echo "--------------------------------------------------------"
 			\&& norminette % &&
 			\echo "--------------------------------------------------------"<CR>
-command Ww !echo "--------------------------------------------------------"
+command! Ww !echo "--------------------------------------------------------"
 			\&& norminette % &&
 			\echo "--------------------------------------------------------"<CR>
 
 "	make norm in the file <leader>nn :Norm
 nmap <leader>nn :call NormFile()<CR>
-command Norm exe ':call NormFile()'
+command! Norm exe ':call NormFile()'
 function! NormFile()
 	let i = 0
 	let max = 15

@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/11/26 11:55:07 by tnicolas          #+#    #+#              "
-"    Updated: 2017/11/27 13:28:30 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/11/28 10:09:02 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -29,13 +29,18 @@ endif
 "create 42 header <F1> or :Header
 nmap <F1> :call Create42Header()<CR>
 imap <F1> <esc>:call Create42Header()<CR>
-command Header exe ':call Create42Header()'
+command! Header exe ':call Create42Header()'
 "update date if the file is modified
-autocmd BufWriteCmd * if &modified && Create42Header_if_exist() == 1
-autocmd BufWriteCmd *	call Create42Header_update()
-autocmd BufWriteCmd *	:write
-autocmd BufWriteCmd * elseif &modified
-autocmd BufWriteCmd *	:write
+augroup headerUpdate
+	autocmd!
+	autocmd BufWriteCmd * :doautoall BufWritePost
+	autocmd BufWriteCmd * if &modified && Create42Header_if_exist() == 1
+	autocmd BufWriteCmd *	call Create42Header_update()
+	autocmd BufWriteCmd *	:write
+	autocmd BufWriteCmd * elseif &modified
+	autocmd BufWriteCmd *	:write
+	autocmd BufWriteCmd * endif
+augroup END
 
 "create a header if we need it
 function! Create42Header()

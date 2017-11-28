@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/11/26 11:58:30 by tnicolas          #+#    #+#              "
-"    Updated: 2017/11/26 15:33:29 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/11/28 09:42:17 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -28,7 +28,7 @@
 "	:source ~/.vimrc
 "	:PluginInstall
 ":plugin to install plugin
-command Plugin call Plugin_install_()
+command! Plugin call Plugin_install_()
 function! PLugin_install_()
 	:source ~/.vimrc
 	:PluginInstall

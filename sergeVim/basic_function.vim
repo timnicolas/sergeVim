@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/11/26 11:57:09 by tnicolas          #+#    #+#              "
-"    Updated: 2017/11/26 19:54:54 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/11/28 09:36:47 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -85,17 +85,17 @@ nmap <F5> :wa<CR>:mksession!<CR>
 "create session and quit <leader><F5>
 nmap <leader><F5> :wa<CR>:mksession!<CR>:wqa<CR>
 "easy save
-command W w
-command WQ wq
-command Wq wq
-command WA wa
-command Wa wa
-command WQA wqa
-command WQa wqa
-command Wqa wqa
-command WqA wqa
-command XA xa
-command Xa xa
+command! W w
+command! WQ wq
+command! Wq wq
+command! WA wa
+command! Wa wa
+command! WQA wqa
+command! WQa wqa
+command! Wqa wqa
+command! WqA wqa
+command! XA xa
+command! Xa xa
 """""""""""""""""""""""""""""""""""""save/quit""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""tab buffer"""""""""""""""""""""""""""""""""
@@ -173,7 +173,7 @@ imap <S-down> <C-o>:+5<CR>
 """""""""""""""""""""""""""""""""""""other""""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""Ugo""""""""""""""""""""""""""""""""""""""""
-command Ugo echo 'pas normal'
-command Goinfre normal ggdG
-command Cleanstars %s/*//g
+command! Ugo echo 'pas normal'
+command! Goinfre normal ggdG
+command! Cleanstars %s/*//g
 """""""""""""""""""""""""""""""""""""Ugo""""""""""""""""""""""""""""""""""""""""
