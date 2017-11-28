@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/11/26 11:55:07 by tnicolas          #+#    #+#              "
-"    Updated: 2017/11/28 10:09:02 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/11/28 10:36:59 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -33,13 +33,13 @@ command! Header exe ':call Create42Header()'
 "update date if the file is modified
 augroup headerUpdate
 	autocmd!
-	autocmd BufWriteCmd * :doautoall BufWritePost
 	autocmd BufWriteCmd * if &modified && Create42Header_if_exist() == 1
 	autocmd BufWriteCmd *	call Create42Header_update()
 	autocmd BufWriteCmd *	:write
 	autocmd BufWriteCmd * elseif &modified
 	autocmd BufWriteCmd *	:write
 	autocmd BufWriteCmd * endif
+	autocmd BufWriteCmd * :doautoall BufWritePost
 augroup END
 
 "create a header if we need it
