@@ -1,6 +1,6 @@
 # sergeVim
 SergeVim est une config vim faite pour 42 avec des outils pour mettre a la norme et un generateur de header.
-Pour utiliser le header en dehors de 42 il faut modifier les variables PATH USER et MAIL (export USER=name).
+Pour utiliser le header en dehors de 42 il faut modifier les variables PATH USER et MAIL (export USER=name) ou modifier le nom et le mail dans les parametres (`~/.vim/sergeVim/param.vim`).
 
 ## Installation
 SergeVim est très simple a installer:
@@ -16,11 +16,12 @@ Pour desinstaller et réinstaller sergeVim:
 ## Mise a jour
 SergeVim est sans cesse mis a jour. N'hesitez pas a mettre le mettre a jour en enttrant la commande ci dessous.
 >`./update_vim.sh`
+/!\ Il existe un script `update_git.sh` il est utile pour mettre a jour sergeVim (uniquement si vous avez les droit pour push sur mon repository). Vous ne devez normalement pas l'utiliser.
 
 ## Parametre
-Vous pouvez parametrer votre sergeVim en modifiant les variables du fichier `~/.vim/sergeVim/param.vim`. Lorsque vous mettez sergeVim a jour vos parametres ne seronts pas modifié.
+Vous pouvez parametrer votre sergeVim en modifiant les variables du fichier `~/.vim/sergeVim/param.vim`. Lorsque vous mettez sergeVim a jour vos parametres seront par defaut ecrasés.
 
-Pour reinitialiser vos parametres il faut utiliser l'option `--param` quand vous mettez a jour.
+Pour garder vos parametres il faut utiliser l'option `--param` quand vous mettez a jour. /!\ Certaines mise a jour peuvent ajouter des parametres. si sergeVim ne fonctionne plus correctement après une mise a jour vous pouvez essayer de reinitialiser vos parametres (`./update_vim.sh` sans `--param`) 
 >`./update_vim.sh --param`
 
 
