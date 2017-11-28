@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/11/26 11:57:34 by tnicolas          #+#    #+#              "
-"    Updated: 2017/11/28 09:23:47 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/11/28 10:43:02 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -29,7 +29,7 @@ function! PointVirgule()
 	let first_line_visible = line('w0') + 4
 	let line_before = line('.')
 	let col_before = col('.')
-	if expand('%.e') == 'h'
+	if expand('%:e') == 'h'
 		:% s/)\n/);\r/g
 	elseif search(';\s*\n', 'n', line('.')) == line_before
 		exe ':' . line_before . 's/;\s*\n/\r'
