@@ -35,8 +35,8 @@ cp vimrc ~/.vimrc
 mkdir -p ~/.vim
 mkdir -p ~/.vim/sergeVim
 if [[ $# -eq 1 && "$1" == "--param" ]]; then
-	cp -r sergeVim ~/.vim
-else
 	cp -r `find sergeVim \( -iname "*" -a -not -iname "*param*" \) | grep "/"` ~/.vim/sergeVim
+else
+	cp -r sergeVim ~/.vim
 fi
 vim 'source ~/.vimrc' '+PluginInstall' '+q' '+q'
