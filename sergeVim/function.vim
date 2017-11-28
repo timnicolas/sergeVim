@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/11/26 11:57:34 by tnicolas          #+#    #+#              "
-"    Updated: 2017/11/28 10:43:02 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/11/28 13:16:57 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -111,7 +111,7 @@ function! PutAcolade() range
 	let rangeIndent = a:lastline - a:firstline + 2
 	exe ':normal =' . l:rangeIndent . 'k'
 endfunction
-vmap <leader>* <Esc>`<i/*<Esc>`><right>a<right>*/<Esc>
+vmap <leader>* <Esc>`>a*/<Esc>`<i/*<Esc>
 nmap <leader>* o*/<Esc><up>O/*<Esc>=2<down><down>
 """""""""""""""""""""""""""""""""""""function"""""""""""""""""""""""""""""""""""
 
@@ -146,7 +146,7 @@ function! SergeDecommentRegion() range
 		let comment = ';'
 	endif
 	exe ':silent!' . a:firstline . ',' . a:lastline . 's/^' . l:comment . '//g'
-	exe ':silent!' . a:firstline . ',' . a:lastline . 's/\s\+\zs' . l:comment .
+	exe ':silent!' . a:firstline . ',' . a:lastline . 's/^\s\+\zs' . l:comment .
 				\'\ze//g'
 	:silent!/dsfahfdkljhfklahsflahsf
 endfunction
@@ -158,6 +158,7 @@ function! NormRemoveComment()
 	:silent! % s/\/\/\/\+/___triple_comment___/g
 	:silent! % s/\/\/d/___del_comment___/g
 	:silent! % s/\/\/</___balise_comment___/g
+	:silent! % g/^\s*\/\/.*/d
 	:silent! % s/\/\/.*//g
 	:silent! % s/___triple_comment___/\/\/\//g
 	:silent! % s/___del_comment___/\/\/d/g
@@ -165,6 +166,7 @@ function! NormRemoveComment()
 	"remove extra whitespaces (end of lines)
 	:silent! % s/\s\+\n/\r/g
 endfunction
+
 "	remove line with //dd comment <leader>dld
 nmap <leader>dld :call NormRemoveDeleteLineComment('d')<CR>
 function! NormRemoveDeleteLineComment(n)
@@ -172,6 +174,19 @@ function! NormRemoveDeleteLineComment(n)
 	exe ':silent! % g/\/\/d' . a:n . '/d'
 	"remove extra whitespaces (end of lines)
 	:silent! % s/\s\+\n/\r/g
+endfunction
+
+"	comment line with //dd comment <leader>dl/
+nmap <leader>dl/ :call NormCommentDeleteLineComment('d')<CR>
+function! NormCommentDeleteLineComment(n)
+	exe 'silent! % s/^\zs\s*\/\/\ze.\+\/\/d' . a:n . '/'
+	exe 'silent! % s/^\zs\ze.\+\/\/d' . a:n . '/\/\/'
+endfunction
+
+"	decomment line with //dd comment <leader>dl\
+nmap <leader>dl\ :call NormDecommentDeleteLineComment('d')<CR>
+function! NormDecommentDeleteLineComment(n)
+	exe 'silent! % s/^\s*\zs\/\/\ze.\+\/\/d' . a:n . '/'
 endfunction
 
 "create <d[x]> block <leader><[x]
