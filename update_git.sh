@@ -32,9 +32,9 @@ cp -r sergeVim ~/.vim_backup
 cp vimrc ~/.vimrc_backup
 cp ~/.vimrc vimrc
 if [[ $# -eq 1 && "$1" == "--param" ]]; then
-	cp -r ~/.vim/sergeVim .
-else
 	cp -r `find ~/.vim/sergeVim \( -iname "*" -a -not -iname "*param*" \) | grep "sergeVim/"` sergeVim
+else
+	cp -r ~/.vim/sergeVim .
 fi
 git add -A
 git commit -m "update git repository"
