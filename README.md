@@ -12,7 +12,7 @@ Pour desinstaller sergeVim:
 
 Pour desinstaller et réinstaller sergeVim:
 >`./re_install.sh`
-  
+
 ## Mise a jour
 SergeVim est sans cesse mis a jour. N'hesitez pas a mettre le mettre a jour en enttrant la commande ci dessous.
 >`./update_vim.sh`
