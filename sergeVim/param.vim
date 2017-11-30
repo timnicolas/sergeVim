@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/11/26 11:57:59 by tnicolas          #+#    #+#              "
-"    Updated: 2017/11/27 16:18:33 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/11/28 17:03:57 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -61,5 +61,8 @@ let g:syntastic_c_include_dirs = [
 			\'includes',
 			\'libft/includes/',
 			\'../libft/includes/'
+			\'../../includes'
+			\'../../libft/includes'
+			\'../../libft'
 			\]
 """""""""""""""""""""""""""""""""""""plugin"""""""""""""""""""""""""""""""""""""
