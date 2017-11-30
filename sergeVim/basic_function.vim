@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/11/26 11:57:09 by tnicolas          #+#    #+#              "
-"    Updated: 2017/11/28 09:36:47 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/12/01 00:34:04 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -131,11 +131,6 @@ nmap <C-w><C-j> <C-w>j
 """""""""""""""""""""""""""""""""""""tab buffer"""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""other""""""""""""""""""""""""""""""""""""""
-"useless spaces and tab in red
-:%retab!
-highlight ExtraWhitespace ctermbg=red guibg=red
-match ExtraWhitespace /\s\+$/
-
 "mouse <leader>m m/a
 "	disable <leader>mm
 nmap <leader>mm :set mouse=<CR>

@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/11/26 11:57:34 by tnicolas          #+#    #+#              "
-"    Updated: 2017/11/30 11:14:24 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/12/01 00:41:12 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -28,6 +28,11 @@ augroup Syntax
 	autocmd!
 	autocmd BufEnter * if expand('%:e') == 'h' || expand('%:e') == 'c' ||
 				\expand('%:e') == 'cpp'
+"	autocmd BufEnter * hi Color_bigFunction ctermbg=DarkGrey
+"	autocmd BufEnter * syn match Color_bigFunction /^{\(\(^}\)\@!.*\n\)\{26}.*/
+"	autocmd BufEnter * syn match Color_bigFunction /^{\(\(^}\)\<@!.*\n\)\{26}\zs.*\ze/
+	autocmd BufEnter * highlight ExtraWhitespace ctermbg=red guibg=red
+	autocmd BufEnter * match ExtraWhitespace /\s\+$/
 	autocmd BufEnter * syn match Color_hashtag /# *\w\+/
 	autocmd BufEnter * hi Color_hashtag ctermfg=red
 	autocmd BufEnter * syn match Color_function_prototype /\zs\w\+\ze(.*)\|
