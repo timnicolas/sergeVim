@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/11/26 11:57:34 by tnicolas          #+#    #+#              "
-"    Updated: 2017/11/30 10:34:06 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/11/30 11:00:32 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -39,8 +39,8 @@ augroup Syntax
 	autocmd BufEnter * hi Color_typedef ctermfg=LightGreen
 	autocmd BufEnter * syn match Color_includes /<\w\+\.*\w*>/
 	autocmd BufEnter * hi Color_includes ctermfg=Magenta
-	autocmd BufEnter * syn match Color_operator /&\||\|\w\zs\**\ze\|\zs\**\ze\w
-				\\|\zs\**\ze)/
+	autocmd BufEnter * syn match Color_operator /&\||\|\w\zs\*\+\ze\|\zs\*\+\ze\w
+				\\|\zs\*\+\ze)\|(\zs\*\+\ze/
 	autocmd BufEnter * hi Color_operator ctermfg=Red
 	autocmd BufEnter * syn match Color_deleteline /\/\/dd.*\|\/\/d\d.*/
 	autocmd BufEnter * hi Color_deleteline ctermfg=DarkRed
