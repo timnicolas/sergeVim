@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/11/26 11:57:09 by tnicolas          #+#    #+#              "
-"    Updated: 2017/12/01 00:34:04 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/12/01 15:16:45 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -36,6 +36,11 @@ set number "number of line
 exe 'set so=' . g:min_number_line_ar_cur
 if g:enable_mouse == 1
 	set mouse=a "mouse on
+	if has("mouse_sgr")
+		set ttymouse=sgr
+	else
+		set ttymouse=xterm2
+	endif
 else
 	set mouse=
 endif
