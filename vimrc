@@ -63,6 +63,11 @@
 """""""""""""""""""""""""""""""""""""Source"""""""""""""""""""""""""""""""""""""
 let mapleader = ","
 let g:help_vim_file='~/.vim/sergeVim/sergeVim_help.vim'
+"if has("mouse_sgr")
+"	set ttymouse=sgr
+"else
+"	set ttymouse=xterm2
+"endif
 source ~/.vim/sergeVim/param.vim
 source ~/.vim/sergeVim/basic_function.vim
 source ~/.vim/sergeVim/plugin.vim
