@@ -1,12 +1,12 @@
 " **************************************************************************** "
 "                                                                              "
 "                                                         :::      ::::::::    "
-"    param.vim                                          :+:      :+:    :+:    "
+"    setting.vim                                        :+:      :+:    :+:    "
 "                                                     +:+ +:+         +:+      "
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
-"    Created: 2017/11/26 11:57:59 by tnicolas          #+#    #+#              "
-"    Updated: 2017/11/28 17:03:57 by tnicolas         ###   ########.fr        "
+"    Created: 2017/12/05 12:11:26 by tnicolas          #+#    #+#              "
+"    Updated: 2017/12/05 12:16:51 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -22,7 +22,7 @@
 "                                                                              "
 " **************************************************************************** "
 
-"""""""""""""""""""""""""""""""""""""param""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""setting""""""""""""""""""""""""""""""""""""
 "defaut username and mail for the header
 let g:username42='tnicolas'
 let g:mail42='marvin@42.fr'
@@ -35,7 +35,18 @@ let g:enable_mouse=1
 let g:highlight_search=1
 "enable 42header (<F1> or :Header)
 let g:enable_42_header=1
-"""""""""""""""""""""""""""""""""""""param""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""setting""""""""""""""""""""""""""""""""""""
+
+"""""""""""""""""""""""""""""""""""""color""""""""""""""""""""""""""""""""""""""
+"enable syntax color (advanced)
+let g:_enable_color_all=1
+"enable fuctions color
+let g:_enable_color_function=1
+"enable | & * and number color
+let g:_enable_color_number=1
+"enable #text color
+let g:_enable_color_includes=1
+"""""""""""""""""""""""""""""""""""""color""""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""plugin"""""""""""""""""""""""""""""""""""""
 "activer ou desactiver un plugin
@@ -47,8 +58,6 @@ let g:_enablelightline=1
 let g:_enablecolorizer=1
 "	syntastic (correction code)
 let g:_enablesyntastic=1
-"	conque (utilisation du terminale dans un buffer)
-let g:_enableconque=1
 
 "taille de la fenetre nerdtree
 let g:NERDTreeWinSize=27

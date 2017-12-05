@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/11/26 12:07:06 by tnicolas          #+#    #+#              "
-"    Updated: 2017/11/28 13:18:12 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/12/05 12:15:32 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -24,6 +24,9 @@
 
 """""""""""""""""""""""""""""""""""""shortcut"""""""""""""""""""""""""""""""""""
 "leader key:		,
+
+"<leader>h			open help
+"<leader>s			open setting
 
 "<F[x]> command:
 "<F3>				enable/disable relative number
@@ -49,14 +52,11 @@
 "nn					make norm in the file
 
 "<leader> + ... (ex: [normal mode] ',h' open the help)
-"h					open help
 "<tab>				move tab to the right
 "<S-tab>			move tab to the left
 
 "v					reload vimrc
 "g					open/close file navigator
-"z					open zsh in the current buffer
-"b					open bash in the current buffer
 "mm					disable mouse
 "ma					enable mouse
 "y					copy from vim

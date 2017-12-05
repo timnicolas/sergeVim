@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/11/26 11:58:30 by tnicolas          #+#    #+#              "
-"    Updated: 2017/11/28 09:42:17 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/12/05 12:15:59 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -62,9 +62,9 @@ endif
 "Plugin 'majutsushi/tagbar'
 
 "pour ouvrir un terminal ds un buffer vim
-if g:_enableconque == 1
-	Plugin 'wkentaro/conque.vim'
-endif
+"if g:_enableconque == 1
+"	Plugin 'wkentaro/conque.vim'
+"endif
 
 "autocompletion
 "Plugin 'Valloric/YouCompleteMe'
@@ -94,9 +94,9 @@ endif
 
 "	Conque
 "		open zsh <leader>z
-if g:_enableconque == 1
-	nmap <leader>z :ConqueTerm zsh<CR><up><down>
+"if g:_enableconque == 1
+"	nmap <leader>z :ConqueTerm zsh<CR><up><down>
 	"		open bash <leader>b
-	nmap <leader>b :ConqueTerm bash<CR><up><down>
-endif
+"	nmap <leader>b :ConqueTerm bash<CR><up><down>
+"endif
 """""""""""""""""""""""""""""""""""""plugin"""""""""""""""""""""""""""""""""""""

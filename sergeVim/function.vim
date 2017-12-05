@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/11/26 11:57:34 by tnicolas          #+#    #+#              "
-"    Updated: 2017/12/01 15:50:48 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/12/05 12:06:45 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -26,32 +26,39 @@
 "color function
 augroup Syntax
 	autocmd!
-	autocmd BufEnter * if expand('%:e') == 'h' || expand('%:e') == 'c' ||
-				\expand('%:e') == 'cpp'
-"	autocmd BufEnter * hi Color_bigFunction ctermbg=DarkGrey
-"	autocmd BufEnter * syn match Color_bigFunction /^{\(\(^}\)\@!.*\n\)\{26}.*/
-"	autocmd BufEnter * syn match Color_bigFunction /^{\(\(^}\)\<@!.*\n\)\{26}\zs.*\ze/
-	autocmd BufEnter * highlight ExtraWhitespace ctermbg=red guibg=red
-	autocmd BufEnter * match ExtraWhitespace /\s\+$/
-	autocmd BufEnter * syn match Color_hashtag /# *\w\+/
-	autocmd BufEnter * hi Color_hashtag ctermfg=red
-	autocmd BufEnter * syn match Color_function_prototype /\zs\w\+\ze(.*)\|
-				\\zs\w\+\ze(.*\n.*)/
-	autocmd BufEnter * hi Color_function_prototype ctermfg=Blue
-	autocmd BufEnter * syn match Color_define_name /[A-Z_][A-Z_]\+/
-	autocmd BufEnter * hi Color_define_name ctermfg=LightBlue
-	autocmd BufEnter * syn match Color_typedef /\(\w\)\@<!\zst_\w\+\ze/
-	autocmd BufEnter * hi Color_typedef ctermfg=LightGreen
-	autocmd BufEnter * syn match Color_includes /<\w\+\.*\w*>/
-	autocmd BufEnter * hi Color_includes ctermfg=Magenta
-	autocmd BufEnter * syn match Color_operator /&\||\|\w\zs\*\+\ze\|\zs\*\+\ze\w
-				\\|\zs\*\+\ze)\|(\zs\*\+\ze/
+	autocmd BufEnter * if (expand('%:e') == 'h' || expand('%:e') == 'c' ||
+				\expand('%:e') == 'cpp') && g:_enable_color_all == 1
+"	autocmd BufEnter * 	hi Color_bigFunction ctermbg=DarkGrey
+"	autocmd BufEnter *  syn match Color_bigFunction /^{\(\(^}\)\@!.*\n\)\{26}.*/
+"	autocmd BufEnter *  syn match Color_bigFunction /^{\(\(^}\)\<@!.*\n\)\{26}\zs.*\ze/
+	autocmd BufEnter *  highlight ExtraWhitespace ctermbg=red guibg=red
+	autocmd BufEnter *  match ExtraWhitespace /\s\+$/
+	autocmd BufEnter *  if g:_enable_color_function == 1
+	autocmd BufEnter *  	syn match Color_function_prototype /\zs\w\+\ze(.*)\|
+				\\zs\w \+\ze(.*\n.*)/
+	autocmd BufEnter *  	hi Color_function_prototype ctermfg=Blue
+	autocmd BufEnter *  endif
+	autocmd BufEnter *  syn match Color_define_name /[A-Z_][A-Z_]\+/
+	autocmd BufEnter *  hi Color_define_name ctermfg=LightBlue
+	autocmd BufEnter *  syn match Color_typedef /\(\w\)\@<!\zst_\w\+\ze/
+	autocmd BufEnter *  hi Color_typedef ctermfg=LightGreen
+	autocmd BufEnter *  if g:_enable_color_includes == 1
+	autocmd BufEnter *  	syn match Color_hashtag /# *\w\+/
+	autocmd BufEnter *  	hi Color_hashtag ctermfg=red
+	autocmd BufEnter *  	syn match Color_includes /<.\+>/
+	autocmd BufEnter *  	hi Color_includes ctermfg=Magenta
+	autocmd BufEnter *  endif
+	autocmd BufEnter *  if g:_enable_color_number == 1
+	autocmd BufEnter *  	syn match Color_operator /&\||\|\w\zs\*\+\ze\|\zs\*\+\ze\w
+				\\|\zs \*\+\ze)\|(\zs\*\+\ze/
 	" )
-	autocmd BufEnter * hi Color_operator ctermfg=Red
-	autocmd BufEnter * syn match Color_deleteline /\/\/dd.*\|\/\/d\d.*/
-	autocmd BufEnter * hi Color_deleteline ctermfg=DarkRed
-	autocmd BufEnter * syn match Color_number /-\d\|\d/
-	autocmd BufEnter * hi Color_number ctermfg=DarkGreen
+	autocmd BufEnter *  	hi Color_operator ctermfg=Red
+	autocmd BufEnter *  	syn match Color_number /-\d\|\d/
+	autocmd BufEnter *  	hi Color_number ctermfg=DarkGreen
+	autocmd BufEnter *  endif
+	autocmd BufEnter *  syn match Color_deleteline /\/\/dd.*\|\/\/d\d.*/
+	autocmd BufEnter *  hi Color_deleteline ctermfg=DarkRed
+	autocmd BufEnter * endif
 augroup END
 "0       0       Black
 "1       4       DarkBlue

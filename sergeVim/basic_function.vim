@@ -5,8 +5,8 @@
 "                                                     +:+ +:+         +:+      "
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
-"    Created: 2017/11/26 11:57:09 by tnicolas          #+#    #+#              "
-"    Updated: 2017/12/04 16:05:10 by tnicolas         ###   ########.fr        "
+"    Created: 2017/12/05 12:11:11 by tnicolas          #+#    #+#              "
+"    Updated: 2017/12/05 12:13:27 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -60,10 +60,14 @@ else
 endif
 set incsearch "highlight when typing command (not only after)
 set backspace=2 "backspace
+set noswapfile "no swap file
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") |
+			\exe "normal! g`\"" | endif "remember position in file
 
 "help <leader>h
-nmap <leader>h :execute "tabnew ".g:help_vim_file<CR>
-nmap <leader><C-h> :execute "tabnew ".g:help_vim_file<CR>
+nmap <leader>h :exe "tabnew " . g:help_vim_file<CR>
+"setting <leader>s
+nmap <leader>s :exe "tabnew " . g:setting_vim_file<CR>
 """""""""""""""""""""""""""""""""""""basic function"""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""copy/paste"""""""""""""""""""""""""""""""""
