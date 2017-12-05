@@ -19,7 +19,7 @@ SergeVim est sans cesse mis a jour. N'hesitez pas a mettre le mettre a jour en e
 /!\ Il existe un script `update_git.sh` il est utile pour mettre a jour sergeVim (uniquement si vous avez les droit pour push sur mon repository). Vous ne devez normalement pas l'utiliser.
 
 ## Parametre
-Vous pouvez parametrer votre sergeVim en modifiant les variables du fichier `~/.vim/sergeVim/param.vim`. Lorsque vous mettez sergeVim a jour vos parametres seront par defaut ecrasés.
+Vous pouvez parametrer votre sergeVim en modifiant les variables du fichier `~/.vim/sergeVim/param.vim` que vous pouvez ouvrir en faisant `,s` en mode normal. Lorsque vous mettez sergeVim a jour vos parametres seront par defaut ecrasés.
 
 Pour garder vos parametres il faut utiliser l'option `--param` quand vous mettez a jour. /!\ Certaines mise a jour peuvent ajouter des parametres. si sergeVim ne fonctionne plus correctement après une mise a jour vous pouvez essayer de reinitialiser vos parametres (`./update_vim.sh` sans `--param`) 
 >`./update_vim.sh --param`
