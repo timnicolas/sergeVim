@@ -40,12 +40,6 @@ let g:enable_42_header=1
 """""""""""""""""""""""""""""""""""""color""""""""""""""""""""""""""""""""""""""
 "enable syntax color (advanced)
 let g:_enable_color_all=1
-"enable fuctions color
-let g:_enable_color_function=1
-"enable | & * and number color
-let g:_enable_color_number=1
-"enable #text color
-let g:_enable_color_includes=1
 """""""""""""""""""""""""""""""""""""color""""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""plugin"""""""""""""""""""""""""""""""""""""
