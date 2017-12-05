@@ -6,7 +6,7 @@
 #    By: tnicolas <tnicolas@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/26 15:20:33 by tnicolas          #+#    #+#              #
-#    Updated: 2017/11/26 18:37:00 by tnicolas         ###   ########.fr        #
+#    Updated: 2017/12/05 12:21:56 by tnicolas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,4 +38,4 @@ else
 fi
 git add -A
 git commit -m "update git repository"
-git push
+git push origin master
