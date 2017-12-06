@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/11/26 11:57:34 by tnicolas          #+#    #+#              "
-"    Updated: 2017/12/05 12:06:45 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/12/07 00:18:01 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -42,7 +42,7 @@ augroup Syntax
 	autocmd BufEnter * hi Color_define_name ctermfg=LightBlue
 	autocmd BufEnter * syn match Color_typedef /\(\w\)\@<!\zst_\w\+\ze/
 	autocmd BufEnter * hi Color_typedef ctermfg=LightGreen
-	autocmd BufEnter * syn match Color_includes /<\w\+\.*\w*>/
+	autocmd BufEnter * syn match Color_includes /<\(\.\.\/\)*\(\w*\/\)*\w\+\.*\w*>/
 	autocmd BufEnter * hi Color_includes ctermfg=Magenta
 	autocmd BufEnter * syn match Color_operator /&\||\|\w\zs\*\+\ze\|\zs\*\+\ze\w
 				\\|\zs\*\+\ze)\|(\zs\*\+\ze/
@@ -50,7 +50,7 @@ augroup Syntax
 	autocmd BufEnter * hi Color_operator ctermfg=Red
 	autocmd BufEnter * syn match Color_deleteline /\/\/dd.*\|\/\/d\d.*/
 	autocmd BufEnter * hi Color_deleteline ctermfg=DarkRed
-	autocmd BufEnter * syn match Color_number /-\d\|\d/
+	autocmd BufEnter * syn match Color_number /-\d\|\d\|\.\d/
 	autocmd BufEnter * hi Color_number ctermfg=DarkGreen
 	autocmd BufEnter * endif
 augroup END
