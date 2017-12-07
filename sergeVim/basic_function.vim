@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/12/05 12:11:11 by tnicolas          #+#    #+#              "
-"    Updated: 2017/12/07 11:00:17 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/12/07 11:01:04 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -140,11 +140,11 @@ nmap <C-w><C-j> <C-w>j
 "make exec <F6> :MakeEx
 command MakeEx !make exec
 command Makeex !make exec
-nmap <F6> :!make exec
+nmap <F6> :!make exec<CR>
 "make re <leader><F6> :MakeRe
 command MakeRe !make re
 command Makere !make re
-nmap <leader><F6> :!make re
+nmap <leader><F6> :!make re<CR>
 "other make
 command MakeCl !make clean
 command Makecl !make clean
