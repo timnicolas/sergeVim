@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/12/05 12:11:11 by tnicolas          #+#    #+#              "
-"    Updated: 2017/12/07 11:19:17 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/12/07 15:25:26 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -117,19 +117,19 @@ nmap <leader><C-S-tab> :tabmove -1<CR>
 "	right <C-w> l
 nmap <C-w><right> <C-w>l
 nmap <C-w><C-l> <C-w>l
-nmap <C-l> <C-w>l
+map <C-l> <C-w>l
 "	left <C-w> h
 nmap <C-w><left> <C-w>h
 nmap <C-w><C-h> <C-w>h
-nmap <C-h> <C-w>h
+map <C-h> <C-w>h
 "	up <C-w> k
 nmap <C-w><up> <C-w>k
 nmap <C-w><C-k> <C-w>k
-nmap <C-k> <C-w>k
+map <C-k> <C-w>k
 "	down <C-w> j
 nmap <C-w><down> <C-w>j
 nmap <C-w><C-j> <C-w>j
-nmap <C-j> <C-w>j
+map <C-j> <C-w>j
 
 "auto open in vertical split (left) <leader> f
 "nmap <leader>f <C-w>f<C-w>L
@@ -144,7 +144,7 @@ nmap <F6> :!make exec<CR>
 "make re <leader><F6> :MakeRe
 command MakeRe !make re
 command Makere !make re
-nmap <leader><F6> :!make re<CR>
+nmap <leader><F6> :!make re && make exec<CR>
 "other make
 command MakeCl !make clean
 command Makecl !make clean
