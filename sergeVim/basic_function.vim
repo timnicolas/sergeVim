@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/12/05 12:11:11 by tnicolas          #+#    #+#              "
-"    Updated: 2017/12/07 10:56:58 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/12/07 11:00:17 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -138,23 +138,23 @@ nmap <C-w><C-j> <C-w>j
 
 """""""""""""""""""""""""""""""""""""other""""""""""""""""""""""""""""""""""""""
 "make exec <F6> :MakeEx
-cmap MakeEx :!make exec
-cmap Makeex :!make exec
+command MakeEx !make exec
+command Makeex !make exec
 nmap <F6> :!make exec
 "make re <leader><F6> :MakeRe
-cmap MakeRe :!make re
-cmap Makere :!make re
+command MakeRe !make re
+command Makere !make re
 nmap <leader><F6> :!make re
 "other make
-cmap MakeCl :!make clean
-cmap Makecl :!make clean
-cmap MakeFc :!make fclean
-cmap Makefc :!make fclean
-cmap MakeNo :!make norm
-cmap Makeno :!make norm
-cmap Make :!make
-cmap MakeAl :!make
-cmap Makeal :!make
+command MakeCl !make clean
+command Makecl !make clean
+command MakeFc !make fclean
+command Makefc !make fclean
+command MakeNo !make norm
+command Makeno !make norm
+command Make !make
+command MakeAl !make
+command Makeal !make
 
 "mouse <leader>m m/a
 "	disable <leader>mm
