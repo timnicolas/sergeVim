@@ -1,0 +1,2 @@
+mot avec chiffre : chiffre colorer (ex test1)
+sizeof pas colorer
