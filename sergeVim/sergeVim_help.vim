@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/11/26 12:07:06 by tnicolas          #+#    #+#              "
-"    Updated: 2017/12/05 12:15:32 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/12/07 10:58:50 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -50,6 +50,16 @@
 ":WW				check the norm in the file (only on 42 imac)
 ":Norm				make norm in the file
 "nn					make norm in the file
+
+"Makefile
+"<F6>				make exec
+"<leader><F6>		make re
+":Make				make
+":MakeEx			make exec
+":MakeRe			make re
+":MakeCl			make clean
+":MakeFc			make fclean
+":MakeNo			make norm
 
 "<leader> + ... (ex: [normal mode] ',h' open the help)
 "<tab>				move tab to the right

@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/12/05 12:11:11 by tnicolas          #+#    #+#              "
-"    Updated: 2017/12/05 12:13:27 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/12/07 10:56:58 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -137,6 +137,25 @@ nmap <C-w><C-j> <C-w>j
 """""""""""""""""""""""""""""""""""""tab buffer"""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""other""""""""""""""""""""""""""""""""""""""
+"make exec <F6> :MakeEx
+cmap MakeEx :!make exec
+cmap Makeex :!make exec
+nmap <F6> :!make exec
+"make re <leader><F6> :MakeRe
+cmap MakeRe :!make re
+cmap Makere :!make re
+nmap <leader><F6> :!make re
+"other make
+cmap MakeCl :!make clean
+cmap Makecl :!make clean
+cmap MakeFc :!make fclean
+cmap Makefc :!make fclean
+cmap MakeNo :!make norm
+cmap Makeno :!make norm
+cmap Make :!make
+cmap MakeAl :!make
+cmap Makeal :!make
+
 "mouse <leader>m m/a
 "	disable <leader>mm
 nmap <leader>mm :set mouse=<CR>
