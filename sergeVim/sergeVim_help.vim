@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/11/26 12:07:06 by tnicolas          #+#    #+#              "
-"    Updated: 2017/12/07 15:24:39 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/12/07 15:26:49 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -53,7 +53,7 @@
 
 "Makefile
 "<F6>				make exec
-"<leader><F6>		make re && make exec
+"<leader><F6>		make reexec
 ":Make				make
 ":MakeEx			make exec
 ":MakeRe			make re
