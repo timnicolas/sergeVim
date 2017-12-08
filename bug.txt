@@ -1,3 +1,6 @@
 mot avec chiffre : chiffre colorer (ex test1)
 sizeof pas colorer
 le curseur se deplace a gauche quand on save
+
+MAJ:
+nouv gf pour ouvrir fichier en fonction du nom d'une fonction
