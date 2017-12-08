@@ -1,4 +1,5 @@
 mot avec chiffre : chiffre colorer (ex test1)
+nombre exadecimal (coloration)
 sizeof pas colorer
 le curseur se deplace a gauche quand on save
 
