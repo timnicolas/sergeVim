@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/12/08 23:32:11 by tnicolas          #+#    #+#              "
-"    Updated: 2017/12/08 23:40:08 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/12/09 00:51:58 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -39,12 +39,17 @@
 "13      5*      Magenta, LightMagenta
 "14      3*      Yellow, LightYellow
 "15      7*      White
+
+"https://alvinalexander.com/linux/vi-vim-editor-color-scheme-syntax
 """""""""""""""""""""""""""""""""""""info"""""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""function"""""""""""""""""""""""""""""""""""
 if g:_enable_color_all == 0
 	finish
 endif
+syntax enable
+hi CursorLine ctermbg=DarkGrey cterm=none
+hi PreProc ctermfg=red
 "color function
 augroup Syntax
 	autocmd!
@@ -55,8 +60,8 @@ augroup Syntax
 "	autocmd BufEnter * syn match Color_bigFunction /^{\(\(^}\)\<@!.*\n\)\{26}\zs.*\ze/
 	autocmd BufEnter * 	highlight ExtraWhitespace ctermbg=red guibg=red
 	autocmd BufEnter *	match ExtraWhitespace /\s\+$/
-	autocmd BufEnter *	syn match Color_hashtag /# *\w\+/
-	autocmd BufEnter * 	hi Color_hashtag ctermfg=red
+"	autocmd BufEnter *	syn match Color_hashtag /# *\w\+/
+"	autocmd BufEnter * 	hi Color_hashtag ctermfg=red
 	autocmd BufEnter * 	syn match Color_function_prototype /\zs\w\+\ze(.*)\|
 				\\zs\w\+\ze(.*\n.*)/
 	autocmd BufEnter * 	hi Color_function_prototype ctermfg=Blue
@@ -64,17 +69,17 @@ augroup Syntax
 	autocmd BufEnter * 	hi Color_define_name ctermfg=LightBlue
 	autocmd BufEnter * 	syn match Color_typedef /\(\w\)\@<!\zst_\w\+\ze/
 	autocmd BufEnter * 	hi Color_typedef ctermfg=LightGreen
-	autocmd BufEnter * 	syn match Color_includes /<\(\.\.\/\)*\(\w*\/\)*\w\+\.*
-				\\w*>/
-	autocmd BufEnter * 	hi Color_includes ctermfg=Magenta
+"	autocmd BufEnter * 	syn match Color_includes /<\(\.\.\/\)*\(\w*\/\)*\w\+\.*
+"				\\w*>/
+"	autocmd BufEnter * 	hi Color_includes ctermfg=Magenta
 	autocmd BufEnter * 	syn match Color_operator /&\||\|\w\zs\*\+\ze\|\zs\*\+
 				\\ze\w\|\zs\*\+\ze)\|(\zs\*\+\ze/
 	" )
 	autocmd BufEnter * 	hi Color_operator ctermfg=Red
 	autocmd BufEnter * 	syn match Color_deleteline /\/\/dd.*\|\/\/d\d.*/
 	autocmd BufEnter * 	hi Color_deleteline ctermfg=DarkRed
-	autocmd BufEnter * 	syn match Color_number /-\d\|\d\|\.\d/
-	autocmd BufEnter * 	hi Color_number ctermfg=DarkGreen
+	autocmd BufEnter * 	hi Number ctermfg=DarkGreen
+	autocmd BufEnter * 	hi Float ctermfg=DarkGreen
 	autocmd BufEnter * endif
 augroup END
 "hi Color_function_prototype guifg=Blue ctermfg=Blue term=bold

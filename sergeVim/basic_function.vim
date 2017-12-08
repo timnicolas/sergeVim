@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/12/05 12:11:11 by tnicolas          #+#    #+#              "
-"    Updated: 2017/12/09 00:08:43 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/12/09 00:48:08 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -85,7 +85,7 @@ function! SetCursorPlaceGo()
 	call setpos('.', g:save_pos)
 endfunction
 
-"open file under cursor
+"open file under cursor <leader>of
 nmap <leader>of :call TryOpenFileUnderCursorName()<CR>
 function! TryOpenFileUnderCursorName()
 	let filename_to_open = expand('<cword>')
@@ -105,6 +105,35 @@ function! TryOpenFileUnderCursorName()
 	elseif !empty(glob(filename_to_open))
 		exe ':silent! e ' . filename_to_open
 	endif
+endfunction
+
+"invert sign (+ -, * /, ...) <C-d>
+imap <C-d> <C-o>:call SergeInvertSign()<CR>
+nmap <C-d> :call SergeInvertSign()<CR>
+function! SergeInvertSign()
+	let char_act = matchstr(getline('.'), '\%' . col('.') . 'c.')
+	if char_act == '+'
+		:normal r-
+	elseif char_act == '-'
+		:normal r+
+	elseif char_act == '|'
+		:normal r&
+	elseif char_act == '&'
+		:normal r|
+	elseif char_act == '<'
+		:normal r>
+	elseif char_act == '>'
+		:normal r<
+	elseif char_act == '='
+		:normal r!
+	elseif char_act == '!'
+		:normal r=
+	elseif char_act == '*'
+		:normal r/
+	elseif char_act == '/'
+		:normal r*
+	endif
+	:silent normal l
 endfunction
 """""""""""""""""""""""""""""""""""""function"""""""""""""""""""""""""""""""""""
 
@@ -176,24 +205,24 @@ map <C-j> <C-w>j
 
 """""""""""""""""""""""""""""""""""""Makefile"""""""""""""""""""""""""""""""""""
 "make exec <F6> :MakeEx
-command MakeEx !make exec
-command Makeex !make exec
+command! MakeEx !make exec
+command! Makeex !make exec
 nmap <F6> :!make exec<CR>
 "make re <leader><F6> :MakeRe
-command MakeRe !make re
-command Makere !make re
+command! MakeRe !make re
+command! Makere !make re
 "other make
-command MakeRx !make reexec
+command! MakeRx !make reexec
 nmap <leader><F6> :!make reexec<CR>
-command MakeCl !make clean
-command Makecl !make clean
-command MakeFc !make fclean
-command Makefc !make fclean
-command MakeNo !make norm
-command Makeno !make norm
-command Make !make
-command MakeAl !make
-command Makeal !make
+command! MakeCl !make clean
+command! Makecl !make clean
+command! MakeFc !make fclean
+command! Makefc !make fclean
+command! MakeNo !make norm
+command! Makeno !make norm
+command! Make !make
+command! MakeAl !make
+command! Makeal !make
 """""""""""""""""""""""""""""""""""""Makefile"""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""other""""""""""""""""""""""""""""""""""""""

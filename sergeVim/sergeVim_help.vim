@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/11/26 12:07:06 by tnicolas          #+#    #+#              "
-"    Updated: 2017/12/09 00:07:32 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/12/09 00:45:14 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -62,6 +62,7 @@
 ":MakeNo			make norm
 
 
+"<C-d>				invert sign (+ -, * /, ...)
 "<leader>v			reload vimrc
 "<leader>g			open/close file navigator
 "<leader>mm			disable mouse
