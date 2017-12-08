@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/12/05 12:11:11 by tnicolas          #+#    #+#              "
-"    Updated: 2017/12/08 11:59:46 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/12/08 12:20:37 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -61,6 +61,7 @@ endif
 set incsearch "highlight when typing command (not only after)
 set backspace=2 "backspace
 set noswapfile "no swap file
+set noignorecase "no ignore case
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") |
 			\exe "normal! g`\"" | endif "remember position in file
 
@@ -166,10 +167,12 @@ nmap <leader>ma :set mouse=a<CR>
 "nmap <CR> i<CR>
 
 "relative number : <F3>
-map <F3> <esc><esc>:set invrelativenumber<CR>
+nmap <F3> :set invrelativenumber<CR>
+imap <F3> <esc>:set invrelativenumber<CR>
 
 "cursor line <F4>
-map <F4> <esc><esc>:set invcursorline<CR>
+nmap <F4> :set invcursorline<CR>
+imap <F4> <esc>:set invcursorline<CR>
 
 "reload vimrc <leader>v
 nmap <leader>v :so $MYVIMRC<CR>
