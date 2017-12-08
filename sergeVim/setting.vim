@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/12/05 12:11:26 by tnicolas          #+#    #+#              "
-"    Updated: 2017/12/05 12:16:51 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/12/08 23:35:18 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -26,6 +26,10 @@
 "defaut username and mail for the header
 let g:username42='tnicolas'
 let g:mail42='marvin@42.fr'
+"enable 42header (<F1> or :Header)
+let g:enable_42_header=1
+"enable auto update in 42 header
+let g:auto_update_42_header=1
 
 "min number of line around cursor
 let g:min_number_line_ar_cur = 4
@@ -33,8 +37,6 @@ let g:min_number_line_ar_cur = 4
 let g:enable_mouse=1
 "highlight search
 let g:highlight_search=1
-"enable 42header (<F1> or :Header)
-let g:enable_42_header=1
 """""""""""""""""""""""""""""""""""""setting""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""color""""""""""""""""""""""""""""""""""""""

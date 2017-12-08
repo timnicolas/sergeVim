@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/11/26 11:57:46 by tnicolas          #+#    #+#              "
-"    Updated: 2017/11/28 09:38:33 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/12/08 23:25:22 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -36,6 +36,7 @@ command! Ww !echo "--------------------------------------------------------"
 nmap <leader>nn :call NormFile()<CR>
 command! Norm exe ':call NormFile()'
 function! NormFile()
+	call SetCursorPlaceSave()
 	let i = 0
 	let max = 15
 	:normal gg=G
@@ -100,5 +101,6 @@ function! NormFile()
 		:silent! 12, $ s/^\n^\n/\r/g
 	endwhile
 	:normal gg=G
+	call SetCursorPlaceGo()
 endfunction
 """""""""""""""""""""""""""""""""""""norm"""""""""""""""""""""""""""""""""""""""

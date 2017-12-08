@@ -74,8 +74,10 @@ source ~/.vim/sergeVim/basic_function.vim
 source ~/.vim/sergeVim/plugin.vim
 source ~/.vim/sergeVim/abreviate.vim
 source ~/.vim/sergeVim/function.vim
+source ~/.vim/sergeVim/comment.vim
 source ~/.vim/sergeVim/42header.vim
 source ~/.vim/sergeVim/emptyHeader.vim
 source ~/.vim/sergeVim/sergeVimHeader.vim
 source ~/.vim/sergeVim/norm.vim
+source ~/.vim/sergeVim/color.vim
 """""""""""""""""""""""""""""""""""""Source"""""""""""""""""""""""""""""""""""""

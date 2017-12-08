@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/11/26 19:08:21 by tnicolas          #+#    #+#              "
-"    Updated: 2017/11/28 09:38:10 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/12/08 23:27:26 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -46,9 +46,7 @@ endfunction
 
 "check if the header exist
 function! CreateSergeHeader_if_exist()
-	let first_line_visible = line('w0') + g:min_number_line_ar_cur
-	let line_before = line('.')
-	let col_before = col('.')
+	call SetCursorPlaceSave()
 	let begin = '# '
 	let end = ' #'
 	let size_c = 1
@@ -76,18 +74,12 @@ function! CreateSergeHeader_if_exist()
 				\\/\*\s\+|___\/\s\+\*\/\n\/\*\s\+\*\/\n\/\* \*\{74} \*\/\n',
 				\'c', line('0'))
 ") "this line is here to debug color in vim
-	exe ':' . first_line_visible
-	:normal zt
-	exe ':' . line_before
-	exe ':normal ' . col_before . '|'
+	call SetCursorPlaceGo()
 	return is_header
 endfunction
 
 "create a header
 function! CreateSergeHeader_create(line_size)
-	let first_line_visible = line('w0') + g:min_number_line_ar_cur
-	let line_before = line('.')
-	let col_before = col('.')
 	let line_s = a:line_size
 	let user = $USER
 	let mail = $MAIL
@@ -159,10 +151,5 @@ function! CreateSergeHeader_create(line_size)
 	exe ':' . l:line_s . 's/^/' . l:begin . repeat(' ', size_c - 1) .
 				\repeat('*', 78 - 2 * size_c) . repeat(' ', size_c - 1) .
 				\l:end . '\r'
-	let line_before += 12
-	exe ':' . first_line_visible
-	:normal zt
-	exe ':' . line_before
-	exe ':normal ' . col_before . '|'
 endfunction
 """""""""""""""""""""""""""""""""""""SergeHeader""""""""""""""""""""""""""""""""

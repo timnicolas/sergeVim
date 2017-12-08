@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/12/05 12:11:11 by tnicolas          #+#    #+#              "
-"    Updated: 2017/12/08 12:20:37 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/12/09 00:02:09 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -70,6 +70,43 @@ nmap <leader>h :exe "tabnew " . g:help_vim_file<CR>
 "setting <leader>s
 nmap <leader>s :exe "tabnew " . g:setting_vim_file<CR>
 """""""""""""""""""""""""""""""""""""basic function"""""""""""""""""""""""""""""
+
+"""""""""""""""""""""""""""""""""""""function"""""""""""""""""""""""""""""""""""
+"keep cursor place
+let g:first_line_visible = line('w0') + g:min_number_line_ar_cur
+let g:save_pos = getpos('.')
+function! SetCursorPlaceSave()
+	let g:first_line_visible = line('w0') + g:min_number_line_ar_cur
+	let g:save_pos = getpos('.')
+endfunction
+function! SetCursorPlaceGo()
+	exe ':' . g:first_line_visible
+	:normal zt
+	call setpos('.', g:save_pos)
+endfunction
+
+"open file under cursor
+nmap <leader>of :call TryOpenFileUnderCursorName()<CR>
+function! TryOpenFileUnderCursorName()
+	let filename_to_open = expand('<cword>')
+	exe ':silent! b ' . filename_to_open
+	exe ':silent! b ' . filename_to_open . '.c'
+	exe ':silent! b ' . filename_to_open . '.h'
+	exe ':silent! b ' . filename_to_open . '.cpp'
+	exe ':silent! b ' . filename_to_open . '.vim'
+	if !empty(glob(filename_to_open . '.c'))
+		exe ':silent! e ' . filename_to_open . '.c'
+	elseif !empty(glob(filename_to_open . '.h'))
+		exe ':silent! e ' . filename_to_open . '.h'
+	else if !empty(glob(filename_to_open . '.cpp'))
+		exe ':silent! e ' . filename_to_open . '.cpp'
+	elseif !empty(glob(filename_to_open . '.vim'))
+		exe ':silent! e ' . filename_to_open . '.vim'
+	elseif !empty(glob(filename_to_open))
+		exe ':silent! e ' . filename_to_open
+	endif
+endfunction
+"""""""""""""""""""""""""""""""""""""function"""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""copy/paste"""""""""""""""""""""""""""""""""
 "copy
@@ -137,7 +174,7 @@ map <C-j> <C-w>j
 "imap <leader>f <esc><C-w>f<C-w>Li
 """""""""""""""""""""""""""""""""""""tab buffer"""""""""""""""""""""""""""""""""
 
-"""""""""""""""""""""""""""""""""""""other""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""Makefile"""""""""""""""""""""""""""""""""""
 "make exec <F6> :MakeEx
 command MakeEx !make exec
 command Makeex !make exec
@@ -157,7 +194,9 @@ command Makeno !make norm
 command Make !make
 command MakeAl !make
 command Makeal !make
+"""""""""""""""""""""""""""""""""""""Makefile"""""""""""""""""""""""""""""""""""
 
+"""""""""""""""""""""""""""""""""""""other""""""""""""""""""""""""""""""""""""""
 "mouse <leader>m m/a
 "	disable <leader>mm
 nmap <leader>mm :set mouse=<CR>
