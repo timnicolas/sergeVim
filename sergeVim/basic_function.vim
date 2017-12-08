@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/12/05 12:11:11 by tnicolas          #+#    #+#              "
-"    Updated: 2017/12/07 15:26:41 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/12/08 11:59:46 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -166,12 +166,10 @@ nmap <leader>ma :set mouse=a<CR>
 "nmap <CR> i<CR>
 
 "relative number : <F3>
-nmap <F3> :set invrelativenumber<CR>
-imap <F3> <esc>:set invrelativenumber<CR>a
+map <F3> <esc><esc>:set invrelativenumber<CR>
 
 "cursor line <F4>
-nmap <F4> :set invcursorline<CR>
-imap <F4> <esc>:set invcursorline<CR>a
+map <F4> <esc><esc>:set invcursorline<CR>
 
 "reload vimrc <leader>v
 nmap <leader>v :so $MYVIMRC<CR>
