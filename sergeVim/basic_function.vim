@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/12/05 12:11:11 by tnicolas          #+#    #+#              "
-"    Updated: 2017/12/09 00:02:09 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/12/09 00:08:43 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -98,7 +98,7 @@ function! TryOpenFileUnderCursorName()
 		exe ':silent! e ' . filename_to_open . '.c'
 	elseif !empty(glob(filename_to_open . '.h'))
 		exe ':silent! e ' . filename_to_open . '.h'
-	else if !empty(glob(filename_to_open . '.cpp'))
+	elseif !empty(glob(filename_to_open . '.cpp'))
 		exe ':silent! e ' . filename_to_open . '.cpp'
 	elseif !empty(glob(filename_to_open . '.vim'))
 		exe ':silent! e ' . filename_to_open . '.vim'
