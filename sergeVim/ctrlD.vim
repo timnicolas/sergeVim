@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/12/09 20:13:15 by tnicolas          #+#    #+#              "
-"    Updated: 2017/12/09 20:31:56 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/12/10 00:33:44 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -56,7 +56,7 @@ function! SergeInvertSign()
 	elseif char_act == '-'
 		:silent normal l
 		let char_act = matchstr(getline('.'), '\%' . col('.') . 'c.')
-		if char_act =~# '\d' || char_act =~# '\w'
+		if char_act =~# '\d'
 			:normal h
 			:normal x
 		elseif char_act == '='
@@ -88,14 +88,24 @@ function! SergeInvertSign()
 			let i += 1
 			:silent normal h
 			let char_act = matchstr(getline('.'), '\%' . col('.') . 'c.')
-			if char_act =~# '\s'
-				:normal l
-				:normal i-
-			elseif char_act == '-'
-				:normal x
-				:normal h
+			if col('.') == 1
+				break
 			endif
 		endwhile
+		if char_act =~# '\s'
+			:normal l
+			:normal i-
+		elseif char_act == '-'
+			:normal x
+			:normal h
+			if col('.') == 1
+				let i -= 1
+			endif
+		elseif col('.') == 1
+			:normal h
+			:normal i-
+			:normal l
+		endif
 		while i > 0
 			let i -= 1
 			:normal l
@@ -205,6 +215,7 @@ function! SergeInvertSign()
 			endif
 		endif
 	elseif char_act == '.'
+		echo "ok"
 		:silent normal l
 		let char_act = matchstr(getline('.'), '\%' . col('.') . 'c.')
 		if char_act =~# '\w'
@@ -273,6 +284,30 @@ function! SergeInvertSign()
 		elseif word == 'SUCCESS'
 			:normal diw
 			:normal iERROR
+		endif
+	elseif char_act =~# '[unsigedtloghrca]'
+		let word = expand("<cword>")
+		if word == 'unsigned'
+			:normal diwx
+		elseif word == 'int' || word == 'char' || word == 'short' ||
+					\word == 'long'
+			:normal lb
+			:normal b
+			let char_act = matchstr(getline('.'), '\%' . col('.') . 'c.')
+			if char_act =~# '\w'
+				let word = expand("<cword>")
+				if word == 'long'
+					:normal b
+					let word = expand("<cword>")
+				endif
+			endif
+			if word == "unsigned"
+				:normal diwx
+			else
+				:normal w
+				exe ':normal iunsigned '
+				:normal l
+			endif
 		endif
 	endif
 endfunction
