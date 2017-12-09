@@ -1,6 +1,4 @@
 sizeof pas colorer
-fonction ,; ne fonctionne plus
-pareil pour EmptyHeader
 
 MAJ:
 ameliorer inverseur de signe (* deviens / ou & en fonction de la situation, -12 deviens 12, ...)
