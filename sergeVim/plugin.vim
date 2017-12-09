@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/11/26 11:58:30 by tnicolas          #+#    #+#              "
-"    Updated: 2017/12/05 12:15:59 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/12/09 23:55:52 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -65,14 +65,6 @@ endif
 "if g:_enableconque == 1
 "	Plugin 'wkentaro/conque.vim'
 "endif
-
-"autocompletion
-"Plugin 'Valloric/YouCompleteMe'
-"Plugin 'marcweber/vim-addon-mw-utils'
-"Plugin 'tomtom/tlib_vim'
-"Plugin 'garbas/vim-snipmate'
-"Plugin 'honza/vim-snippets'
-"Plugin 'othree/vim-autocomplpop'
 
 call vundle#end()
 
