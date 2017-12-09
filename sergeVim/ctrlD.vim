@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/12/09 20:13:15 by tnicolas          #+#    #+#              "
-"    Updated: 2017/12/09 20:14:17 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/12/09 20:22:09 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -240,6 +240,8 @@ function! SergeInvertSign()
 		if char_act == '='
 			:normal h
 			:normal r=
+		else
+			:normal h
 		endif
 	elseif char_act == "'"
 		:normal r"
