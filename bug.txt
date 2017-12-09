@@ -1,5 +1,4 @@
 sizeof pas colorer
 
 MAJ:
-ameliorer inverseur de signe (* deviens / ou & en fonction de la situation, -12 deviens 12, ...)
 systeme pour commenter les //d1 //<d1>...
