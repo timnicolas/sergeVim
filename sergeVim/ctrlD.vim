@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/12/09 20:13:15 by tnicolas          #+#    #+#              "
-"    Updated: 2017/12/09 20:22:09 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/12/09 20:31:56 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -83,12 +83,23 @@ function! SergeInvertSign()
 			endif
 		endif
 	elseif char_act =~# '\d'
-		:silent normal h
-		let char_act = matchstr(getline('.'), '\%' . col('.') . 'c.')
-		if char_act =~# '\s'
+		let i = 0
+		while char_act =~# '\d'
+			let i += 1
+			:silent normal h
+			let char_act = matchstr(getline('.'), '\%' . col('.') . 'c.')
+			if char_act =~# '\s'
+				:normal l
+				:normal i-
+			elseif char_act == '-'
+				:normal x
+				:normal h
+			endif
+		endwhile
+		while i > 0
+			let i -= 1
 			:normal l
-			:normal i-
-		endif
+		endwhile
 	elseif char_act == '|'
 		:normal r&
 		:silent normal l
@@ -101,6 +112,8 @@ function! SergeInvertSign()
 			let char_act = matchstr(getline('.'), '\%' . col('.') . 'c.')
 			if char_act == '|'
 				:normal r&
+				:normal l
+			else
 				:normal l
 			endif
 		endif
@@ -124,9 +137,14 @@ function! SergeInvertSign()
 				if char_act == '&'
 					:normal r|
 					:normal l
+				else
+					:normal l
+					:normal r^
 				endif
 			endif
 		endif
+	elseif char_act == '^'
+		:normal r|
 	elseif char_act == '*'
 		:silent normal l
 		let char_act = matchstr(getline('.'), '\%' . col('.') . 'c.')
@@ -146,7 +164,7 @@ function! SergeInvertSign()
 			:normal r/
 		endif
 	elseif char_act == '/'
-		:normal r*
+		:normal r%
 	elseif char_act == '%'
 		:normal r*
 	elseif char_act == '<'
