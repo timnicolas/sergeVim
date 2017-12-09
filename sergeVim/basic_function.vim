@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/12/05 12:11:11 by tnicolas          #+#    #+#              "
-"    Updated: 2017/12/09 00:48:08 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/12/09 20:13:52 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -105,35 +105,6 @@ function! TryOpenFileUnderCursorName()
 	elseif !empty(glob(filename_to_open))
 		exe ':silent! e ' . filename_to_open
 	endif
-endfunction
-
-"invert sign (+ -, * /, ...) <C-d>
-imap <C-d> <C-o>:call SergeInvertSign()<CR>
-nmap <C-d> :call SergeInvertSign()<CR>
-function! SergeInvertSign()
-	let char_act = matchstr(getline('.'), '\%' . col('.') . 'c.')
-	if char_act == '+'
-		:normal r-
-	elseif char_act == '-'
-		:normal r+
-	elseif char_act == '|'
-		:normal r&
-	elseif char_act == '&'
-		:normal r|
-	elseif char_act == '<'
-		:normal r>
-	elseif char_act == '>'
-		:normal r<
-	elseif char_act == '='
-		:normal r!
-	elseif char_act == '!'
-		:normal r=
-	elseif char_act == '*'
-		:normal r/
-	elseif char_act == '/'
-		:normal r*
-	endif
-	:silent normal l
 endfunction
 """""""""""""""""""""""""""""""""""""function"""""""""""""""""""""""""""""""""""
 
