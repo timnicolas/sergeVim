@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/11/26 22:43:54 by tnicolas          #+#    #+#              "
-"    Updated: 2017/12/08 23:23:22 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/12/09 18:47:45 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -27,6 +27,7 @@
 command! EmptyHeader exe ':call CreateEmptyHeader()'
 function! CreateEmptyHeader()
 	call SetCursorPlaceSave()
+	let line_before = line('.')
 	let user = $USER
 	let mail = $MAIL
 	let begin = '# '
@@ -87,7 +88,6 @@ function! CreateEmptyHeader()
 	exe ':' . l:line_s . 's/^/' . l:begin . repeat(' ', size_c - 1) .
 				\repeat('*', 78 - 2 * size_c) . repeat(' ', size_c - 1) .
 				\l:end . '\r'
-	let line_before += 11
 	call SetCursorPlaceGo()
 endfunction
 """""""""""""""""""""""""""""""""""""emptyHeader""""""""""""""""""""""""""""""""

@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/11/26 11:57:34 by tnicolas          #+#    #+#              "
-"    Updated: 2017/12/08 23:32:19 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/12/09 18:48:26 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -27,6 +27,7 @@
 nmap <leader>; :call PointVirgule()<CR>
 function! PointVirgule()
 	call SetCursorPlaceSave()
+	let line_before = line('.')
 	if expand('%:e') == 'h'
 		:% s/)\n/);\r/g
 	elseif search(';\s*\n', 'n', line('.')) == line_before
