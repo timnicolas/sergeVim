@@ -2,6 +2,7 @@ sizeof pas colorer
 ctrlD /= quand le curseur est sur '/' : %=
 probleme de u quand le updated du header a ete modifie
 couleur de surlignage des lignes pas top (texte en bleu illisible)
+ctrlD passer nb en neg fonctionne pas sir char avant
 
 MAJ:
 systeme pour commenter les //d1 //<d1>...
