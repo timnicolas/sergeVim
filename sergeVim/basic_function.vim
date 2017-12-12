@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/12/05 12:11:11 by tnicolas          #+#    #+#              "
-"    Updated: 2017/12/09 20:13:52 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/12/12 13:26:47 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -39,6 +39,12 @@ if g:enable_mouse == 1
 
 else
 	set mouse=
+endif
+if g:setHighlightLine == 1
+	set cursorline "highlight  line
+
+else
+	set nocursorline
 endif
 set tabstop=4 "tab size
 set shiftwidth=4 "tab size
@@ -104,6 +110,30 @@ function! TryOpenFileUnderCursorName()
 		exe ':silent! e ' . filename_to_open . '.vim'
 	elseif !empty(glob(filename_to_open))
 		exe ':silent! e ' . filename_to_open
+	endif
+endfunction
+
+"double u if updated line as changed
+nmap u :call SergeU()<CR>
+function! SergeU()
+	let first_line_ = line('w0') + g:min_number_line_ar_cur
+	:undo
+	if Create42Header_if_exist() == 1 && line('.') == 9
+		exe ':' . first_line_
+		:normal zt
+		:silent! undo
+	endif
+endfunction
+
+"double <C-r> if updated line as changed
+nmap <C-r> :call SergeCtrlR()<CR>
+function! SergeCtrlR()
+	let first_line_ = line('w0') + g:min_number_line_ar_cur
+	:redo
+	if Create42Header_if_exist() == 1 && line('.') == 9
+		exe ':' . first_line_
+		:normal zt
+		:silent! redo
 	endif
 endfunction
 """""""""""""""""""""""""""""""""""""function"""""""""""""""""""""""""""""""""""

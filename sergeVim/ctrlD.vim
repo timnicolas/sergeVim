@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/12/09 20:13:15 by tnicolas          #+#    #+#              "
-"    Updated: 2017/12/10 00:33:44 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/12/12 13:23:24 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -92,19 +92,21 @@ function! SergeInvertSign()
 				break
 			endif
 		endwhile
-		if char_act =~# '\s'
-			:normal l
-			:normal i-
-		elseif char_act == '-'
+		if char_act == '-'
 			:normal x
 			:normal h
 			if col('.') == 1
 				let i -= 1
 			endif
 		elseif col('.') == 1
-			:normal h
+			":normal h
 			:normal i-
 			:normal l
+		elseif char_act =~# '\w'
+			:normal hl
+		else
+			:normal l
+			:normal i-
 		endif
 		while i > 0
 			let i -= 1
@@ -215,7 +217,6 @@ function! SergeInvertSign()
 			endif
 		endif
 	elseif char_act == '.'
-		echo "ok"
 		:silent normal l
 		let char_act = matchstr(getline('.'), '\%' . col('.') . 'c.')
 		if char_act =~# '\w'

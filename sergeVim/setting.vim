@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/12/05 12:11:26 by tnicolas          #+#    #+#              "
-"    Updated: 2017/12/08 23:35:18 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/12/12 13:31:32 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -37,6 +37,8 @@ let g:min_number_line_ar_cur = 4
 let g:enable_mouse=1
 "highlight search
 let g:highlight_search=1
+"highlight line
+let g:setHighlightLine=0
 """""""""""""""""""""""""""""""""""""setting""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""color""""""""""""""""""""""""""""""""""""""
