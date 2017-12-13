@@ -1,5 +1,6 @@
 sizeof pas colorer
 pb color #ifndef XXX #define XXX (les 2 XXX pas de la meme couleur)
+pb color *( l'etoile n'est pas colorer
 
 MAJ:
 systeme pour commenter les //d1 //<d1>...
