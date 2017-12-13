@@ -2,6 +2,7 @@ sizeof pas colorer
 bug sur certains ordi uniquement syntastic ne reconnait pas certains fichiers (#include <libft.h> file not found)
 pb color #ifndef XXX #define XXX (les 2 XXX pas de la meme couleur)
 pb color *( l'etoile n'est pas colorer
+pb 42header not at the top of the file (il ne se met pas tout seul en haut)
 
 MAJ:
 systeme pour commenter les //d1 //<d1>...
