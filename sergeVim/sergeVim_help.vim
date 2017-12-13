@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/11/26 12:07:06 by tnicolas          #+#    #+#              "
-"    Updated: 2017/12/09 00:45:14 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/12/14 00:33:52 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -89,7 +89,8 @@
 "<leader>[([{'"*]	create block (ex (test)) (visual mode only exept for '{')
 
 "tab/buffer
-"<leader>of			open file (name under cursor + .c, .h, ...)
+"<C-o>				go to function declaration (name under cursor)
+"<C-p>				go to last <C-o>
 "<leader><tab>		move tab to the right
 "<leader><S-tab>	move tab to the left
 "<C-l>				move to buffer right

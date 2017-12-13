@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/11/26 11:57:34 by tnicolas          #+#    #+#              "
-"    Updated: 2017/12/10 00:14:04 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/12/14 00:32:53 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -111,4 +111,90 @@ function! PutAcolade() range
 endfunction
 vmap <leader>* <Esc>`>a*/<Esc>`<i/*<Esc>
 nmap <leader>* o*/<Esc><up>O/*<Esc>=2<down><down>
+
+"open file under cursor <C-o> <C-p>
+nmap <C-o> :call TryOpenFileUnderCursorName()<CR>
+nmap <C-p> :call TryOpenFileUnderCursorNameLast()<CR>
+let g:last1 = 'no_file'
+let g:last1_pos = 'no_file'
+let g:last1_top = 'no_file'
+let g:last2 = 'no_file'
+let g:last2_pos = 'no_file'
+let g:last2_top = 'no_file'
+let g:last3 = 'no_file'
+let g:last3_pos = 'no_file'
+let g:last3_top = 'no_file'
+let g:last4 = 'no_file'
+let g:last4_pos = 'no_file'
+let g:last4_top = 'no_file'
+let g:last5 = 'no_file'
+let g:last5_pos = 'no_file'
+let g:last5_top = 'no_file'
+let g:last6 = 'no_file'
+let g:last6_pos = 'no_file'
+let g:last6_top = 'no_file'
+let g:last7 = 'no_file'
+let g:last7_pos = 'no_file'
+let g:last7_top = 'no_file'
+let g:last8 = 'no_file'
+let g:last8_pos = 'no_file'
+let g:last8_top = 'no_file'
+let g:last9 = 'no_file'
+let g:last9_pos = 'no_file'
+let g:last9_top = 'no_file'
+function! TryOpenFileUnderCursorName()
+	call SetCursorPlaceMoveArg('last8', 'last8_pos', 'last8_top',
+				\'last9', 'last9_pos', 'last9_top')
+	call SetCursorPlaceMoveArg('last7', 'last7_pos', 'last7_top',
+				\'last8', 'last8_pos', 'last8_top')
+	call SetCursorPlaceMoveArg('last6', 'last6_pos', 'last6_top',
+				\'last7', 'last7_pos', 'last7_top')
+	call SetCursorPlaceMoveArg('last5', 'last5_pos', 'last5_top',
+				\'last6', 'last6_pos', 'last6_top')
+	call SetCursorPlaceMoveArg('last4', 'last4_pos', 'last4_top',
+				\'last5', 'last5_pos', 'last5_top')
+	call SetCursorPlaceMoveArg('last3', 'last3_pos', 'last3_top',
+				\'last4', 'last4_pos', 'last4_top')
+	call SetCursorPlaceMoveArg('last2', 'last2_pos', 'last2_top',
+				\'last3', 'last3_pos', 'last3_top')
+	call SetCursorPlaceMoveArg('last1', 'last1_pos', 'last1_top',
+				\'last2', 'last2_pos', 'last2_top')
+	call SetCursorPlaceSaveArg('last1', 'last1_pos', 'last1_top')
+	let func_name = expand('<cword>')
+	echo g:last1 . ' ' . g:last1_top
+	if search('^\(static\s\+\)\=\w\+[\t ]\+\**' . l:func_name . '[\t ]*(.*\(\n.*\)*)', 'b') > 0
+		:normal zt
+"		echo '"' . expand('%') . '" -> ' . l:func_name . '()'
+	else
+		exe ':silent! vimgrep /^\(static\s\+\)\=\w\+[\t ]\+\**' . l:func_name . '[\t ]*(.*\(\n.*\)*)/ **/*.c'
+		:normal zt
+"		echo '"' . expand('%') . '" -> ' . l:func_name . '()'
+	endif
+endfunction
+function! TryOpenFileUnderCursorNameLast()
+	if g:last1 != 'no_file'
+		call SetCursorPlaceGoArg(g:last1, g:last1_pos, g:last1_top)
+		call SetCursorPlaceMoveArg('last2', 'last2_pos', 'last2_top',
+					\'last1', 'last1_pos', 'last1_top')
+		call SetCursorPlaceMoveArg('last3', 'last3_pos', 'last3_top',
+					\'last2', 'last2_pos', 'last2_top')
+		call SetCursorPlaceMoveArg('last4', 'last4_pos', 'last4_top',
+					\'last3', 'last3_pos', 'last3_top')
+		call SetCursorPlaceMoveArg('last5', 'last5_pos', 'last5_top',
+					\'last4', 'last4_pos', 'last4_top')
+		call SetCursorPlaceMoveArg('last6', 'last6_pos', 'last6_top',
+					\'last5', 'last5_pos', 'last5_top')
+		call SetCursorPlaceMoveArg('last7', 'last7_pos', 'last7_top',
+					\'last6', 'last6_pos', 'last6_top')
+		call SetCursorPlaceMoveArg('last8', 'last8_pos', 'last8_top',
+					\'last7', 'last7_pos', 'last7_top')
+		call SetCursorPlaceMoveArg('last9', 'last9_pos', 'last9_top',
+					\'last8', 'last8_pos', 'last8_top')
+		let g:last9 = 'no_file'
+		let g:last9_pos = 'no_file'
+		let g:last9_top = 'no_file'
+	else
+		echo "no last file"
+	endif
+endfunction
 """""""""""""""""""""""""""""""""""""function"""""""""""""""""""""""""""""""""""

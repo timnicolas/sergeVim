@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/12/05 12:11:11 by tnicolas          #+#    #+#              "
-"    Updated: 2017/12/12 15:53:00 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/12/14 00:26:15 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -93,27 +93,29 @@ function! SetCursorPlaceGo()
 	:normal zt
 	call setpos('.', g:save_pos)
 endfunction
-
-"open file under cursor <leader>of
-nmap <leader>of :call TryOpenFileUnderCursorName()<CR>
-function! TryOpenFileUnderCursorName()
-	let filename_to_open = expand('<cword>')
-	exe ':silent! b ' . filename_to_open
-	exe ':silent! b ' . filename_to_open . '.c'
-	exe ':silent! b ' . filename_to_open . '.h'
-	exe ':silent! b ' . filename_to_open . '.cpp'
-	exe ':silent! b ' . filename_to_open . '.vim'
-	if !empty(glob(filename_to_open . '.c'))
-		exe ':silent! e ' . filename_to_open . '.c'
-	elseif !empty(glob(filename_to_open . '.h'))
-		exe ':silent! e ' . filename_to_open . '.h'
-	elseif !empty(glob(filename_to_open . '.cpp'))
-		exe ':silent! e ' . filename_to_open . '.cpp'
-	elseif !empty(glob(filename_to_open . '.vim'))
-		exe ':silent! e ' . filename_to_open . '.vim'
-	elseif !empty(glob(filename_to_open))
-		exe ':silent! e ' . filename_to_open
-	endif
+"keep cursor place width arg
+function! SetCursorPlaceSaveArg(last_file, last_pos, last_top)
+	exe ':let g:' . a:last_file . '="' . expand('%') . '"'
+"	let pos_pos = getline('.')
+"	exe ':let g:' . a:last_pos . '="' . l:pos_pos . '"'
+	let pos_pos = line('.')
+	exe ':let g:' . a:last_pos . '=' . l:pos_pos
+	let pos_top = line('w0') + g:min_number_line_ar_cur
+	exe ':let g:' . a:last_top . '=' . l:pos_top
+endfunction
+function! SetCursorPlaceMoveArg(last1_file, last1_pos, last1_top,
+			\last2_file, last2_pos, last2_top)
+	exe ':let g:' . a:last2_file . '= g:' . a:last1_file
+	exe ':let g:' . a:last2_pos . '= g:' . a:last1_pos
+	exe ':let g:' . a:last2_top . '= g:' . a:last1_top
+endfunction
+function! SetCursorPlaceGoArg(last_file, last_pos, last_top)
+	exe ':b ' . a:last_file
+	exe ':' . a:last_top
+	:normal zt
+	exe ':' . a:last_pos
+"	exe ':silent! /^' . a:last_pos
+"	exe ':silent! /sdfahkfghjasgfjakfgdjhakgf'
 endfunction
 
 "double u if updated line as changed
