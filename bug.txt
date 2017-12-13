@@ -1,5 +1,4 @@
 sizeof pas colorer
-couleur de surlignage des lignes pas top (texte en bleu illisible)
 
 MAJ:
 systeme pour commenter les //d1 //<d1>...
