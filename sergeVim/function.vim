@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/11/26 11:57:34 by tnicolas          #+#    #+#              "
-"    Updated: 2017/12/14 00:32:53 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/12/14 00:37:39 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -167,7 +167,9 @@ function! TryOpenFileUnderCursorName()
 "		echo '"' . expand('%') . '" -> ' . l:func_name . '()'
 	else
 		exe ':silent! vimgrep /^\(static\s\+\)\=\w\+[\t ]\+\**' . l:func_name . '[\t ]*(.*\(\n.*\)*)/ **/*.c'
-		:normal zt
+		if search('^\(static\s\+\)\=\w\+[\t ]\+\**' . l:func_name . '[\t ]*(.*\(\n.*\)*)', 'b') > 0
+			:normal zt
+		endif
 "		echo '"' . expand('%') . '" -> ' . l:func_name . '()'
 	endif
 endfunction
