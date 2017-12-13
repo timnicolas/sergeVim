@@ -5,3 +5,5 @@ MAJ:
 systeme pour commenter les //d1 //<d1>...
 ouverture de fichier + aller sur la fonction (command a determiner)
 :SergeUpdate pour mettre a jour sergeVim
+:SergeSetting ouvre les parametres
+:SergeHelp ouvre l'aide
