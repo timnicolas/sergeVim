@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/12/08 23:32:11 by tnicolas          #+#    #+#              "
-"    Updated: 2017/12/12 13:31:25 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/12/13 10:42:28 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -40,6 +40,8 @@
 "14      3*      Yellow, LightYellow
 "15      7*      White
 
+"for 256 colors https://jonasjacek.github.io/colors/
+
 "https://alvinalexander.com/linux/vi-vim-editor-color-scheme-syntax
 """""""""""""""""""""""""""""""""""""info"""""""""""""""""""""""""""""""""""""""
 
@@ -48,7 +50,7 @@ if g:_enable_color_all == 0
 	finish
 endif
 syntax enable
-hi CursorLine ctermbg=DarkGrey cterm=none
+hi CursorLine ctermbg=236 cterm=none
 hi PreProc ctermfg=red
 "color function
 augroup Syntax
