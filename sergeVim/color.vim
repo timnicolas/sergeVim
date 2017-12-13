@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/12/08 23:32:11 by tnicolas          #+#    #+#              "
-"    Updated: 2017/12/13 10:47:39 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/12/13 10:49:37 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -50,7 +50,7 @@ if g:_enable_color_all == 0
 	finish
 endif
 syntax enable
-hi CursorLine ctermbg=239 cterm=bold
+hi CursorLine ctermbg=237 cterm=none
 hi PreProc ctermfg=red
 "color function
 augroup Syntax
