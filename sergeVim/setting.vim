@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/12/05 12:11:26 by tnicolas          #+#    #+#              "
-"    Updated: 2017/12/15 00:37:37 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/12/15 00:42:39 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -102,15 +102,15 @@ let g:alias5 = "alias serge='cd ~/sergeVim'"
 
 let g:enable_alias6 = 1
 let g:alias6_name = 'cleanstars'
-let g:alias6 = "alias cleanstars=clear'"
+let g:alias6 = "alias cleanstars='clear'"
 
 let g:enable_alias6 = 1
 let g:alias6_name = 'goinfre'
-let g:alias6 = "alias serge='exit'"
+let g:alias6 = "alias goinfre='exit'"
 
 let g:enable_alias7 = 1
 let g:alias7_name = 'serge'
-let g:alias7 = "alias serge='cd ~/sergeVim'"
+let g:alias7 = "alias serge='cd " . g:pwdGitSergeVim . "'"
 
 let g:enable_alias8 = 1
 let g:alias8_name = 'wgcc'
