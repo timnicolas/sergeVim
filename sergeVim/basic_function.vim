@@ -6,7 +6,19 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/12/05 12:11:11 by tnicolas          #+#    #+#              "
-"    Updated: 2017/12/15 00:16:07 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/12/15 00:24:35 by tnicolas         ###   ########.fr        "
+"                                                                              "
+" **************************************************************************** "
+
+" **************************************************************************** "
+"                                      __      ___                             "
+"                                      \ \    / (_)                            "
+"                 ___  ___ _ __ __ _  __\ \  / / _ _ __ ___                    "
+"                / __|/ _ \ '__/ _` |/ _ \ \/ / | | '_ ` _ \                   "
+"                \__ \  __/ | | (_| |  __/\  /  | | | | | | |                  "
+"                |___/\___|_|  \__, |\___| \/   |_|_| |_| |_|                  "
+"                               __/ |                                          "
+"                              |___/                                           "
 "                                                                              "
 " **************************************************************************** "
 
@@ -70,6 +82,12 @@ command! SergeUpdate call SergeUpdateFunction()
 function! SergeUpdateFunction()
 	let lastPwd = getcwd()
 	exe ':!cd ' . g:pwdGitSergeVim . ' && ./update_vim.sh && cd ' . l:lastPwd
+endfunction
+"update git repository
+command! GitSergeUpdate call SergeUpdateGitFunction()
+function! SergeUpdateGitFunction()
+	let lastPwd = getcwd()
+	exe ':!cd ' . g:pwdGitSergeVim . ' && ./update_git.sh && cd ' . l:lastPwd
 endfunction
 """""""""""""""""""""""""""""""""""""basic function"""""""""""""""""""""""""""""
 
