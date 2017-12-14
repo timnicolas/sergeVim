@@ -1,15 +1,10 @@
 sizeof pas colorer
 bug sur certains ordi uniquement syntastic ne reconnait pas certains fichiers (#include <libft.h> file not found)
+bug sur certains ordi uniquement pb 42header not at the top of the file (il ne se met pas tout seul en haut)
 pb color #ifndef XXX #define XXX (les 2 XXX pas de la meme couleur)
-pb color *( l'etoile n'est pas colorer
-pb 42header not at the top of the file (il ne se met pas tout seul en haut)
-annuler C-o innutile (avec un C-p)
 C-o tres lent eszayer de commencer par chercher dans les fichiers ouvert
   peut etre cree un fichier qui met en lien les noms de fonctions et le fichier qui leur correspond
-  <C-u> ??? u du ctrlP
-S-<up> / <down>... en mode visuel bug
 desactiver le clic qui command V
-ajout ctrlD : if / else if
 
 MAJ:
 systeme pour commenter les //d1 //<d1>...
