@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/11/26 12:07:06 by tnicolas          #+#    #+#              "
-"    Updated: 2017/12/14 23:52:03 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/12/15 00:10:25 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -29,8 +29,8 @@
 ":SergeHelp			open help
 "<leader>s			open setting
 ":SergeSetting		open setting
-
 ":SergeAlias		update alias
+":SergeUpdate		update sergeVim
 
 "<F[x]> command:
 "<F3>				enable/disable relative number
