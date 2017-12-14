@@ -5,6 +5,7 @@ pb color *( l'etoile n'est pas colorer
 pb 42header not at the top of the file (il ne se met pas tout seul en haut)
 annuler C-o innutile (avec un C-p)
 C-o tres lent eszayer de commencer par chercher dans les fichiers ouvert
+  peut etre cree un fichier qui met en lien les noms de fonctions et le fichier qui leur correspond
 
 MAJ:
 systeme pour commenter les //d1 //<d1>...
