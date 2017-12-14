@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/11/26 11:57:34 by tnicolas          #+#    #+#              "
-"    Updated: 2017/12/14 11:16:26 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/12/14 11:20:30 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -142,10 +142,10 @@ let g:last8_top = 'no_file'
 let g:last9 = 'no_file'
 let g:last9_pos = 'no_file'
 let g:last9_top = 'no_file'
-let g:last1 = 'no_file'
+let g:last10 = 'no_file'
 let g:last10_pos = 'no_file'
 let g:last10_top = 'no_file'
-let g:last10 = 'no_file'
+let g:last11 = 'no_file'
 let g:last11_pos = 'no_file'
 let g:last11_top = 'no_file'
 let g:last12 = 'no_file'
