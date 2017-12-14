@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/12/05 12:11:11 by tnicolas          #+#    #+#              "
-"    Updated: 2017/12/14 22:37:11 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/12/14 23:53:39 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -71,10 +71,12 @@ set noignorecase "no ignore case
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") |
 			\exe "normal! g`\"" | endif "remember position in file
 
-"help <leader>h
+"help <leader>h :SergeHelp
 nmap <leader>h :exe "tabnew " . g:help_vim_file<CR>
-"setting <leader>s
+command! SergeHelp exe "tabnew " . g:help_vim_file
+"setting <leader>s :SergeSetting
 nmap <leader>s :exe "tabnew " . g:setting_vim_file<CR>
+command! SergeSetting exe "tabnew " . g:setting_vim_file
 """""""""""""""""""""""""""""""""""""basic function"""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""function"""""""""""""""""""""""""""""""""""
