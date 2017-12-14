@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/12/05 12:11:26 by tnicolas          #+#    #+#              "
-"    Updated: 2017/12/15 00:35:34 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/12/15 00:37:37 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -118,7 +118,7 @@ let g:alias8 = "alias wgcc='gcc -Wall -Wextra'"
 
 let g:enable_alias9 = 1
 let g:alias9_name = 'cwgcc'
-let g:alias9 = "alias cwgcc='clear && gcc -Wall -Wextra"
+let g:alias9 = "alias cwgcc='clear && gcc -Wall -Wextra'"
 
 let g:enable_alias10 = 1
 let g:alias10_name = 'cgcc'
