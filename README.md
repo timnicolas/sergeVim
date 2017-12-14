@@ -16,6 +16,7 @@ Pour desinstaller et réinstaller sergeVim:
 ## Mise a jour
 SergeVim est sans cesse mis a jour. N'hesitez pas a mettre le mettre a jour en enttrant la commande ci dessous.
 >`SergeUpdate`
+
 Pour que SergeUpdate fonctionne il ne faut pas deplacer ou supprimer le git clone
 /!\ Il existe une commande `:GitSergeUpdate` elle est utile pour mettre a jour sergeVim (uniquement si vous avez les droit pour push sur mon repository). Vous ne devez normalement pas l'utiliser.
 
