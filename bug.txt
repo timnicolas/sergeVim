@@ -9,6 +9,7 @@ C-o tres lent eszayer de commencer par chercher dans les fichiers ouvert
   <C-u> ??? u du ctrlP
 S-<up> / <down>... en mode visuel bug
 desactiver le clic qui command V
+ajout ctrlD : if / else if
 
 MAJ:
 systeme pour commenter les //d1 //<d1>...
