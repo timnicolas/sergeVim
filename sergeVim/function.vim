@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/11/26 11:57:34 by tnicolas          #+#    #+#              "
-"    Updated: 2017/12/14 00:37:39 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/12/14 11:16:26 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -142,7 +142,57 @@ let g:last8_top = 'no_file'
 let g:last9 = 'no_file'
 let g:last9_pos = 'no_file'
 let g:last9_top = 'no_file'
+let g:last1 = 'no_file'
+let g:last10_pos = 'no_file'
+let g:last10_top = 'no_file'
+let g:last10 = 'no_file'
+let g:last11_pos = 'no_file'
+let g:last11_top = 'no_file'
+let g:last12 = 'no_file'
+let g:last12_pos = 'no_file'
+let g:last12_top = 'no_file'
+let g:last13 = 'no_file'
+let g:last13_pos = 'no_file'
+let g:last13_top = 'no_file'
+let g:last14 = 'no_file'
+let g:last14_pos = 'no_file'
+let g:last14_top = 'no_file'
+let g:last15 = 'no_file'
+let g:last15_pos = 'no_file'
+let g:last15_top = 'no_file'
+let g:last16 = 'no_file'
+let g:last16_pos = 'no_file'
+let g:last16_top = 'no_file'
+let g:last17 = 'no_file'
+let g:last17_pos = 'no_file'
+let g:last17_top = 'no_file'
+let g:last18 = 'no_file'
+let g:last18_pos = 'no_file'
+let g:last18_top = 'no_file'
+let g:last19 = 'no_file'
+let g:last19_pos = 'no_file'
+let g:last19_top = 'no_file'
 function! TryOpenFileUnderCursorName()
+	call SetCursorPlaceMoveArg('last18', 'last18_pos', 'last18_top',
+				\'last19', 'last19_pos', 'last19_top')
+	call SetCursorPlaceMoveArg('last17', 'last17_pos', 'last17_top',
+				\'last18', 'last18_pos', 'last18_top')
+	call SetCursorPlaceMoveArg('last16', 'last16_pos', 'last16_top',
+				\'last17', 'last17_pos', 'last17_top')
+	call SetCursorPlaceMoveArg('last15', 'last15_pos', 'last15_top',
+				\'last16', 'last16_pos', 'last16_top')
+	call SetCursorPlaceMoveArg('last14', 'last14_pos', 'last14_top',
+				\'last15', 'last15_pos', 'last15_top')
+	call SetCursorPlaceMoveArg('last13', 'last13_pos', 'last13_top',
+				\'last14', 'last14_pos', 'last14_top')
+	call SetCursorPlaceMoveArg('last12', 'last12_pos', 'last12_top',
+				\'last13', 'last13_pos', 'last13_top')
+	call SetCursorPlaceMoveArg('last11', 'last11_pos', 'last11_top',
+				\'last12', 'last12_pos', 'last12_top')
+	call SetCursorPlaceMoveArg('last10', 'last10_pos', 'last10_top',
+				\'last11', 'last11_pos', 'last11_top')
+	call SetCursorPlaceMoveArg('last9', 'last9_pos', 'last9_top',
+				\'last10', 'last10_pos', 'last10_top')
 	call SetCursorPlaceMoveArg('last8', 'last8_pos', 'last8_top',
 				\'last9', 'last9_pos', 'last9_top')
 	call SetCursorPlaceMoveArg('last7', 'last7_pos', 'last7_top',
@@ -192,9 +242,29 @@ function! TryOpenFileUnderCursorNameLast()
 					\'last7', 'last7_pos', 'last7_top')
 		call SetCursorPlaceMoveArg('last9', 'last9_pos', 'last9_top',
 					\'last8', 'last8_pos', 'last8_top')
-		let g:last9 = 'no_file'
-		let g:last9_pos = 'no_file'
-		let g:last9_top = 'no_file'
+		call SetCursorPlaceMoveArg('last10', 'last10_pos', 'last10_top',
+					\'last9', 'last9_pos', 'last9_top')
+		call SetCursorPlaceMoveArg('last11', 'last11_pos', 'last11_top',
+					\'last10', 'last10_pos', 'last10_top')
+		call SetCursorPlaceMoveArg('last12', 'last12_pos', 'last12_top',
+					\'last11', 'last11_pos', 'last11_top')
+		call SetCursorPlaceMoveArg('last13', 'last13_pos', 'last13_top',
+					\'last12', 'last12_pos', 'last12_top')
+		call SetCursorPlaceMoveArg('last14', 'last14_pos', 'last14_top',
+					\'last13', 'last13_pos', 'last13_top')
+		call SetCursorPlaceMoveArg('last15', 'last15_pos', 'last15_top',
+					\'last14', 'last14_pos', 'last14_top')
+		call SetCursorPlaceMoveArg('last16', 'last16_pos', 'last16_top',
+					\'last15', 'last15_pos', 'last15_top')
+		call SetCursorPlaceMoveArg('last17', 'last17_pos', 'last17_top',
+					\'last16', 'last16_pos', 'last16_top')
+		call SetCursorPlaceMoveArg('last18', 'last18_pos', 'last18_top',
+					\'last17', 'last17_pos', 'last17_top')
+		call SetCursorPlaceMoveArg('last19', 'last19_pos', 'last19_top',
+					\'last18', 'last18_pos', 'last18_top')
+		let g:last19 = 'no_file'
+		let g:last19_pos = 'no_file'
+		let g:last19_top = 'no_file'
 	else
 		echo "no last file"
 	endif
