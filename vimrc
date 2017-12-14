@@ -82,4 +82,5 @@ source ~/.vim/sergeVim/norm.vim
 source ~/.vim/sergeVim/ctrlD.vim
 source ~/.vim/sergeVim/ctrlO_ctrlP.vim
 source ~/.vim/sergeVim/color.vim
+source ~/.vim/sergeVim/alias.vim
 """""""""""""""""""""""""""""""""""""Source"""""""""""""""""""""""""""""""""""""

@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/12/05 12:11:26 by tnicolas          #+#    #+#              "
-"    Updated: 2017/12/12 13:31:32 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/12/14 23:44:49 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -42,8 +42,10 @@ let g:setHighlightLine=0
 """""""""""""""""""""""""""""""""""""setting""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""color""""""""""""""""""""""""""""""""""""""
-"enable syntax color (advanced)
-let g:_enable_color_all=1
+"enable SergeVim shell alias
+let g:enable_alias=1
+"alias file
+let g:alias_file='~/.zshrc'
 """""""""""""""""""""""""""""""""""""color""""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""plugin"""""""""""""""""""""""""""""""""""""
@@ -73,3 +75,92 @@ let g:syntastic_c_include_dirs = [
 			\'../../libft'
 			\]
 """""""""""""""""""""""""""""""""""""plugin"""""""""""""""""""""""""""""""""""""
+
+"""""""""""""""""""""""""""""""""""""alias""""""""""""""""""""""""""""""""""""""
+"enable syntax color (advanced)
+let g:_enable_color_all=1
+
+let g:enable_alias1 = 1
+let g:alias1_name = 'valg'
+let g:alias1 = 'alias valg="valgrind --leak-check=full --track-origins=yes --show-reachable=no"'
+
+let g:enable_alias2 = 1
+let g:alias2_name = 'gpush'
+let g:alias2 = "alias gpush='echo -n \"commit message : \" && read msg && git add -A && git commit -m \"$msg\"     && git push'"
+
+let g:enable_alias3 = 1
+let g:alias3_name = 'bim'
+let g:alias3 = 'alias bim="vim +Line"'
+
+let g:enable_alias4 = 1
+let g:alias4_name = 'vimrc'
+let g:alias4 = 'alias vimrc="vim +12 +Line ~/.vimrc ~/.vim/sergevim/*"'
+
+let g:enable_alias5 = 1
+let g:alias5_name = 'serge'
+let g:alias5 = "alias serge='cd ~/sergeVim'"
+
+let g:enable_alias6 = 1
+let g:alias6_name = 'cleanstars'
+let g:alias6 = "alias cleanstars=clear'"
+
+let g:enable_alias6 = 1
+let g:alias6_name = 'goinfre'
+let g:alias6 = "alias serge='exit'"
+
+let g:enable_alias7 = 1
+let g:alias7_name = 'serge'
+let g:alias7 = "alias serge='cd ~/sergeVim'"
+
+let g:enable_alias8 = 1
+let g:alias8_name = 'wgcc'
+let g:alias8 = "alias wgcc='gcc -Wall -Wextra'"
+
+let g:enable_alias9 = 1
+let g:alias9_name = 'cwgcc'
+let g:alias9 = "alias cgcc='clear && gcc -Wall -Wextra"
+
+let g:enable_alias10 = 1
+let g:alias10_name = 'cgcc'
+let g:alias10 = "alias cgcc='clear && gcc'"
+
+let g:enable_alias11 = 0
+let g:alias11_name = ''
+let g:alias11 = ""
+
+let g:enable_alias12 = 0
+let g:alias12_name = ''
+let g:alias12 = ""
+
+let g:enable_alias13 = 0
+let g:alias13_name = ''
+let g:alias13 = ""
+
+let g:enable_alias14 = 0
+let g:alias14_name = ''
+let g:alias14 = ""
+
+let g:enable_alias15 = 0
+let g:alias15_name = ''
+let g:alias15 = ""
+
+let g:enable_alias16 = 0
+let g:alias16_name = ''
+let g:alias16 = ""
+
+let g:enable_alias17 = 0
+let g:alias17_name = ''
+let g:alias17 = ""
+
+let g:enable_alias18 = 0
+let g:alias18_name = ''
+let g:alias18 = ""
+
+let g:enable_alias19 = 0
+let g:alias19_name = ''
+let g:alias19 = ""
+
+let g:enable_alias20 = 0
+let g:alias20_name = ''
+let g:alias20 = ""
+"""""""""""""""""""""""""""""""""""""alias""""""""""""""""""""""""""""""""""""""
