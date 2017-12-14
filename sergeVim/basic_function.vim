@@ -81,7 +81,7 @@ command! SergeSetting exe "tabnew " . g:setting_vim_file
 command! SergeUpdate call SergeUpdateFunction()
 function! SergeUpdateFunction()
 	let lastPwd = getcwd()
-	echo ':!cd ' . g:pwdGitSergeVim . ' && ./update_vim.sh && cd ' . l:lastPwd
+	exe ':!cd ' . g:pwdGitSergeVim . ' && ./update_vim.sh && cd ' . l:lastPwd
 endfunction
 """""""""""""""""""""""""""""""""""""basic function"""""""""""""""""""""""""""""
 
