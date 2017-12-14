@@ -15,7 +15,7 @@ systeme pour commenter les //d1 //<d1>...
 :SergeUpdate pour mettre a jour sergeVim
 :SergeSetting ouvre les parametres
 :SergeHelp ouvre l'aide
-Systeme de mise a jour des alias (alias vim +line)
+Systeme de mise a jour des alias (alias vim +line, gpush, sergeUpdate, ...)
 
 a tester (arg ?)
 command! -nargs=1 Search call setqflist([]) | silent bufdo grepadd! <args> %
