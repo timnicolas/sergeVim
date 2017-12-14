@@ -16,6 +16,7 @@ systeme pour commenter les //d1 //<d1>...
 :SergeSetting ouvre les parametres
 :SergeHelp ouvre l'aide
 Systeme de mise a jour des alias (alias vim +line, gpush, sergeUpdate, ...)
+ajout alias valgrind : valgrind --leak-check=full --track-origins=yes --show-reachable=no ./a.out
 
 a tester (arg ?)
 command! -nargs=1 Search call setqflist([]) | silent bufdo grepadd! <args> %
