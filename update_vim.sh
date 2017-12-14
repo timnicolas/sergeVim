@@ -6,7 +6,7 @@
 #    By: tnicolas <tnicolas@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/26 15:20:39 by tnicolas          #+#    #+#              #
-#    Updated: 2017/12/05 12:22:09 by tnicolas         ###   ########.fr        #
+#    Updated: 2017/12/14 23:46:06 by tnicolas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,4 +39,4 @@ if [[ $# -eq 1 && "$1" == "--param" ]]; then
 else
 	cp -r sergeVim ~/.vim
 fi
-vim 'source ~/.vimrc' '+PluginInstall' '+q' '+q'
+vim 'source ~/.vimrc' '+PluginInstall' '+q' '+SergeAlias' '+q'
