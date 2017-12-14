@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/12/05 12:11:11 by tnicolas          #+#    #+#              "
-"    Updated: 2017/12/15 00:13:54 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/12/15 00:16:07 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -81,7 +81,7 @@ command! SergeSetting exe "tabnew " . g:setting_vim_file
 command! SergeUpdate call SergeUpdateFunction()
 function! SergeUpdateFunction()
 	let lastPwd = getcwd()
-	exe ':!cd ' . g:pwdGitSergeVim . ' && ./update_vim.sh && cd ' . l:getcwd
+	echo ':!cd ' . g:pwdGitSergeVim . ' && ./update_vim.sh && cd ' . l:lastPwd
 endfunction
 """""""""""""""""""""""""""""""""""""basic function"""""""""""""""""""""""""""""
 
