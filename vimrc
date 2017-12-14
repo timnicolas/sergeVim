@@ -69,6 +69,7 @@ let g:setting_vim_file='~/.vim/sergeVim/setting.vim'
 "else
 "	set ttymouse=xterm2
 "endif
+source ~/.vim/sergePwd.vim
 source ~/.vim/sergeVim/setting.vim
 source ~/.vim/sergeVim/basic_function.vim
 source ~/.vim/sergeVim/plugin.vim
