@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/12/09 20:13:15 by tnicolas          #+#    #+#              "
-"    Updated: 2017/12/12 13:23:24 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/12/14 22:05:50 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -286,7 +286,7 @@ function! SergeInvertSign()
 			:normal diw
 			:normal iERROR
 		endif
-	elseif char_act =~# '[unsigedtloghrca]'
+	elseif char_act =~# '[unsigedtloghrcafs]'
 		let word = expand("<cword>")
 		if word == 'unsigned'
 			:normal diwx
@@ -308,6 +308,26 @@ function! SergeInvertSign()
 				:normal w
 				exe ':normal iunsigned '
 				:normal l
+			endif
+		elseif word == 'if' || word == 'else'
+			:normal lb
+			let word = expand("<cword>")
+			if word == "else"
+				:normal w
+				let word = expand("<cword>")
+				if word == 'if'
+					:normal bdiwx
+				endif
+			elseif word == 'if'
+				:normal b
+				let word = expand("<cword>")
+				if word == 'else'
+					:normal diwx
+				else
+					:normal w
+					exe ':normal ielse '
+					:normal l
+				endif
 			endif
 		endif
 	endif

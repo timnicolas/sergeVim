@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/12/05 12:11:11 by tnicolas          #+#    #+#              "
-"    Updated: 2017/12/14 00:26:15 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/12/14 22:37:11 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -94,26 +94,36 @@ function! SetCursorPlaceGo()
 	call setpos('.', g:save_pos)
 endfunction
 "keep cursor place width arg
-function! SetCursorPlaceSaveArg(last_file, last_pos, last_top)
+function! SetCursorPlaceSaveArg(last_file, last_pos, last_col, last_top)
 	exe ':let g:' . a:last_file . '="' . expand('%') . '"'
 "	let pos_pos = getline('.')
 "	exe ':let g:' . a:last_pos . '="' . l:pos_pos . '"'
 	let pos_pos = line('.')
 	exe ':let g:' . a:last_pos . '=' . l:pos_pos
+	let pos_col = col('.')
+	:normal 0
+	while matchstr(getline('.'), '\%' . col('.') . 'c.') =~# '\t'
+		let pos_col += 3
+		:normal l
+	endwhile
+	exe ':silent! normal ' . l:pos_col . '|'
+	exe ':let g:' . a:last_col . '=' . l:pos_col
 	let pos_top = line('w0') + g:min_number_line_ar_cur
 	exe ':let g:' . a:last_top . '=' . l:pos_top
 endfunction
-function! SetCursorPlaceMoveArg(last1_file, last1_pos, last1_top,
-			\last2_file, last2_pos, last2_top)
+function! SetCursorPlaceMoveArg(last1_file, last1_pos, last1_col, last1_top,
+			\last2_file, last2_pos, last2_col, last2_top)
 	exe ':let g:' . a:last2_file . '= g:' . a:last1_file
 	exe ':let g:' . a:last2_pos . '= g:' . a:last1_pos
+	exe ':let g:' . a:last2_col . '= g:' . a:last1_col
 	exe ':let g:' . a:last2_top . '= g:' . a:last1_top
 endfunction
-function! SetCursorPlaceGoArg(last_file, last_pos, last_top)
+function! SetCursorPlaceGoArg(last_file, last_pos, last_col, last_top)
 	exe ':b ' . a:last_file
 	exe ':' . a:last_top
 	:normal zt
 	exe ':' . a:last_pos
+	exe ':silent! normal ' . a:last_col . '|'
 "	exe ':silent! /^' . a:last_pos
 "	exe ':silent! /sdfahkfghjasgfjakfgdjhakgf'
 endfunction
@@ -257,15 +267,19 @@ nmap <leader>V <C-o>:so $MYVIMRC<CR>
 "	fast move of 5 char right <S-right>
 nmap <S-right> <right><right><right><right><right>
 imap <S-right> <right><right><right><right><right>
+vmap <S-right> <right><right><right><right><right>
 "	fast move of 5 char left <S-left>
 nmap <S-left> <left><left><left><left><left>
 imap <S-left> <left><left><left><left><left>
+vmap <S-left> <left><left><left><left><left>
 "	fast move of 5 char up <S-up>
 nmap <S-up> :-5<CR>
 imap <S-up> <C-o>:-5<CR>
+vmap <S-up> <up><up><up><up><up>
 "	fast move of 5 char down <S-down>
 nmap <S-down> :+5<CR>
 imap <S-down> <C-o>:+5<CR>
+vmap <S-down> <down><down><down><down><down>
 """""""""""""""""""""""""""""""""""""other""""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""Ugo""""""""""""""""""""""""""""""""""""""""
