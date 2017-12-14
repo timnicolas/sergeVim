@@ -3,7 +3,7 @@ bug sur certains ordi uniquement syntastic ne reconnait pas certains fichiers (#
 bug sur certains ordi uniquement pb 42header not at the top of the file (il ne se met pas tout seul en haut)
 pb color #ifndef XXX #define XXX (les 2 XXX pas de la meme couleur)
 C-o tres lent eszayer de commencer par chercher dans les fichiers ouvert
-  peut etre cree un fichier qui met en lien les noms de fonctions et le fichier qui leur correspond
+	peut etre cree un fichier qui met en lien les noms de fonctions et le fichier qui leur correspond
 desactiver le clic qui command V
 ajouter --param a :SergeUpdate
 
