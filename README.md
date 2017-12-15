@@ -27,6 +27,10 @@ Vous pouvez parametrer votre sergeVim en modifiant les variables du fichier `~/.
 Pour garder vos parametres il faut utiliser l'option `setting` quand vous mettez a jour. /!\ Certaines mise a jour peuvent ajouter des parametres. si sergeVim ne fonctionne plus correctement après une mise a jour vous pouvez essayer de reinitialiser vos parametres (`:SergeUpdate` sans `setting`) 
 >`:SergeUpdate setting`
 
+## Alias
+SergeVim dispose aujourd'hui d'alias (par defaut dans `~/.zshrc`) vous pouvez dans les parametres (`:SergeSetting`) choisir les alias a activer ou a desactiver. Vous pouvez aussi cree vos propres alias. Si vous mettez un alias en commentaire dans votre fichier d'alias (par defaut `~/.zshrc`) il ne sera pas mis a jour par SergeVim.
+
+Les alias se mettent a jour automatiquement lorsque vous mettez a jour sergeVim (`:SergeUpdate [setting]`). Vous pouvez aussi les mettre a jour avec la commande `:SergeAlias`.
 
 ## Aide
 Pour obtenir de l'aide tappez `,h` en mode normal ou `:SergeHelp` dans vim. Cela ouvrira un fichier d'aide dans un nouvel onglet avec tout les racourcis ajouté sur sergeVim.
