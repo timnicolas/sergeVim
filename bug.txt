@@ -10,6 +10,7 @@ MAJ:
 systeme pour commenter les //d1 //<d1>...
 SergeUpdate : demander confirmation (pour les param)
 utiliser des nombres dans les commandes (,/12/    ,\12<up>    ...)
+ajouter un parametre pour sauvegarder les parametres (:SergeUpdate --setting automatique)
 
 save quand on perd le focus
 :au FocusLost * silent! wa
