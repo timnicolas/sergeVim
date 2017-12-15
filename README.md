@@ -24,8 +24,8 @@ Pour que SergeUpdate fonctionne il ne faut pas deplacer ou supprimer le git clon
 ## Parametre
 Vous pouvez parametrer votre sergeVim en modifiant les variables du fichier `~/.vim/sergeVim/param.vim` que vous pouvez ouvrir en faisant `,s` en mode normal ou `:SergeSetting`. Lorsque vous mettez sergeVim a jour vos parametres seront par defaut ecrasés.
 
-Pour garder vos parametres il faut utiliser l'option `--param` quand vous mettez a jour. /!\ Certaines mise a jour peuvent ajouter des parametres. si sergeVim ne fonctionne plus correctement après une mise a jour vous pouvez essayer de reinitialiser vos parametres (`./update_vim.sh` sans `--param`) 
->`./update_vim.sh --param`
+Pour garder vos parametres il faut utiliser l'option `setting` quand vous mettez a jour. /!\ Certaines mise a jour peuvent ajouter des parametres. si sergeVim ne fonctionne plus correctement après une mise a jour vous pouvez essayer de reinitialiser vos parametres (`:SergeUpdate` sans `setting`) 
+>`:SergeUpdate setting`
 
 
 ## Aide
