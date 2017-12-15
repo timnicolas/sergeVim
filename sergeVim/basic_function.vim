@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/12/05 12:11:11 by tnicolas          #+#    #+#              "
-"    Updated: 2017/12/15 00:24:35 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/12/15 11:12:44 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -77,16 +77,40 @@ command! SergeHelp exe "tabnew " . g:help_vim_file
 "setting <leader>s :SergeSetting
 nmap <leader>s :exe "tabnew " . g:setting_vim_file<CR>
 command! SergeSetting exe "tabnew " . g:setting_vim_file
-"update sergeVim
-command! SergeUpdate call SergeUpdateFunction()
-function! SergeUpdateFunction()
+"update SergeVim :SergeUpdate [--param to save your param]
+command! -nargs=* SergeUpdate call SergeUpdateFunction(<f-args>)
+function! SergeUpdateFunction(...)
+	let l:i = 1
+	let l:nb_arg = a:0
 	let lastPwd = getcwd()
+	while l:i <= l:nb_arg
+		let arg_act = eval('a:' . l:i)
+		if l:arg_act == '--param' || l:arg_act == '--setting' ||
+					\l:arg_act == 'param' || l:arg_act == 'setting'
+			exe ':!cd ' . g:pwdGitSergeVim . ' && ./update_vim.sh --param
+						\&& cd ' . l:lastPwd
+			return
+		endif
+		let l:i += 1
+	endwhile
 	exe ':!cd ' . g:pwdGitSergeVim . ' && ./update_vim.sh && cd ' . l:lastPwd
 endfunction
-"update git repository
-command! GitSergeUpdate call SergeUpdateGitFunction()
-function! SergeUpdateGitFunction()
+"update git repository (admin only) :GitSergeUpdate [--param to save your param]
+command! -nargs=* GitSergeUpdate call GitSergeUpdateFunction(<f-args>)
+function! GitSergeUpdateFunction(...)
+	let l:i = 1
+	let l:nb_arg = a:0
 	let lastPwd = getcwd()
+	while l:i <= l:nb_arg
+		let arg_act = eval('a:' . l:i)
+		if l:arg_act == '--param' || l:arg_act == '--setting' ||
+					\l:arg_act == 'param' || l:arg_act == 'setting'
+			exe ':!cd ' . g:pwdGitSergeVim . ' && ./update_git.sh --param
+						\&& cd ' . l:lastPwd
+			return
+		endif
+		let l:i += 1
+	endwhile
 	exe ':!cd ' . g:pwdGitSergeVim . ' && ./update_git.sh && cd ' . l:lastPwd
 endfunction
 """""""""""""""""""""""""""""""""""""basic function"""""""""""""""""""""""""""""
