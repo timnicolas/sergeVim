@@ -30,7 +30,8 @@ Pour garder vos parametres il faut utiliser l'option `setting` quand vous mettez
 ## Alias
 SergeVim dispose aujourd'hui d'alias (par defaut dans `~/.zshrc`). Vous pouvez, dans les parametres (`:SergeSetting`) choisir les alias a activer ou a desactiver. Vous pouvez aussi cree vos propres alias. Si vous mettez un alias en commentaire dans votre fichier d'alias (par defaut `~/.zshrc`) il ne sera pas mis a jour par SergeVim.
 
-Les alias se mettent a jour automatiquement lorsque vous mettez a jour sergeVim (`:SergeUpdate [setting]`). Vous pouvez aussi les mettre a jour avec la commande `:SergeAlias`.
+Les alias se mettent a jour automatiquement lorsque vous mettez a jour sergeVim (`:SergeUpdate [setting]`). Vous pouvez aussi les mettre a jour avec la commande si dessous.
+>`:SergeAlias`
 
 Le fichier ou seront mis les alias peut être modifié dans les parametres (`:SergeSetting`).
 
