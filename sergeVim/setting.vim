@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/12/05 12:11:26 by tnicolas          #+#    #+#              "
-"    Updated: 2017/12/15 00:42:39 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/12/15 11:19:28 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -42,10 +42,8 @@ let g:setHighlightLine=0
 """""""""""""""""""""""""""""""""""""setting""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""color""""""""""""""""""""""""""""""""""""""
-"enable SergeVim shell alias
-let g:enable_alias=1
-"alias file
-let g:alias_file='~/.zshrc'
+"enable more color
+let g:_enable_color_all = 1
 """""""""""""""""""""""""""""""""""""color""""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""plugin"""""""""""""""""""""""""""""""""""""
@@ -77,6 +75,10 @@ let g:syntastic_c_include_dirs = [
 """""""""""""""""""""""""""""""""""""plugin"""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""alias""""""""""""""""""""""""""""""""""""""
+"enable SergeVim shell alias
+let g:enable_alias=1
+"alias file
+let g:alias_file='~/.zshrc'
 "enable syntax color (advanced)
 let g:_enable_color_all=1
 
