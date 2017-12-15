@@ -81,7 +81,7 @@ source ~/.vim/sergeVim/emptyHeader.vim
 source ~/.vim/sergeVim/sergeVimHeader.vim
 source ~/.vim/sergeVim/norm.vim
 source ~/.vim/sergeVim/ctrlD.vim
-source ~/.vim/sergeVim/ctrlF_ctrlE.vim
+source ~/.vim/sergeVim/ctrlO_ctrlP.vim
 source ~/.vim/sergeVim/color.vim
 source ~/.vim/sergeVim/alias.vim
 """""""""""""""""""""""""""""""""""""Source"""""""""""""""""""""""""""""""""""""
