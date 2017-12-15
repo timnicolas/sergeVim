@@ -6,7 +6,7 @@
 #    By: tnicolas <tnicolas@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/26 15:20:39 by tnicolas          #+#    #+#              #
-#    Updated: 2017/12/15 11:21:48 by tnicolas         ###   ########.fr        #
+#    Updated: 2017/12/15 14:20:14 by tnicolas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,5 +39,6 @@ if [[ $# -eq 1 && "$1" == "--param" ]]; then
 else
 	cp -r sergeVim ~/.vim
 fi
+touch ~/.vim/sergePwd.vim
 echo "let g:pwdGitSergeVim='"`pwd`"'" > ~/.vim/sergePwd.vim
 vim 'source ~/.vimrc' '+PluginInstall' '+q' '+SergeAlias' '+q'
