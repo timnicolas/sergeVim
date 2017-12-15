@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/11/26 12:07:06 by tnicolas          #+#    #+#              "
-"    Updated: 2017/12/15 11:25:09 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/12/15 15:35:52 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -62,7 +62,7 @@
 "<leader><F6>		make reexec
 ":Make				make
 ":MakeEx			make exec
-":MakeRe			make re
+"Maÿe:MakeRe			make re
 ":MakeCl			make clean
 ":MakeFc			make fclean
 ":MakeNo			make norm
@@ -95,8 +95,8 @@
 "<leader>[([{'"*]	create block (ex (test)) (visual mode only exept for '{')
 
 "tab/buffer
-"<C-o>				go to function declaration (name under cursor)
-"<C-p>				go to last <C-o>
+"<C-f>				go to function declaration (name under cursor)
+"<C-e>				go to last <C-o>
 "<leader><tab>		move tab to the right
 "<leader><S-tab>	move tab to the left
 "<C-l>				move to buffer right
