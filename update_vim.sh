@@ -6,7 +6,7 @@
 #    By: tnicolas <tnicolas@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/26 15:20:39 by tnicolas          #+#    #+#              #
-#    Updated: 2017/12/15 00:05:31 by tnicolas         ###   ########.fr        #
+#    Updated: 2017/12/15 11:21:48 by tnicolas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,7 @@ cp vimrc ~/.vimrc
 mkdir -p ~/.vim
 mkdir -p ~/.vim/sergeVim
 if [[ $# -eq 1 && "$1" == "--param" ]]; then
-	cp -r `find sergeVim \( -iname "*" -a -not -iname "*param*" \) | grep "/"` ~/.vim/sergeVim
+	cp -r `find sergeVim \( -iname "*" -a -not -iname "*setting*" \) | grep "/"` ~/.vim/sergeVim
 else
 	cp -r sergeVim ~/.vim
 fi
