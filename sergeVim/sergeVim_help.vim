@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/11/26 12:07:06 by tnicolas          #+#    #+#              "
-"    Updated: 2017/12/15 00:25:31 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/12/15 11:25:09 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -30,7 +30,8 @@
 "<leader>s			open setting
 ":SergeSetting		open setting
 ":SergeAlias		update alias
-":SergeUpdate		update sergeVim
+":SergeUpdate		update sergeVim opt setting ignore setting file
+"						:SergeUpdate setting
 ":GitSergeUpdate	update git repository (ADMIN ONLY)
 
 "<F[x]> command:
