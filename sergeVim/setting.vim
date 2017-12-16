@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/12/05 12:11:26 by tnicolas          #+#    #+#              "
-"    Updated: 2017/12/15 11:23:29 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/12/16 15:26:34 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -130,9 +130,9 @@ let g:enable_alias11 = 1
 let g:alias11_name = 'mx'
 let g:alias11 = "alias mx='make exec'"
 
-let g:enable_alias12 = 0
-let g:alias12_name = ''
-let g:alias12 = ""
+let g:enable_alias12 = 1
+let g:alias12_name = 'vim_init_ctrlO'
+let g:alias12 = "alias vim_init_ctrlO='vim +SergeInitCtrlO +q'"
 
 let g:enable_alias13 = 0
 let g:alias13_name = ''
