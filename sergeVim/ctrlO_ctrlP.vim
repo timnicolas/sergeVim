@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/12/14 22:07:23 by tnicolas          #+#    #+#              "
-"    Updated: 2017/12/15 15:39:23 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/12/16 11:43:34 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -110,38 +110,48 @@ function! TryOpenFileUnderCursorName()
 	call SetCursorPlaceSaveArg('last1', 'last1_pos', 'last1_col', 'last1_top')
 	let func_name = expand('<cword>')
 	echo g:last1 . ' ' . g:last1_top
-	if search('^\(static\s\+\)\=\w\+[\t ]\+\**' . l:func_name . '[\t ]*(.*\(\n.*\)*)', 'b') > 0
+	if search('^\(static\s\+\)\=\w\+[\t ]\+\**' . l:func_name .
+				\'[\t ]*(.*\(\n.*\)*)', 'b') > 0
 		:normal zt
-"		echo '"' . expand('%') . '" -> ' . l:func_name . '()'
 	else
-		exe ':silent! vimgrep /^\(static\s\+\)\=\w\+[\t ]\+\**' . l:func_name . '[\t ]*(.*\(\n.*\)*)/ **/*.c'
-		if search('^\(static\s\+\)\=\w\+[\t ]\+\**' . l:func_name . '[\t ]*(.*\(\n.*\)*)', 'b') > 0
+		exe ':silent! vimgrep /^\(static\s\+\)\=\w\+[\t ]\+\**' . l:func_name .
+					\'[\t ]*(.*\(\n.*\)*)/ **/*.c'
+		if search('^\(static\s\+\)\=\w\+[\t ]\+\**' . l:func_name .
+					\'[\t ]*(.*\(\n.*\)*)', 'b') > 0
 			:normal zt
 		else
 			call LastPosMoveUp()
 			echo "no function under cursor"
 		endif
-"		echo '"' . expand('%') . '" -> ' . l:func_name . '()'
 	endif
 endfunction
 function! LastPosMoveDown()
-	call SetCursorPlaceMoveArg('last18', 'last18_pos', 'last18_col', 'last18_top',
+	call SetCursorPlaceMoveArg('last18', 'last18_pos', 'last18_col',
+				\'last18_top',
 				\'last19', 'last19_pos', 'last19_col', 'last19_top')
-	call SetCursorPlaceMoveArg('last17', 'last17_pos', 'last17_col', 'last17_top',
+	call SetCursorPlaceMoveArg('last17', 'last17_pos', 'last17_col',
+				\'last17_top',
 				\'last18', 'last18_pos', 'last18_col', 'last18_top')
-	call SetCursorPlaceMoveArg('last16', 'last16_pos', 'last16_col', 'last16_top',
+	call SetCursorPlaceMoveArg('last16', 'last16_pos', 'last16_col',
+				\'last16_top',
 				\'last17', 'last17_pos', 'last17_col', 'last17_top')
-	call SetCursorPlaceMoveArg('last15', 'last15_pos', 'last15_col', 'last15_top',
+	call SetCursorPlaceMoveArg('last15', 'last15_pos', 'last15_col',
+				\'last15_top',
 				\'last16', 'last16_pos', 'last16_col', 'last16_top')
-	call SetCursorPlaceMoveArg('last14', 'last14_pos', 'last14_col', 'last14_top',
+	call SetCursorPlaceMoveArg('last14', 'last14_pos', 'last14_col',
+				\'last14_top',
 				\'last15', 'last15_pos', 'last15_col', 'last15_top')
-	call SetCursorPlaceMoveArg('last13', 'last13_pos', 'last13_col', 'last13_top',
+	call SetCursorPlaceMoveArg('last13', 'last13_pos', 'last13_col', 
+				\'last13_top',
 				\'last14', 'last14_pos', 'last14_col', 'last14_top')
-	call SetCursorPlaceMoveArg('last12', 'last12_pos', 'last12_col', 'last12_top',
+	call SetCursorPlaceMoveArg('last12', 'last12_pos', 'last12_col',
+				\'last12_top',
 				\'last13', 'last13_pos', 'last13_col', 'last13_top')
-	call SetCursorPlaceMoveArg('last11', 'last11_pos', 'last11_col', 'last11_top',
+	call SetCursorPlaceMoveArg('last11', 'last11_pos', 'last11_col',
+				\'last11_top',
 				\'last12', 'last12_pos', 'last12_col', 'last12_top')
-	call SetCursorPlaceMoveArg('last10', 'last10_pos', 'last10_col', 'last10_top',
+	call SetCursorPlaceMoveArg('last10', 'last10_pos', 'last10_col',
+				\'last10_top',
 				\'last11', 'last11_pos', 'last11_col', 'last11_top')
 	call SetCursorPlaceMoveArg('last9', 'last9_pos', 'last9_col', 'last9_top',
 				\'last10', 'last10_pos', 'last10_col', 'last10_top')
@@ -174,41 +184,59 @@ function! TryOpenFileUnderCursorNameLast()
 	endif
 endfunction
 function! LastPosMoveUp()
-		call SetCursorPlaceMoveArg('last2', 'last2_pos', 'last2_col', 'last2_top',
+		call SetCursorPlaceMoveArg('last2', 'last2_pos', 'last2_col',
+					\'last2_top',
 					\'last1', 'last1_pos', 'last1_col', 'last1_top')
-		call SetCursorPlaceMoveArg('last3', 'last3_pos', 'last3_col', 'last3_top',
+		call SetCursorPlaceMoveArg('last3', 'last3_pos', 'last3_col',
+					\'last3_top',
 					\'last2', 'last2_pos', 'last2_col', 'last2_top')
-		call SetCursorPlaceMoveArg('last4', 'last4_pos', 'last4_col', 'last4_top',
+		call SetCursorPlaceMoveArg('last4', 'last4_pos', 'last4_col',
+					\'last4_top',
 					\'last3', 'last3_pos', 'last3_col', 'last3_top')
-		call SetCursorPlaceMoveArg('last5', 'last5_pos', 'last5_col', 'last5_top',
+		call SetCursorPlaceMoveArg('last5', 'last5_pos', 'last5_col',
+					\'last5_top',
 					\'last4', 'last4_pos', 'last4_col', 'last4_top')
-		call SetCursorPlaceMoveArg('last6', 'last6_pos', 'last6_col', 'last6_top',
+		call SetCursorPlaceMoveArg('last6', 'last6_pos', 'last6_col',
+					\'last6_top',
 					\'last5', 'last5_pos', 'last5_col', 'last5_top')
-		call SetCursorPlaceMoveArg('last7', 'last7_pos', 'last7_col', 'last7_top',
+		call SetCursorPlaceMoveArg('last7', 'last7_pos', 'last7_col',
+					\'last7_top',
 					\'last6', 'last6_pos', 'last6_col', 'last6_top')
-		call SetCursorPlaceMoveArg('last8', 'last8_pos', 'last8_col', 'last8_top',
+		call SetCursorPlaceMoveArg('last8', 'last8_pos', 'last8_col',
+					\'last8_top',
 					\'last7', 'last7_pos', 'last7_col', 'last7_top')
-		call SetCursorPlaceMoveArg('last9', 'last9_pos', 'last9_col', 'last9_top',
+		call SetCursorPlaceMoveArg('last9', 'last9_pos', 'last9_col',
+					\'last9_top',
 					\'last8', 'last8_pos', 'last8_col', 'last8_top')
-		call SetCursorPlaceMoveArg('last10', 'last10_pos', 'last10_col', 'last10_top',
+		call SetCursorPlaceMoveArg('last10', 'last10_pos', 'last10_col',
+					\'last10_top',
 					\'last9', 'last9_pos', 'last9_col', 'last9_top')
-		call SetCursorPlaceMoveArg('last11', 'last11_pos', 'last11_col', 'last11_top',
+		call SetCursorPlaceMoveArg('last11', 'last11_pos', 'last11_col',
+					\'last11_top',
 					\'last10', 'last10_pos', 'last10_col', 'last10_top')
-		call SetCursorPlaceMoveArg('last12', 'last12_pos', 'last12_col', 'last12_top',
+		call SetCursorPlaceMoveArg('last12', 'last12_pos', 'last12_col',
+					\'last12_top',
 					\'last11', 'last11_pos', 'last11_col', 'last11_top')
-		call SetCursorPlaceMoveArg('last13', 'last13_pos', 'last13_col', 'last13_top',
+		call SetCursorPlaceMoveArg('last13', 'last13_pos', 'last13_col',
+					\'last13_top',
 					\'last12', 'last12_pos', 'last12_col', 'last12_top')
-		call SetCursorPlaceMoveArg('last14', 'last14_pos', 'last14_col', 'last14_top',
+		call SetCursorPlaceMoveArg('last14', 'last14_pos', 'last14_col',
+					\'last14_top',
 					\'last13', 'last13_pos', 'last13_col', 'last13_top')
-		call SetCursorPlaceMoveArg('last15', 'last15_pos', 'last15_col', 'last15_top',
+		call SetCursorPlaceMoveArg('last15', 'last15_pos', 'last15_col',
+					\'last15_top',
 					\'last14', 'last14_pos', 'last14_col', 'last14_top')
-		call SetCursorPlaceMoveArg('last16', 'last16_pos', 'last16_col', 'last16_top',
+		call SetCursorPlaceMoveArg('last16', 'last16_pos', 'last16_col',
+					\'last16_top',
 					\'last15', 'last15_pos', 'last15_col', 'last15_top')
-		call SetCursorPlaceMoveArg('last17', 'last17_pos', 'last17_col', 'last17_top',
+		call SetCursorPlaceMoveArg('last17', 'last17_pos', 'last17_col',
+					\'last17_top',
 					\'last16', 'last16_pos', 'last16_col', 'last16_top')
-		call SetCursorPlaceMoveArg('last18', 'last18_pos', 'last18_col', 'last18_top',
+		call SetCursorPlaceMoveArg('last18', 'last18_pos', 'last18_col',
+					\'last18_top',
 					\'last17', 'last17_pos', 'last17_col', 'last17_top')
-		call SetCursorPlaceMoveArg('last19', 'last19_pos', 'last19_col', 'last19_top',
+		call SetCursorPlaceMoveArg('last19', 'last19_pos', 'last19_col',
+					\'last19_top',
 					\'last18', 'last18_pos', 'last18_col', 'last18_top')
 		let g:last19 = 'no_file'
 		let g:last19_pos = 'no_file'
