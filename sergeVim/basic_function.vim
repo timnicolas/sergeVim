@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/12/05 12:11:11 by tnicolas          #+#    #+#              "
-"    Updated: 2017/12/15 11:37:58 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/12/16 15:10:13 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -120,13 +120,16 @@ endfunction
 command! Line set cursorline
 
 "keep cursor place
+let g:last_filename = expand('%')
 let g:first_line_visible = line('w0') + g:min_number_line_ar_cur
 let g:save_pos = getpos('.')
 function! SetCursorPlaceSave()
+	let g:last_filename = expand('%')
 	let g:first_line_visible = line('w0') + g:min_number_line_ar_cur
 	let g:save_pos = getpos('.')
 endfunction
 function! SetCursorPlaceGo()
+	exe ':b ' . g:last_filename
 	exe ':' . g:first_line_visible
 	:normal zt
 	call setpos('.', g:save_pos)
@@ -213,6 +216,7 @@ nmap <F5> :wa<CR>:mksession!<CR>
 nmap <leader><F5> :wa<CR>:mksession!<CR>:wqa<CR>
 "easy save
 command! W w
+command! Q q
 command! WQ wq
 command! Wq wq
 command! WA wa

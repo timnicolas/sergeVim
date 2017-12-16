@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/11/26 12:07:06 by tnicolas          #+#    #+#              "
-"    Updated: 2017/12/15 15:39:53 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/12/16 15:11:54 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -95,6 +95,7 @@
 "<leader>[([{'"*]	create block (ex (test)) (visual mode only exept for '{')
 
 "tab/buffer
+":SergeInitCtrlO	create a file where vim is open and set ctrlO faster
 "<C-o>				go to function declaration (name under cursor)
 "<C-p>				go to last <C-o>
 "<leader><tab>		move tab to the right

@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/12/14 22:07:23 by tnicolas          #+#    #+#              "
-"    Updated: 2017/12/16 11:43:34 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/12/16 15:20:45 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -24,8 +24,10 @@
 
 """""""""""""""""""""""""""""""""""""variables""""""""""""""""""""""""""""""""""
 "open file under cursor <C-o> <C-p>
-nmap <C-o> :call TryOpenFileUnderCursorName()<CR>
-nmap <C-p> :call TryOpenFileUnderCursorNameLast()<CR>
+nmap <C-o> :silent! call TryOpenFileUnderCursorName()<CR>
+nmap <C-p> :silent! call TryOpenFileUnderCursorNameLast()<CR>
+"create a file to link function and files to have faster ctrlO
+command! SergeInitCtrlO silent! call SergeCreateCtrlOFile()
 let g:last1 = 'no_file'
 let g:last1_pos = 'no_file'
 let g:last1_col = 'no_file'
@@ -102,7 +104,47 @@ let g:last19 = 'no_file'
 let g:last19_pos = 'no_file'
 let g:last19_col = 'no_file'
 let g:last19_top = 'no_file'
+
+let g:last_f = 'no_file'
+let g:last_f__pos = 'no_file'
+let g:last_f__col = 'no_file'
+let g:last_f__top = 'no_file'
 """""""""""""""""""""""""""""""""""""variables""""""""""""""""""""""""""""""""""
+
+"""""""""""""""""""""""""""""""""""""file"""""""""""""""""""""""""""""""""""""""
+let s:filename = 'file_funct.vim'
+if findfile(s:filename) == s:filename
+	let s:filename = s:filename
+elseif findfile('../' . s:filename) == '../' . s:filename
+	let s:filename = '../' . s:filename
+elseif findfile('../../' . s:filename) == '../../' . s:filename
+	let s:filename = '../../' . s:filename
+elseif findfile('../../../' . s:filename) == '../../../' . s:filename
+	let s:filename = '../../../' . s:filename
+elseif findfile('../../../../' . s:filename) == '../../../../' . s:filename
+	let s:filename = '../../../../' . s:filename
+endif
+function! SergeCreateCtrlOFile()
+	call SetCursorPlaceSaveArg('last_f', 'last_f_pos', 'last_f_col', 'last_f_top')
+	exe ':e ' . s:filename
+	:normal ggdG
+	:silent! vimgrep /^\w\+[\t ]*\**\w\+(.*)\n/ **/*.c
+	while 1
+		exe ':silent! .w! >> ' . s:filename
+		let func_filename = expand('%')
+		exe ':silent! b ' . s:filename
+		silent call append(line('$'), l:func_filename)
+		try
+			:cn
+		catch
+			break
+		endtry
+	endwhile
+	:w
+	:bd
+	call SetCursorPlaceGoArg(g:last_f, g:last_f_pos, g:last_f_col, g:last_f_top)
+endfunction
+"""""""""""""""""""""""""""""""""""""file"""""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""ctrlO""""""""""""""""""""""""""""""""""""""
 function! TryOpenFileUnderCursorName()
@@ -114,6 +156,22 @@ function! TryOpenFileUnderCursorName()
 				\'[\t ]*(.*\(\n.*\)*)', 'b') > 0
 		:normal zt
 	else
+		if findfile(s:filename) == s:filename
+			exe ':e ' . s:filename
+			if search('\w\+\s\+\**' . l:func_name . '\s*(.*\(\n.*\)*)', 'b') > 0
+				:normal j
+				:normal gf
+				if search('^\(static\s\+\)\=\w\+[\t ]\+\**' . l:func_name .
+							\'[\t ]*(.*\(\n.*\)*)', 'b') > 0
+					:normal zt
+				endif
+				exe ':bd ' . s:filename
+				return
+			endif
+			exe ':bd ' . s:filename
+			call SetCursorPlaceGoArg(g:last1, g:last1_pos, g:last1_col,
+						\g:last1_top)
+		endif
 		exe ':silent! vimgrep /^\(static\s\+\)\=\w\+[\t ]\+\**' . l:func_name .
 					\'[\t ]*(.*\(\n.*\)*)/ **/*.c'
 		if search('^\(static\s\+\)\=\w\+[\t ]\+\**' . l:func_name .
