@@ -18,6 +18,7 @@ ajouter un system pour init un tableau:
       tab[15]
       tab[16]
       tableau[17]
+systeme pour voir le prototype d'une fonction sous le curseur (fichier ctrlO)
 
 save quand on perd le focus
 :au FocusLost * silent! wa
