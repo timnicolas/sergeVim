@@ -6,7 +6,7 @@
 #    By: tnicolas <tnicolas@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/26 15:20:33 by tnicolas          #+#    #+#              #
-#    Updated: 2017/12/15 11:22:11 by tnicolas         ###   ########.fr        #
+#    Updated: 2017/12/18 11:51:16 by tnicolas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,6 +27,7 @@ echo "\x1b[35m"
 cat sergeHeader
 echo "\x1b[0m"
 echo "update git repository"
+git pull
 mkdir -p ~/.vim_backup
 cp -r sergeVim ~/.vim_backup
 cp vimrc ~/.vimrc_backup
