@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/11/26 11:57:34 by tnicolas          #+#    #+#              "
-"    Updated: 2017/12/14 22:08:08 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/12/18 10:37:57 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -41,7 +41,7 @@ endfunction
 "imap <leader>; <C-o>:% s/)\n/);\r/g<CR>
 
 "highlight prototypes <leader>ff
-nmap <leader>ff /^\w\+[\t ]*\**\w\+(.*)\n<CR>
+nmap <leader>ff /^\(static\s\+\)\?\w\+[\t ]*\**\w\+(.*)\n<CR>
 
 "select prototypes <leader>yf[x]
 nmap <leader>yf1 /^\w\+[\t ]*\**\w\+(.*)\n<CR>"ayyn:silent!
