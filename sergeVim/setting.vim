@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/12/05 12:11:26 by tnicolas          #+#    #+#              "
-"    Updated: 2017/12/16 15:26:34 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/12/18 10:52:52 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -88,7 +88,7 @@ let g:alias1 = 'alias valg="valgrind --leak-check=full --track-origins=yes --sho
 
 let g:enable_alias2 = 1
 let g:alias2_name = 'gpush'
-let g:alias2 = "alias gpush='echo -n \"commit message : \" && read msg && git add -A && git commit -m \"$msg\"     && git push'"
+let g:alias2 = "alias gpush='echo -n \"commit message : \" && read msg && git add -A && git commit -m \"$msg\" && git push'"
 
 let g:enable_alias3 = 1
 let g:alias3_name = 'bim'
@@ -128,19 +128,19 @@ let g:alias10 = "alias cgcc='clear && gcc'"
 
 let g:enable_alias11 = 1
 let g:alias11_name = 'mx'
-let g:alias11 = "alias mx='make exec'"
+let g:alias11 = "alias mx='make -j3 exec'"
 
 let g:enable_alias12 = 1
 let g:alias12_name = 'vim_init_ctrlO'
 let g:alias12 = "alias vim_init_ctrlO='vim +SergeInitCtrlO +q'"
 
-let g:enable_alias13 = 0
-let g:alias13_name = ''
-let g:alias13 = ""
+let g:enable_alias13 = 1
+let g:alias13_name = 'vim_serge_update'
+let g:alias13 = "alias vim_serge_update='vim +SergeUpdate +q'"
 
-let g:enable_alias14 = 0
-let g:alias14_name = ''
-let g:alias14 = ""
+let g:enable_alias14 = 1
+let g:alias14_name = 'git_vim_update'
+let g:alias14 = "alias git_vim_update='vim +GitSergeUpdate +q'"
 
 let g:enable_alias15 = 0
 let g:alias15_name = ''

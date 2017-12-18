@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/12/14 22:41:53 by tnicolas          #+#    #+#              "
-"    Updated: 2017/12/14 23:41:25 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/12/18 10:51:52 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -88,7 +88,7 @@ function! SergeUpdateAlias()
 			call SergeUpdateAliasName(g:alias20_name, g:alias20)
 		endif
 		:w
-		:bd
+"		:bd
 	endif
 endfunction
 function! SergeUpdateAliasName(name, text)
