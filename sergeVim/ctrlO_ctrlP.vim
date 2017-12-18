@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/12/14 22:07:23 by tnicolas          #+#    #+#              "
-"    Updated: 2017/12/16 15:20:45 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/12/18 11:46:57 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -152,8 +152,8 @@ function! TryOpenFileUnderCursorName()
 	call SetCursorPlaceSaveArg('last1', 'last1_pos', 'last1_col', 'last1_top')
 	let func_name = expand('<cword>')
 	echo g:last1 . ' ' . g:last1_top
-	if search('^\(static\s\+\)\=\w\+[\t ]\+\**' . l:func_name .
-				\'[\t ]*(.*\(\n.*\)*)', 'b') > 0
+	if expand('%:e') != 'h' && search('^\(static\s\+\)\=\w\+[\t ]\+\**' .
+				\l:func_name . '[\t ]*(.*\(\n.*\)*)', 'b') > 0
 		:normal zt
 	else
 		if findfile(s:filename) == s:filename
