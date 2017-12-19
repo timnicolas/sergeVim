@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/12/14 22:07:23 by tnicolas          #+#    #+#              "
-"    Updated: 2017/12/18 11:46:57 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/12/18 15:21:07 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -27,7 +27,7 @@
 nmap <C-o> :silent! call TryOpenFileUnderCursorName()<CR>
 nmap <C-p> :silent! call TryOpenFileUnderCursorNameLast()<CR>
 "create a file to link function and files to have faster ctrlO
-command! SergeInitCtrlO silent! call SergeCreateCtrlOFile()
+command! SergeInitCtrlO call SergeCreateCtrlOFile()
 let g:last1 = 'no_file'
 let g:last1_pos = 'no_file'
 let g:last1_col = 'no_file'
@@ -130,9 +130,11 @@ function! SergeCreateCtrlOFile()
 	:normal ggdG
 	:silent! vimgrep /^\w\+[\t ]*\**\w\+(.*)\n/ **/*.c
 	while 1
-		exe ':silent! .w! >> ' . s:filename
+		let linecontent =  getline('.')
+"		exe ':.w! >> ' . s:filename
 		let func_filename = expand('%')
 		exe ':silent! b ' . s:filename
+		silent call append(line('$'), l:linecontent)
 		silent call append(line('$'), l:func_filename)
 		try
 			:cn
