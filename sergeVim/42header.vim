@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/11/26 11:55:07 by tnicolas          #+#    #+#              "
-"    Updated: 2017/12/19 23:57:01 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/12/20 17:45:28 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -31,18 +31,18 @@ nmap <F1> :call Create42Header()<CR>
 imap <F1> <esc>:call Create42Header()<CR>
 command! Header exe ':call Create42Header()'
 "update date if the file is modified
-if g:auto_update_42_header == 1
-	augroup headerUpdate
-		autocmd!
-		autocmd BufWriteCmd * if &modified && Create42Header_if_exist() == 1
-		autocmd BufWriteCmd *	call Create42Header_update()
-		autocmd BufWriteCmd *	:write
-		autocmd BufWriteCmd * elseif &modified
-		autocmd BufWriteCmd *	:write
-		autocmd BufWriteCmd * endif
-		autocmd BufWriteCmd * :doautoall BufWritePost
-	augroup END
-endif
+"if g:auto_update_42_header == 1
+"	augroup headerUpdate
+"		autocmd!
+"		autocmd BufWriteCmd * if &modified && Create42Header_if_exist() == 1
+"		autocmd BufWriteCmd *	call Create42Header_update()
+"		autocmd BufWriteCmd *	:write
+"		autocmd BufWriteCmd * elseif &modified
+"		autocmd BufWriteCmd *	:write
+"		autocmd BufWriteCmd * endif
+"		autocmd BufWriteCmd * :doautoall BufWritePost
+"	augroup END
+"endif
 
 "create a header if we need it
 function! Create42Header()
