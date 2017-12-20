@@ -168,6 +168,17 @@ function! TryOpenFileUnderCursorName()
 				endif
 				exe ':bd ' . s:filename
 				return
+			else
+				exe ':silent! vimgrep /^\(static\s\+\)\=\w\+[\t ]\+\**' . l:func_name .
+							\'[\t ]*(.*\(\n.*\)*)/ **/*.c'
+				if search('^\(static\s\+\)\=\w\+[\t ]\+\**' . l:func_name .
+							\'[\t ]*(.*\(\n.*\)*)', 'b') > 0
+					:normal zt
+				else
+					call LastPosMoveUp()
+					echo "no function under cursor"
+				endif
+				exe ':bd' . s:filename
 			endif
 			exe ':bd ' . s:filename
 			call SetCursorPlaceGoArg(g:last1, g:last1_pos, g:last1_col,
