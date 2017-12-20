@@ -67,10 +67,13 @@ let g:syntastic_c_include_dirs = [
 			\'lib/includes',
 			\'includes',
 			\'libft/includes/',
-			\'../libft/includes/'
-			\'../../includes'
-			\'../../libft/includes'
-			\'../../libft'
+			\'../libft/includes/',
+			\'../../includes',
+			\'../../libft/includes',
+			\'../../libft',
+			\'../../../includes',
+			\'../../../libft/includes',
+			\'../../../libft'
 			\]
 """""""""""""""""""""""""""""""""""""plugin"""""""""""""""""""""""""""""""""""""
 

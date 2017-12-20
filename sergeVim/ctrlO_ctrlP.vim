@@ -27,7 +27,7 @@
 nmap <C-o> :silent! call TryOpenFileUnderCursorName()<CR>
 nmap <C-p> :silent! call TryOpenFileUnderCursorNameLast()<CR>
 "create a file to link function and files to have faster ctrlO
-command! SergeInitCtrlO call SergeCreateCtrlOFile()
+command! SergeInitCtrlO silent! call SergeCreateCtrlOFile()
 let g:last1 = 'no_file'
 let g:last1_pos = 'no_file'
 let g:last1_col = 'no_file'
