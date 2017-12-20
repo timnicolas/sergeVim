@@ -5,6 +5,7 @@ pb color #ifndef XXX #define XXX (les 2 XXX pas de la meme couleur)
 C-o tres lent eszayer de commencer par chercher dans les fichiers ouvert
   peut etre cree un fichier qui met en lien les noms de fonctions et le fichier qui leur correspond
 desactiver le clic qui command V
+ctrlD sur les nombre a virgule 12.42 >> 12.-42
 
 MAJ:
 systeme pour commenter les //d1 //<d1>...
