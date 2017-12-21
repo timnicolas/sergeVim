@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/12/05 12:11:26 by tnicolas          #+#    #+#              "
-"    Updated: 2017/12/21 19:52:42 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/12/21 19:53:57 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -91,7 +91,7 @@ let g:alias1 = 'alias valg="valgrind --leak-check=full --track-origins=yes --sho
 
 let g:enable_alias2 = 1
 let g:alias2_name = 'gpush'
-let g:alias2 = "alias gpush='echo -n \"commit message : \" && read msg && git add -A && git commit -m \"$msg\" && git push origin `git branch | grep "*" | cut -c 3-`'"
+let g:alias2 = "alias gpush='echo -n \"commit message : \" && read msg && git add -A && git commit -m \"$msg\" && git push origin `git branch | grep \"*\" | cut -c 3-`'"
 
 let g:enable_alias3 = 1
 let g:alias3_name = 'bim'
