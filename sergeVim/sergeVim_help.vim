@@ -114,6 +114,8 @@
 
 """""""""""""""""""""""""""""""""""""info"""""""""""""""""""""""""""""""""""""""
 "comment
+" the auto indent of vim has been modified to keep comment in norm (and set
+"   multiple line comment in norm)
 "	ignore delete comment (<leader>nc) with ///
 "	delete all lines of comment (<leader>ndd) //dd
 
