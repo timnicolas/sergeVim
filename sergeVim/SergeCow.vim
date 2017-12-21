@@ -22,18 +22,9 @@
 "                                                                              "
 " **************************************************************************** "
 
-
-"	 _(__)_        V
-"	'-e e -'__,--.__)
-"	 (o_o)        ) 
-"	    \. /___.  |
-"	    ||| _)/_)/
-"	   //_(/_(/_(
-
-
-"	__________________________
-"	|comment here            |
-"	--------------------------
+"   ________________________
+"   |:sergeCow cow-mentaire|
+"   ------------------------
 "           __n__n__  /
 "    .------`-\00/-'/
 "   /  ##  ## (oo)
@@ -54,14 +45,14 @@ function! SergeAddCow(...)
 		let end = '*/'
 		let size_c = 2
 	elseif expand('%:e') == 'vim' || expand('%:t') == '.vimrc'
-		let begin = '"'
+		let begin = ''
 		let middle = '"'
-		let end = '"'
+		let end = ''
 		let size_c = 1
 	elseif expand('%:t') == '.emacs'
-		let begin = ';'
+		let begin = ''
 		let middle = ';'
-		let end = ';'
+		let end = ''
 		let size_c = 1
 	endif
 	echo a:0
@@ -78,8 +69,10 @@ function! SergeAddCow(...)
 	else
 		let line_txt = 'vous pouvez mettre un cow-mentaire ici'
 	endif
-		let size_line = strlen(l:line_txt)
-	silent! call append(line('.'), l:end)
+	let size_line = strlen(l:line_txt)
+	if l:end != ''
+		silent! call append(line('.'), l:end)
+	endif
 	silent! call append(line('.'), l:middle . repeat(' ', 5) . '|||' .
 				\repeat(' ', 3) . '|||')
 	silent! call append(line('.'), l:middle . repeat(' ', 5) . '|//YY \|/')
@@ -94,6 +87,8 @@ function! SergeAddCow(...)
 				\'|' . l:line_txt . '|')
 	silent! call append(line('.'), l:middle . repeat(' ', 3) .
 				\repeat('_', l:size_line) . '__')
-	silent! call append(line('.'), l:begin)
+	if l:begin != ''
+		silent! call append(line('.'), l:begin)
+	endif
 endfunction
 """""""""""""""""""""""""""""""""""""cow""""""""""""""""""""""""""""""""""""""""

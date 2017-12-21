@@ -33,6 +33,7 @@
 ":SergeUpdate		update sergeVim opt setting ignore setting file
 "						:SergeUpdate setting
 ":GitSergeUpdate	update git repository (ADMIN ONLY)
+":SergeCow <arg>	create a cow-mentaire
 
 "<F[x]> command:
 "<F3>				enable/disable relative number
