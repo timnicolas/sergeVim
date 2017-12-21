@@ -8,6 +8,7 @@ le header serge se refait si il exite deja
 ctrlO ferme un split si li trouve pas de corespondance dans le fichier file_func.vim
 vim super lent en save avec les auto updates de header (je les ait desative)
 macro avec des nb dedant (nb non colore)
+SergeCow centrer le texte sur la bulle
 
 MAJ:
 systeme pour commenter les //d1 //<d1>...
