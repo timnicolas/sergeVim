@@ -87,11 +87,14 @@ let g:_enable_color_all=1
 
 let g:enable_alias1 = 1
 let g:alias1_name = 'valg'
-let g:alias1 = 'alias valg="valgrind --leak-check=full --track-origins=yes --show-reachable=no"'
+let g:alias1 = 'alias valg="valgrind --leak-check=full --track-origins=yes
+			\ --show-reachable=no"'
 
 let g:enable_alias2 = 1
 let g:alias2_name = 'gpush'
-let g:alias2 = "alias gpush='echo -n \"commit message : \" && read msg && git add -A && git commit -m \"$msg\" && git push origin `git branch | grep \"*\" | cut -c 3-`'"
+let g:alias2 = "alias gpush='echo -n \"commit message : \" && read msg &&
+			\ git add -A && git commit -m \"$msg\" && git push origin
+			\ `git branch | grep \"*\" | cut -c 3-`'"
 
 let g:enable_alias3 = 1
 let g:alias3_name = 'bim'
@@ -146,12 +149,12 @@ let g:alias14_name = 'git_vim_update'
 let g:alias14 = "alias git_vim_update='vim +GitSergeUpdate +q'"
 
 let g:enable_alias15 = 0
-let g:alias15_name = ''
-let g:alias15 = ""
+let g:alias15_name = 'a'
+let g:alias15 = "alias a='&& ./a.out'"
 
 let g:enable_alias16 = 0
-let g:alias16_name = ''
-let g:alias16 = ""
+let g:alias16_name = 'g'
+let g:alias16 = "alias g='gcc -Wall -Wextra'"
 
 let g:enable_alias17 = 0
 let g:alias17_name = ''
