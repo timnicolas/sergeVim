@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/12/05 12:11:11 by tnicolas          #+#    #+#              "
-"    Updated: 2017/12/21 19:34:39 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/12/16 15:10:13 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -112,6 +112,14 @@ function! GitSergeUpdateFunction(...)
 		let l:i += 1
 	endwhile
 	exe ':!cd ' . g:pwdGitSergeVim . ' && ./update_git.sh && cd ' . l:lastPwd
+endfunction
+
+"auto indent whit norm comment
+nmap =G :call SergeIndentComment()<CR>
+function! SergeIndentComment()
+	:normal G=gg
+	:silent! % s/^ \*\+/\*\*/g
+	:silent! % s/^\*\*\+\//\*\//g
 endfunction
 """""""""""""""""""""""""""""""""""""basic function"""""""""""""""""""""""""""""
 
@@ -326,7 +334,6 @@ vmap <S-down> <down><down><down><down><down>
 
 """""""""""""""""""""""""""""""""""""Ugo""""""""""""""""""""""""""""""""""""""""
 command! Ugo echo 'pas normal'
-command! Equanime :normal gg=G
 command! Goinfre normal ggdG
 command! Cleanstars %s/*//g
 """""""""""""""""""""""""""""""""""""Ugo""""""""""""""""""""""""""""""""""""""""
