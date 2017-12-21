@@ -150,7 +150,7 @@ let g:alias14 = "alias git_vim_update='vim +GitSergeUpdate +q'"
 
 let g:enable_alias15 = 1
 let g:alias15_name = 'a'
-let g:alias15 = "alias a='&& ./a.out'"
+let g:alias15 = "alias -g a='&& ./a.out'"
 
 let g:enable_alias16 = 1
 let g:alias16_name = 'g'
