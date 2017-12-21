@@ -7,6 +7,7 @@ ctrlD sur les nombre a virgule 12.42 >> 12.-42
 le header serge se refait si il exite deja
 ctrlO ferme un split si li trouve pas de corespondance dans le fichier file_func.vim
 vim super lent en save avec les auto updates de header (je les ait desative)
+macro avec des nb dedant (nb non colore)
 
 MAJ:
 systeme pour commenter les //d1 //<d1>...
