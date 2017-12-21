@@ -24,9 +24,9 @@ ajouter un system pour init un tableau:
       tableau[17]
 systeme pour voir le prototype d'une fonction sous le curseur (fichier ctrlO)
 ouvrir ctrlO en split ou onglet (:vs <C-o> ???)
-ajouter les animaux de la ferme
 surligner la 26eme ligne d'une fonction
 la vache peut servir de header et indique entre autre e nom des fonctions du fichier
+syteme de replis auto (replier/deplier toute les fonctions, ...)
 
 save quand on perd le focus
 :au FocusLost * silent! wa
