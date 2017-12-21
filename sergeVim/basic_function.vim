@@ -120,6 +120,7 @@ function! SergeIndentComment()
 	:normal G=gg
 	:silent! % s/^ \*\+/\*\*/g
 	:silent! % s/^\*\*\+\//\*\//g
+	:normal gg
 endfunction
 """""""""""""""""""""""""""""""""""""basic function"""""""""""""""""""""""""""""
 
