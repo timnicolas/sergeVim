@@ -334,6 +334,7 @@ vmap <S-down> <down><down><down><down><down>
 
 """""""""""""""""""""""""""""""""""""Ugo""""""""""""""""""""""""""""""""""""""""
 command! Ugo echo 'pas normal'
+command! Equanime :normal gg=G
 command! Goinfre normal ggdG
 command! Cleanstars %s/*//g
 """""""""""""""""""""""""""""""""""""Ugo""""""""""""""""""""""""""""""""""""""""
