@@ -27,6 +27,7 @@ ouvrir ctrlO en split ou onglet (:vs <C-o> ???)
 surligner la 26eme ligne d'une fonction
 la vache peut servir de header et indique entre autre e nom des fonctions du fichier
 syteme de replis auto (replier/deplier toute les fonctions, ...)
+Paramètre d'update pour mettre a jour sans modifier les settings
 
 save quand on perd le focus
 :au FocusLost * silent! wa
