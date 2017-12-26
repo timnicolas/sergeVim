@@ -29,7 +29,7 @@ let g:mail42='marvin@42.fr'
 "enable 42header (<F1> or :Header)
 let g:enable_42_header=1
 "enable auto update in 42 header
-let g:auto_update_42_header=1
+let g:auto_update_42_header=0
 
 "min number of line around cursor
 let g:min_number_line_ar_cur = 4

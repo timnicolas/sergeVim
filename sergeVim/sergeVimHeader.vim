@@ -74,6 +74,9 @@ function! CreateSergeHeader_if_exist()
 				\\/\*\s\+|___\/\s\+\*\/\n\/\*\s\+\*\/\n\/\* \*\{74} \*\/\n',
 				\'c', line('0'))
 ") "this line is here to debug color in vim
+	if is_header > 0
+		let is_header = 1
+	endif
 	call SetCursorPlaceGo()
 	return is_header
 endfunction

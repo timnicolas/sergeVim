@@ -33,10 +33,14 @@
 "     |||   |||
 
 """""""""""""""""""""""""""""""""""""cow""""""""""""""""""""""""""""""""""""""""
+"create a cow-mentaire
 command! -nargs=* SergeCow call SergeAddCow(<f-args>)
-command! SergeCowHeader silent! call SergeCowAddHeader()
+"create a cow header
+nmap <leader><F2> :silent! call SergeCowAddHeader_line()<CR>
+command! SergeCowHeader silent! call SergeCowAddHeader_line()
 
-function! SergeCowAddHeader()
+function! SergeCowHeader_exist()
+	call SetCursorPlaceSave()
 	let begin = '#'
 	let middle = '#'
 	let end = '#'
@@ -57,22 +61,93 @@ function! SergeCowAddHeader()
 		let end = ''
 		let size_c = 1
 	endif
-	if l:end != ''
-		silent! call append(line('.'), l:end)
+	let is_header = search('\(' . l:begin . '\n\)*' .
+				\'\(' . l:middle . '\s\+_\{60}\n\)\+' .
+				\'\(' . l:middle . '\s\+|.*|\n\)*' .
+				\'\(' . l:middle . '\s\+|.*|\n\)\+' .
+				\'\(' . l:middle . '\s\+-\{60}\n\)\+' .
+				\'\(' . l:middle . '.*\n\)\{6}' .
+				\'\(' . l:end . '\n\)*', 'c', line('0'))
+	if is_header > 0
+		let is_header = 1
 	endif
-	silent! call append(line('.'), l:middle . repeat(' ', 5) . '|||' .
-				\repeat(' ', 3) . '|||')
-	silent! call append(line('.'), l:middle . repeat(' ', 5) . '|//YY \|/')
-	silent! call append(line('.'), l:middle . repeat(' ', 2) . '/ \## __   ./')
-	silent! call append(line('.'), l:middle . repeat(' ', 3) . '/  ##  ## (oo)')
-	silent! call append(line('.'), l:middle . repeat(' ', 4) .
-				\".------`-\\00/-'/")
-	silent! call append(line('.'), l:middle . repeat(' ', 11) . '__n__n__  /')
-	silent! call append(line('.'), l:middle . repeat(' ', 3) .
-				\repeat('-', 60))
+	call SetCursorPlaceGo()
+	return is_header
+endfunction
+
+function! SergeCowUpdateHeader()
+	call SetCursorPlaceSave()
+	let begin = '#'
+	let middle = '#'
+	let end = '#'
+	let size_c = 1
+	if expand('%:e') == 'c' || expand('%:e') == 'h' || expand('%:e') == 'cpp'
+		let begin = '/*'
+		let middle = '**'
+		let end = '*/'
+		let size_c = 2
+	elseif expand('%:e') == 'vim' || expand('%:t') == '.vimrc'
+		let begin = ''
+		let middle = '"'
+		let end = ''
+		let size_c = 1
+	elseif expand('%:t') == '.emacs'
+		let begin = ''
+		let middle = ';'
+		let end = ''
+		let size_c = 1
+	endif
+	if SergeCowHeader_exist() == 1
+		:normal gg
+		exe '/' . l:middle . '\s\+_\{60}'
+		let del_start = line('.') + 1
+		exe '/' . l:middle . '\s\+-\{60}'
+		let del_size = line('.') - l:del_start
+		exe ':' . l:del_start
+		exe ':normal! d' . l:del_size . 'dk'
+		call SergeCowAddHeader_center()
+	endif
+	call SetCursorPlaceGo()
+endfunction
+
+function! SergeCowAddHeader_line()
+	let isCowHeader = SergeCowHeader_exist()
+	if isCowHeader == 0
+		let is42Header = Create42Header_if_exist()
+		let isSergeHeader = CreateSergeHeader_if_exist()
+		let line = 12 * l:is42Header + 12 * l:isSergeHeader
+		if line == 0
+			let line = 1
+		endif
+		silent! call SergeCowAddHeader(l:line)
+	endif
+endfunction
+
+function! SergeCowAddHeader_center()
+	let begin = '#'
+	let middle = '#'
+	let end = '#'
+	let size_c = 1
+	if expand('%:e') == 'c' || expand('%:e') == 'h' || expand('%:e') == 'cpp'
+		let begin = '/*'
+		let middle = '**'
+		let end = '*/'
+		let size_c = 2
+	elseif expand('%:e') == 'vim' || expand('%:t') == '.vimrc'
+		let begin = ''
+		let middle = '"'
+		let end = ''
+		let size_c = 1
+	elseif expand('%:t') == '.emacs'
+		let begin = ''
+		let middle = ';'
+		let end = ''
+		let size_c = 1
+	endif
 	let line_act = line('.')
 	let line_name = line('.')
-	if expand('%:e') == 'c' &&  search('^\(static\s\+\)\=\w\+[\t ]*\**\w\+(.*\(\n.*\)*)\n', 'b') > 0
+	if expand('%:e') == 'c' &&  search('^\(static\s\+\)\=\w\+[\t ]*\**\w\+(.*
+				\\(\n.*\)*)\n', 'b') > 0
 		:silent! vimgrep /^\(static\s\+\)\=\w\+[\t ]*\**\w\+(.*\(\n.*\)*)\n/ %
 		let nb_func = 0
 		while 1
@@ -112,6 +187,45 @@ function! SergeCowAddHeader()
 	silent! call append(line('.'), l:middle . repeat(' ', 3) . '|' .
 				\repeat(' ', 1) . l:line_txt . repeat(' ', 57 -
 				\strlen(l:line_txt)) . '|')
+endfunction
+
+function! SergeCowAddHeader(line_start_header)
+	let begin = '#'
+	let middle = '#'
+	let end = '#'
+	let size_c = 1
+	if expand('%:e') == 'c' || expand('%:e') == 'h' || expand('%:e') == 'cpp'
+		let begin = '/*'
+		let middle = '**'
+		let end = '*/'
+		let size_c = 2
+	elseif expand('%:e') == 'vim' || expand('%:t') == '.vimrc'
+		let begin = ''
+		let middle = '"'
+		let end = ''
+		let size_c = 1
+	elseif expand('%:t') == '.emacs'
+		let begin = ''
+		let middle = ';'
+		let end = ''
+		let size_c = 1
+	endif
+	exe ':' . a:line_start_header
+	:normal O
+	if l:end != ''
+		silent! call append(line('.'), l:end)
+	endif
+	silent! call append(line('.'), l:middle . repeat(' ', 5) . '|||' .
+				\repeat(' ', 3) . '|||')
+	silent! call append(line('.'), l:middle . repeat(' ', 5) . '|//YY \|/')
+	silent! call append(line('.'), l:middle . repeat(' ', 2) . '/ \## __   ./')
+	silent! call append(line('.'), l:middle . repeat(' ', 3) . '/  ##  ## (oo)')
+	silent! call append(line('.'), l:middle . repeat(' ', 4) .
+				\".------`-\\00/-'/")
+	silent! call append(line('.'), l:middle . repeat(' ', 11) . '__n__n__  /')
+	silent! call append(line('.'), l:middle . repeat(' ', 3) .
+				\repeat('-', 60))
+	silent! call SergeCowAddHeader_center()
 	silent! call append(line('.'), l:middle . repeat(' ', 3) .
 				\repeat('_', 60))
 	if l:begin != ''

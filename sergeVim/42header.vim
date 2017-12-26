@@ -30,19 +30,28 @@ endif
 nmap <F1> :call Create42Header()<CR>
 imap <F1> <esc>:call Create42Header()<CR>
 command! Header exe ':call Create42Header()'
+"update header <leader><F1>
+nmap <leader><F1> :call Update42Header()<CR>
+command! SergeUpdateHeader call Update42Header()
 "update date if the file is modified
-"if g:auto_update_42_header == 1
-"	augroup headerUpdate
-"		autocmd!
-"		autocmd BufWriteCmd * if &modified && Create42Header_if_exist() == 1
-"		autocmd BufWriteCmd *	call Create42Header_update()
-"		autocmd BufWriteCmd *	:write
-"		autocmd BufWriteCmd * elseif &modified
-"		autocmd BufWriteCmd *	:write
-"		autocmd BufWriteCmd * endif
-"		autocmd BufWriteCmd * :doautoall BufWritePost
-"	augroup END
-"endif
+if g:auto_update_42_header == 1
+	augroup headerUpdate
+		autocmd!
+		autocmd BufWriteCmd * if &modified
+		autocmd BufWriteCmd *	silent! call Update42Header()
+		autocmd BufWriteCmd *	:write
+		autocmd BufWriteCmd * endif
+		autocmd BufWriteCmd * :doautoall BufWritePost
+	augroup END
+endif
+function! Update42Header()
+	if Create42Header_if_exist() == 1
+		call Create42Header_update()
+	endif
+	if SergeCowHeader_exist() == 1
+		silent! call SergeCowUpdateHeader()
+	endif
+endfunction
 
 "create a header if we need it
 function! Create42Header()

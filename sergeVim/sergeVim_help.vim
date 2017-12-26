@@ -47,6 +47,10 @@
 "<F2>				sergaVim header
 ":SergeHeader		create the sergeHeader
 ":EmptyHeader		create a empty header
+"<leader><F2>		create a cow header
+":SergeCowHeader	create a cow header
+"<leader><F1>		update header
+"SergeUpdateHeader	update header
 
 "abreviate:
 "mainn				create a main
