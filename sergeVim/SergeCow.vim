@@ -162,8 +162,8 @@ function! SergeCowAddHeader_center()
 			if l:nb_line > 25
 				let l:line_act += 1
 				silent! call append(line('.'), '**' . repeat(' ', 3) . '|' .
-							\repeat(' ', 9) . 'MEUUUU to many lines' .
-							\repeat(' ', 29) . '|')
+							\repeat(' ', 9) . 'MEUUUU too many lines' .
+							\repeat(' ', 28) . '|')
 			endif
 			silent! call append(line('.'), l:middle . repeat(' ', 3) . '|' .
 						\repeat(' ', 5) . l:func_name . '(' . l:nb_line	.
@@ -178,8 +178,8 @@ function! SergeCowAddHeader_center()
 		exe ':' . l:line_act
 		if nb_func > 5
 			silent! call append(line('.'), '**' . repeat(' ', 3) . '|' .
-						\repeat(' ', 1) . 'MEUUUU to many function' .
-						\repeat(' ', 34) . '|')
+						\repeat(' ', 1) . 'MEUUUU too many functions' .
+						\repeat(' ', 32) . '|')
 		endif
 	endif
 	exe ':' . l:line_name
