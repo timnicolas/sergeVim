@@ -24,8 +24,10 @@ Pour que SergeUpdate fonctionne il ne faut pas deplacer ou supprimer le git clon
 ## Parametre
 Vous pouvez parametrer votre sergeVim en modifiant les variables du fichier `~/.vim/sergeVim/param.vim` que vous pouvez ouvrir en faisant `,s` en mode normal ou `:SergeSetting`. Lorsque vous mettez sergeVim a jour vos parametres seront par defaut ecrasés.
 
-Pour garder vos parametres il faut utiliser l'option `setting` quand vous mettez a jour. /!\ Certaines mise a jour peuvent ajouter des parametres. si sergeVim ne fonctionne plus correctement après une mise a jour vous pouvez essayer de reinitialiser vos parametres (`:SergeUpdate` sans `setting`) 
+Pour garder vos parametres il faut utiliser l'option `setting` quand vous mettez a jour.
 >`:SergeUpdate setting`
+
+/!\ Certaines mise a jour peuvent ajouter des parametres. si sergeVim ne fonctionne plus correctement après une mise a jour vous pouvez essayer de reinitialiser vos parametres (`:SergeUpdate` sans `setting`) 
 
 ## Alias
 SergeVim dispose aujourd'hui d'alias (par defaut dans `~/.zshrc`). Vous pouvez, dans les parametres (`:SergeSetting`) choisir les alias a activer ou a desactiver. Vous pouvez aussi cree vos propres alias. Si vous mettez un alias en commentaire dans votre fichier d'alias (par defaut `~/.zshrc`) il ne sera pas mis a jour par SergeVim.
