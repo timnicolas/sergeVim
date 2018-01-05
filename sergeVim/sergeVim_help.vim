@@ -59,7 +59,7 @@
 
 "norm
 ":WW				check the norm in the file (only on 42 imac)
-":Norm				make norm in the file
+":SergeNorm			make norm in the file
 "<leader>nn			make norm in the file
 
 "Makefile

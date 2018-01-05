@@ -34,7 +34,7 @@ command! Ww !echo "--------------------------------------------------------"
 
 "	make norm in the file <leader>nn :Norm
 nmap <leader>nn :call NormFile()<CR>
-command! Norm exe ':call NormFile()'
+command! SergeNorm exe ':call NormFile()'
 function! NormFile()
 	call SetCursorPlaceSave()
 	let i = 0
