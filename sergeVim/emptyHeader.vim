@@ -23,8 +23,8 @@
 " **************************************************************************** "
 
 """""""""""""""""""""""""""""""""""""emptyHeader""""""""""""""""""""""""""""""""
-"create a empty header :EmptyHeader
-command! EmptyHeader exe ':call CreateEmptyHeader()'
+"create a empty header :SergeEmptyHeader
+command! SergeEmptyHeader exe ':call CreateEmptyHeader()'
 function! CreateEmptyHeader()
 	call SetCursorPlaceSave()
 	let line_before = line('.')

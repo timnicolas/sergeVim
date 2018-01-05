@@ -43,10 +43,10 @@
 
 "header
 "<F1>				42header
-":Header			create the 42header
+":Serge42Header		create the 42header
 "<F2>				sergaVim header
 ":SergeHeader		create the sergeHeader
-":EmptyHeader		create a empty header
+":SergeEmptyHeader	create a empty header
 "<leader><F2>		create a cow header
 ":SergeCowHeader	create a cow header
 "<leader><F1>		update header
@@ -84,6 +84,8 @@
 "<leader>;			put the ';' at the end of prototypes in .h files
 "<leader>ff			highlight function prototypes (not static function)
 "<leader>yff		copy all prototypes (not static) in buffer a ("ap to paste)
+
+"<C-s>				to quickly call a SergeFunction
 
 "comment
 "<leader>/			comment region (visual only)

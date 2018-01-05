@@ -122,6 +122,11 @@ function! SergeIndentComment()
 	:silent! % s/^\*\*\+\//\*\//g
 	:normal gg
 endfunction
+
+"call a SergeFunction <C-s>
+imap <C-s> <C-o>:Serge
+nmap <C-s> :Serge
+vmap <C-s> :Serge
 """""""""""""""""""""""""""""""""""""basic function"""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""function"""""""""""""""""""""""""""""""""""

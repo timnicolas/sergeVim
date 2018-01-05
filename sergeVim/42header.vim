@@ -26,10 +26,10 @@
 if g:enable_42_header == 0
 	finish
 endif
-"create 42 header <F1> or :Header
+"create 42 header <F1> or :Serge42Header
 nmap <F1> :call Create42Header()<CR>
 imap <F1> <esc>:call Create42Header()<CR>
-command! Header exe ':call Create42Header()'
+command! Serge42Header exe ':call Create42Header()'
 "update header <leader><F1>
 nmap <leader><F1> :call Update42Header()<CR>
 command! SergeUpdateHeader call Update42Header()
