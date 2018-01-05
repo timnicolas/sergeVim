@@ -124,9 +124,8 @@ function! SergeIndentComment()
 endfunction
 
 "call a SergeFunction <C-s>
-imap <C-s> <C-o>:Serge
-nmap <C-s> :Serge
-vmap <C-s> :Serge
+nmap <leader>z :Serge
+vmap <leader>z :Serge
 """""""""""""""""""""""""""""""""""""basic function"""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""function"""""""""""""""""""""""""""""""""""

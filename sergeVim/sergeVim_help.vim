@@ -85,7 +85,7 @@
 "<leader>ff			highlight function prototypes (not static function)
 "<leader>yff		copy all prototypes (not static) in buffer a ("ap to paste)
 
-"<C-s>				to quickly call a SergeFunction
+"<leader>z			to quickly call a SergeFunction
 
 "comment
 "<leader>/			comment region (visual only)
