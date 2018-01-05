@@ -94,7 +94,7 @@
 "<leader>dld		remove all lines with //dd
 "<leader>dl/		comment all lines with //dd
 "<leader>dl\		decomment all lines with //dd
-"<leader>*			 create multiline comment
+"<leader>*			create multiline comment
 
 "balise //<d[x]> //</d[x]>
 "<leader>d[x]d		remove between the 2 balise <d5> ... </d5>
@@ -104,6 +104,8 @@
 "tab/buffer
 ":SergeInitCtrlO	create a file where vim is open and set ctrlO faster
 "<C-o>				go to function declaration (name under cursor)
+":SergeCtrlO n [s]	search a function whith name n (search static and no static
+"						with arg static ex :SergeCtrlO ft_search static)
 "<C-p>				go to last <C-o>
 "<leader><tab>		move tab to the right
 "<leader><S-tab>	move tab to the left

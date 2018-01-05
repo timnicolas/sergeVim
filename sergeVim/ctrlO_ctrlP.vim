@@ -25,6 +25,7 @@
 """""""""""""""""""""""""""""""""""""variables""""""""""""""""""""""""""""""""""
 "open file under cursor <C-o> <C-p>
 nmap <C-o> :silent! call TryOpenFileUnderCursorName()<CR>
+command! -nargs=* SergeCtrlO silent! call TryOpenFileUnderCursorName_args(<f-args>)
 nmap <C-p> :silent! call TryOpenFileUnderCursorNameLast()<CR>
 "create a file to link function and files to have faster ctrlO
 command! SergeInitCtrlO silent! call SergeCreateCtrlOFile()
@@ -149,29 +150,43 @@ endfunction
 
 """""""""""""""""""""""""""""""""""""ctrlO""""""""""""""""""""""""""""""""""""""
 function! TryOpenFileUnderCursorName()
+	let func_name = expand('<cword>')
+	call TryOpenFileUnderCursorName_final(func_name, '')
+endfunction
+
+function! TryOpenFileUnderCursorName_args(...)
+	if a:0 == 1
+		call TryOpenFileUnderCursorName_final(a:1, '')
+	elseif a:1 == 'static'
+		call TryOpenFileUnderCursorName_final(a:2, '\(static\s\+\)\=')
+	elseif a:2 == 'static'
+		call TryOpenFileUnderCursorName_final(a:1, '\(static\s\+\)\=')
+	endif
+endfunction
+
+function! TryOpenFileUnderCursorName_final(func_name, static)
 	call LastPosMoveDown()
 	call SetCursorPlaceSaveArg('last1', 'last1_pos', 'last1_col', 'last1_top')
-	let func_name = expand('<cword>')
 	echo g:last1 . ' ' . g:last1_top
 	if expand('%:e') != 'h' && search('^\(static\s\+\)\=\w\+[\t ]\+\**' .
-				\l:func_name . '[\t ]*(.*\(\n.*\)*)', 'b') > 0
+				\a:func_name . '[\t ]*(.*\(\n.*\)*)', 'b') > 0
 		:normal zt
 	else
 		if findfile(s:filename) == s:filename
 			exe ':e ' . s:filename
-			if search('\w\+\s\+\**' . l:func_name . '\s*(.*\(\n.*\)*)', 'b') > 0
+			if search('\w\+\s\+\**' . a:func_name . '\s*(.*\(\n.*\)*)', 'b') > 0
 				:normal j
 				:normal gf
-				if search('^\(static\s\+\)\=\w\+[\t ]\+\**' . l:func_name .
+				if search('^\w\+[\t ]\+\**' . a:func_name .
 							\'[\t ]*(.*\(\n.*\)*)', 'b') > 0
 					:normal zt
 				endif
-"				exe ':bd ' . s:filename
+				exe ':bd ' . s:filename
 				return
 			else
-				exe ':silent! vimgrep /^\(static\s\+\)\=\w\+[\t ]\+\**' . l:func_name .
-							\'[\t ]*(.*\(\n.*\)*)/ **/*.c'
-				if search('^\(static\s\+\)\=\w\+[\t ]\+\**' . l:func_name .
+				exe ':silent! vimgrep /^' . a:static . '\w\+[\t ]\+\**' .
+							\a:func_name .  '[\t ]*(.*\(\n.*\)*)/ **/*.c'
+				if search('^' . a:static . '\w\+[\t ]\+\**' . a:func_name .
 							\'[\t ]*(.*\(\n.*\)*)', 'b') > 0
 					:normal zt
 				else
@@ -181,12 +196,14 @@ function! TryOpenFileUnderCursorName()
 "				exe ':bd' . s:filename
 			endif
 			exe ':bd ' . s:filename
-			call SetCursorPlaceGoArg(g:last1, g:last1_pos, g:last1_col,
-						\g:last1_top)
+			if g:last1 != 'no_file'
+				call SetCursorPlaceGoArg(g:last1, g:last1_pos, g:last1_col,
+							\g:last1_top)
+			endif
 		endif
-		exe ':silent! vimgrep /^\(static\s\+\)\=\w\+[\t ]\+\**' . l:func_name .
+		exe ':silent! vimgrep /^' . a:static . '\w\+[\t ]\+\**' . a:func_name .
 					\'[\t ]*(.*\(\n.*\)*)/ **/*.c'
-		if search('^\(static\s\+\)\=\w\+[\t ]\+\**' . l:func_name .
+		if search('^' . a:static . '\w\+[\t ]\+\**' . a:func_name .
 					\'[\t ]*(.*\(\n.*\)*)', 'b') > 0
 			:normal zt
 		else
