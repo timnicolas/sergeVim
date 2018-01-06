@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/12/21 00:47:59 by tnicolas          #+#    #+#              "
-"    Updated: 2017/12/21 00:47:59 by tnicolas         ###   ########.fr        "
+"    Updated: 2018/01/06 16:38:05 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -154,6 +154,9 @@ function! SergeCowAddHeader_center()
 			let nb_func += 1
 			:normal f(h
 			let func_name = expand('<cword>')
+			:silent! /^{
+			"}
+			:normal k
 			let nb_line = line('.')
 			:silent! /^}
 			let nb_line = line('.') - l:nb_line - 2
