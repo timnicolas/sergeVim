@@ -29,3 +29,8 @@ syteme de replis auto (replier/deplier toute les fonctions, ...)
 
 save quand on perd le focus
 :au FocusLost * silent! wa
+
+
+
+git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions && echo "source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh" >> ~/.zshrc
+git clone https://github.com/rupa/z ~/.vim/z && echo ". ~/.vim/z/z.sh" >> ~/.zshrc
