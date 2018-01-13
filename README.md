@@ -67,6 +67,8 @@ Par defaut la mise a jour automatique des header (42Header et CowHeader) est des
 SergeVim propose une commande pour inverser des signes (`<C-d>`). Disponible en mode normal ou insetion, elle permet de modifier le texte sous le curseur. Par exemple elle transphorme `>` en `<`, `int` en `unsigned int`, `if` en `else if`, `&&` en `||`, `SUCCESS` en `ERROR`, ...
 ### Fichier de test
 Lorsque vous voulez faire un fichier de test tappez `testt<tab>` en mode normal et ca vous crée un fichier de test.
+
+![Auto Update](https://github.com/tarama78/sergeVim/raw/master/img/testt.png)
 ### Point virgule auto
 Lorques vous êtes dans un fichier `.h` vous pouvez tapper `,;` et des `;` se mettrons automatiquement a la fin des prototypes de fonction qui n'en possede pas.
 
