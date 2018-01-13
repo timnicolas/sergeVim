@@ -40,6 +40,29 @@ Le fichier ou seront mis les alias peut être modifié dans les parametres (`:Se
 ## Aide
 Pour obtenir de l'aide tappez `,h` en mode normal ou `:SergeHelp` dans vim. Cela ouvrira un fichier d'aide dans un nouvel onglet avec tout les racourcis ajouté sur sergeVim.
 
+## Quelques commandes
+### Navigation de fichier
+SergeVim propose un systeme de navigation dans les fichiers. Pour l'utiliser vous devez soit executer la commande `vim_init_ctrO` ou `:SergeInitCtrlO`, soit ouvrir vos fichier depuis la racine du projet (`vim srcs/main.c`). Lorsque votre curseur est sur le nom d'une fonction tappez `<C-o>` et vim va chercher dans votre projet le fichier ou la fonction a été ecrite. pour retourner dans le fichier ou vous etiez avant tappez `<C-p>`.
+### Header
+#### 42Header
+SergeVim propose differents header.
+#### SergeVimHeader
+Le Header de 42 est disponible `<F1>` ou `:Serge42Header`.
+Il existe aussi un SergeVim header `<F2>` ou `:SergeHeader` /!\ ce header n'est pas a la norme pour les fichier C. Vous pouvez l'utiliser dans les Makefiles.
+#### CowHeader
+Vous pouvez utiliser le CowHeader `,<F2>` ou `:SergeCowHeader`. Ce header pour vos fichier `.c` indiques le nom de vos fonction et le nombre de lignes par fonctions (si il y as trop de fonction ou trop de lignes dans une fonction le CowHeader vous l'indique).
+#### Mise a jour auto
+Par defaut la mise a jour automatique des header (42Header et CowHeader) est desactive. vous pouvez les mettre a jour avec `,<F1>` ou `:SergeUpdateHeader`. Vous pouvez aussi activer la mise a jour auto en modifiant les parametres (voir `parametres`).
+### Invertion de signes
+SergeVim propose une commande pour inverser des signes (`<C-d>`). Disponible en mode normal ou insetion, elle permet de modifier le texte sous le curseur. Par exemple elle transphorme `>` en `<`, `int` en `unsigned int`, `if` en `else if`, `&&` en `||`, `SUCCESS` en `ERROR`, ...
+### Fichier de test
+Lorsque vous voulez faire un fichier de test tappez `testt<tab>` en mode normal et ca vous crée un fichier de test.
+### Point virgule auto
+Lorques vous êtes dans un fichier `.h` vous pouvez tapper `,;` et des `;` se mettrons automatiquement a la fin des prototypes de fonction qui n'en possede pas.
+
+## Coloration syntax
+SergeVim ameliore la coloration du texte notament en mettant les nom de fonctions en bleu, certains signes (`||`, `&&`, ...) en orange ...
+
 ## Des questions ?
 Si vous avez des questions, des idées d'amélioration ou si vous trouvez des bugs contactez moi `tnicolas@student.42.fr`
 Si vous etes a 42 vous pouvez me contacter sur slack: `tnicolas`
