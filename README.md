@@ -2,7 +2,7 @@
 SergeVim est une config vim faite pour 42 avec des outils pour mettre a la norme et un generateur de header.
 Pour utiliser le header en dehors de 42 il faut modifier les variables PATH USER et MAIL (export USER=name) ou modifier le nom et le mail dans les parametres (`:SergeSetting`).
 
-![SergeVim](http://raw.githubusercontent.com/tarama78/sergeVim/img/SergeVim.png)
+![Serge Vim](https://github.com/tarama78/sergeVim/raw/master/img/SergeVim.png)
 
 ## Installation
 SergeVim est très simple a installer:
