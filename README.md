@@ -16,7 +16,7 @@ Pour désinstaller et réinstaller sergeVim:
 >`./re_install.sh`
 
 ## Mise a jour
-SergeVim est sans cesse mis à jour. N'hésitez pas à le mettre à jour en enttrant la commande ci-dessous.
+SergeVim est sans cesse mis à jour. N'hésitez pas à le mettre à jour en entrant la commande ci-dessous.
 >`:SergeUpdate`
 
 Pour que SergeUpdate fonctionne, il ne faut ni déplacer ni supprimer le git clone.
@@ -29,10 +29,10 @@ Vous pouvez paramètrer votre sergeVim en modifiant les variables du fichier `~/
 Pour sauvegarder vos paramètres il faut utiliser l'option `setting` quand vous mettez à jour.
 >`:SergeUpdate setting`
 
-/!\ Certaines mises à jour peuvent ajouter des paramètres. Si sergeVim ne fonctionne plus correctement après une mise a jour, vous pouvez essayer de réinitialiser vos parametres (`:SergeUpdate` sans `setting`) 
+/!\ Certaines mises à jour peuvent ajouter des paramètres. Si sergeVim ne fonctionne plus correctement après une mise a jour, vous pouvez essayer de réinitialiser vos paramètres (`:SergeUpdate` sans `setting`) 
 
 ## Alias
-SergeVim dispose aujourd'hui d'alias (par défaut dans `~/.zshrc`). Vous pouvez, dans les paramètres (`:SergeSetting`) choisir les alias à activer ou à desactiver. Vous pouvez aussi créer vos propres alias. Si vous mettez un alias en commentaire dans votre fichier d'alias (par défaut `~/.zshrc`), il ne sera pas mis à jour par SergeVim.
+SergeVim dispose aujourd'hui d'alias (par défaut dans `~/.zshrc`). Vous pouvez, dans les paramètres (`:SergeSetting`) choisir les alias à activer ou à désactiver. Vous pouvez aussi créer vos propres alias. Si vous mettez un alias en commentaire dans votre fichier d'alias (par défaut `~/.zshrc`), il ne sera pas mis à jour par SergeVim.
 
 Les alias se mettent à jour automatiquement lorsque vous mettez à jour sergeVim (`:SergeUpdate [setting]`). Vous pouvez aussi les mettre à jour avec la commande ci-dessous.
 >`:SergeAlias`
@@ -45,7 +45,7 @@ Pour obtenir de l'aide tapez `,h` en mode normal ou `:SergeHelp` dans vim. Cela 
 
 ## Quelques commandes
 ### Navigation de fichier
-SergeVim propose un systeme de navigation dans les fichiers. Pour l'utiliser vous devez soit exécuter la commande `vim_init_ctrlO` ou la commande `:SergeInitCtrlO`, soit ouvrir vos fichiers depuis la racine du projet (`vim srcs/main.c`). Lorsque votre curseur est sur le nom d'une fonction tappez `<C-o>` et vim va chercher dans votre projet le fichier dans lequel la fonction a été écrite. Pour retourner dans le fichier dans lequel vous étiez avant, tapez `<C-p>`.
+SergeVim propose un système de navigation dans les fichiers. Pour l'utiliser vous devez soit exécuter la commande `vim_init_ctrlO` ou la commande `:SergeInitCtrlO`, soit ouvrir vos fichiers depuis la racine du projet (`vim srcs/main.c`). Lorsque votre curseur est sur le nom d'une fonction tapez `<C-o>` et vim va chercher dans votre projet le fichier dans lequel la fonction a été écrite. Pour retourner dans le fichier dans lequel vous étiez avant, tapez `<C-p>`.
 ### Header
 SergeVim propose différents header.
 #### 42Header
