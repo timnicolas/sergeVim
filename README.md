@@ -48,13 +48,21 @@ SergeVim propose un systeme de navigation dans les fichiers. Pour l'utiliser vou
 ### Header
 #### 42Header
 SergeVim propose differents header.
+
+![42 header](https://github.com/tarama78/sergeVim/raw/master/img/42Header.png)
 #### SergeVimHeader
 Le Header de 42 est disponible `<F1>` ou `:Serge42Header`.
 Il existe aussi un SergeVim header `<F2>` ou `:SergeHeader` /!\ ce header n'est pas a la norme pour les fichier C. Vous pouvez l'utiliser dans les Makefiles.
+
+![Serge Vim Header](https://github.com/tarama78/sergeVim/raw/master/img/SergeVimHeader.png)
 #### CowHeader
 Vous pouvez utiliser le CowHeader `,<F2>` ou `:SergeCowHeader`. Ce header pour vos fichier `.c` indiques le nom de vos fonction et le nombre de lignes par fonctions (si il y as trop de fonction ou trop de lignes dans une fonction le CowHeader vous l'indique).
+
+![Cow Header](https://github.com/tarama78/sergeVim/raw/master/img/CowHeader.png)
 #### Mise a jour auto
 Par defaut la mise a jour automatique des header (42Header et CowHeader) est desactive. vous pouvez les mettre a jour avec `,<F1>` ou `:SergeUpdateHeader`. Vous pouvez aussi activer la mise a jour auto en modifiant les parametres (voir `parametres`).
+
+![Auto Update](https://github.com/tarama78/sergeVim/raw/master/img/autoUpdate.png)
 ### Invertion de signes
 SergeVim propose une commande pour inverser des signes (`<C-d>`). Disponible en mode normal ou insetion, elle permet de modifier le texte sous le curseur. Par exemple elle transphorme `>` en `<`, `int` en `unsigned int`, `if` en `else if`, `&&` en `||`, `SUCCESS` en `ERROR`, ...
 ### Fichier de test
