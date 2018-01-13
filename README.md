@@ -58,7 +58,7 @@ Il existe aussi un SergeVim header `<F2>` ou `:SergeHeader` /!\ ce header n'est 
 #### CowHeader
 Vous pouvez utiliser le CowHeader `,<F2>` ou `:SergeCowHeader`. Ce header pour vos fichier `.c` indiques le nom de vos fonction et le nombre de lignes par fonctions (si il y as trop de fonction ou trop de lignes dans une fonction le CowHeader vous l'indique).
 
-![Cow Header](https://github.com/tarama78/sergeVim/raw/master/img/CowHeader.png)
+![Cow Header](https://github.com/tarama78/sergeVim/raw/master/img/SergeCowHeader.png)
 #### Mise a jour auto
 Par defaut la mise a jour automatique des header (42Header et CowHeader) est desactive. vous pouvez les mettre a jour avec `,<F1>` ou `:SergeUpdateHeader`. Vous pouvez aussi activer la mise a jour auto en modifiant les parametres (voir `parametres`).
 
