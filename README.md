@@ -41,6 +41,7 @@ Le fichier ou seront mis les alias peut être modifié dans les parametres (`:Se
 
 ## Aide
 Pour obtenir de l'aide tappez `,h` en mode normal ou `:SergeHelp` dans vim. Cela ouvrira un fichier d'aide dans un nouvel onglet avec tout les racourcis ajouté sur sergeVim.
+>`https://github.com/tarama78/sergeVim/blob/master/sergeVim/sergeVim_help.vim`
 
 ## Quelques commandes
 ### Navigation de fichier
