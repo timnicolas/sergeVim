@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/11/26 11:56:59 by tnicolas          #+#    #+#              "
-"    Updated: 2018/01/15 12:30:59 by tnicolas         ###   ########.fr        "
+"    Updated: 2018/01/15 18:56:37 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -27,7 +27,7 @@
 ab mainn int<tab><tab><tab>main(int ac, char **av)<CR>
 			\{<CR>
 			\<CR>
-			\return(0);<CR>
+			\return (0);<CR>
 			\}<esc>4=<up>2<down>i
 
 "test file with testt
