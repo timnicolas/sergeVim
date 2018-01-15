@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/11/26 11:56:59 by tnicolas          #+#    #+#              "
-"    Updated: 2017/11/26 12:37:27 by tnicolas         ###   ########.fr        "
+"    Updated: 2018/01/15 12:30:59 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -24,7 +24,7 @@
 
 """""""""""""""""""""""""""""""""""""abreviate""""""""""""""""""""""""""""""""""
 "main auto with mainn
-ab mainn int<tab><tab><tab><tab>main(int ac, char **av)<CR>
+ab mainn int<tab><tab><tab>main(int ac, char **av)<CR>
 			\{<CR>
 			\<CR>
 			\return(0);<CR>
@@ -39,7 +39,7 @@ ab testt //<d0><CR><left><left><del><del>
 			\#include <string.h><CR>
 			\#include <ctype.h><CR>
 			\<CR>
-			\int<tab><tab><tab><tab>main(int ac, char **av)<CR>
+			\int<tab><tab><tab>main(int ac, char **av)<CR>
 			\{<CR>
 			\int<tab><tab><tab>i;<CR>
 			\<CR>
