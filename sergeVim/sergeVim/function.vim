@@ -41,18 +41,18 @@ endfunction
 "imap <leader>; <C-o>:% s/)\n/);\r/g<CR>
 
 "highlight prototypes <leader>ff
-nmap <leader>ff /^\(static\s\+\)\=\(unsigned\s\+\)\=\(long\s\+\)\=\w\+[\t ]*\**\w\+(.*)\n<CR>
+nmap <leader>ff /^\(static\s\+\)\?\w\+[\t ]*\**\w\+(.*)\n<CR>
 
 "select prototypes <leader>yf[x]
-nmap <leader>yf1 /^\(unsigned\s\+\)\=\(long\s\+\)\=\w\+[\t ]*\**\w\+(.*)\n<CR>"ayyn:silent!
+nmap <leader>yf1 /^\w\+[\t ]*\**\w\+(.*)\n<CR>"ayyn:silent!
 			\/kjdhkjdhakfdf<CR>:echo "1 function yanked in buffer A"<CR>
-nmap <leader>yf2 /^\(unsigned\s\+\)\=\(long\s\+\)\=\w\+[\t ]*\**\w\+(.*)\n<CR>"ayyn"Ayyn":silent!
+nmap <leader>yf2 /^\w\+[\t ]*\**\w\+(.*)\n<CR>"ayyn"Ayyn":silent!
 			\/kjdhkjdhakfdf<CR>:echo "2 function yanked in buffer A"<CR>
-nmap <leader>yf3 /^\(unsigned\s\+\)\=\(long\s\+\)\=\w\+[\t ]*\**\w\+(.*)\n<CR>"ayyn"Ayyn"Ayyn:silent!
+nmap <leader>yf3 /^\w\+[\t ]*\**\w\+(.*)\n<CR>"ayyn"Ayyn"Ayyn:silent!
 			\/kjdhkjdhakfdf<CR>:echo "3 function yanked in buffer A"<CR>
-nmap <leader>yf4 /^\(unsigned\s\+\)\=\(long\s\+\)\=\w\+[\t ]*\**\w\+(.*)\n<CR>"ayyn"Ayyn"Ayyn"Ayyn:silent!
+nmap <leader>yf4 /^\w\+[\t ]*\**\w\+(.*)\n<CR>"ayyn"Ayyn"Ayyn"Ayyn:silent!
 			\/kjdhkjdhakfdf<CR>:echo "4 function yanked in buffer A"<CR>
-nmap <leader>yf5 /^\(unsigned\s\+\)\=\(long\s\+\)\=\w\+[\t ]*\**\w\+(.*)\n<CR>"ayyn"Ayyn"Ayyn"Ayyn"Ayy:silent!
+nmap <leader>yf5 /^\w\+[\t ]*\**\w\+(.*)\n<CR>"ayyn"Ayyn"Ayyn"Ayyn"Ayy:silent!
 			\/kjdhkjdhakfdf<CR>:echo "5 function yanked in buffer A"<CR>
 
 "select function <leader>fc[yYdD]
@@ -83,7 +83,7 @@ function! FunctionSelect()
 	endwhile
 	:1
 	:normal qaq
-	:silent! g/^\(unsigned\s\+\)\=\(long\s\+\)\=\w\+[\t ]*\**\w\+(.*)\n/y A
+	:silent! g/^\w\+[\t ]*\**\w\+(.*)\n/y A
 	:silent! /hsdkflhgslkdjghlsfhgdskg
 	call SetCursorPlaceGo()
 	:echo nb_func " func yanked in buffer A"@a

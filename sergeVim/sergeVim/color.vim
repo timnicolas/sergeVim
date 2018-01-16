@@ -67,9 +67,9 @@ augroup Syntax
 	autocmd BufEnter * 	syn match Color_function_prototype /\zs\w\+\ze(.*)\|
 				\\zs\w\+\ze(.*\n.*)/
 	autocmd BufEnter * 	hi Color_function_prototype ctermfg=Blue
-	autocmd BufEnter * 	syn match Color_define_name /[A-Z_][A-Z_0-9]\+/
+	autocmd BufEnter * 	syn match Color_define_name /[A-Z_][A-Z_]\+/
 	autocmd BufEnter * 	hi Color_define_name ctermfg=LightBlue
-	autocmd BufEnter * 	syn match Color_typedef /\(\w\)\@<!\zs[tseu]_\w\+\ze/
+	autocmd BufEnter * 	syn match Color_typedef /\(\w\)\@<!\zst_\w\+\ze/
 	autocmd BufEnter * 	hi Color_typedef ctermfg=LightGreen
 "	autocmd BufEnter * 	syn match Color_includes /<\(\.\.\/\)*\(\w*\/\)*\w\+\.*
 "				\\w*>/

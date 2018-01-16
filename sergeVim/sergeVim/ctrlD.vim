@@ -84,7 +84,7 @@ function! SergeInvertSign()
 		endif
 	elseif char_act =~# '\d'
 		let i = 0
-		while char_act =~# '\d' || char_act == '.'
+		while char_act =~# '\d'
 			let i += 1
 			:silent normal h
 			let char_act = matchstr(getline('.'), '\%' . col('.') . 'c.')
@@ -219,23 +219,11 @@ function! SergeInvertSign()
 	elseif char_act == '.'
 		:silent normal l
 		let char_act = matchstr(getline('.'), '\%' . col('.') . 'c.')
-		if char_act =~# '[a-zA-Z_]'
+		if char_act =~# '\w'
 			:normal h
 			:normal x
 			:normal i->
 			:normal h
-		elseif char_act =~# '\d'
-			:silent normal hh
-			let char_act = matchstr(getline('.'), '\%' . col('.') . 'c.')
-			if char_act =~# '\d'
-				call SergeInvertSign()
-				:normal l
-			else
-				:normal l
-				:normal x
-				:normal i->
-				:normal h
-			endif
 		else
 			:normal h
 		endif

@@ -129,7 +129,7 @@ function! SergeCreateCtrlOFile()
 	call SetCursorPlaceSaveArg('last_f', 'last_f_pos', 'last_f_col', 'last_f_top')
 	exe ':e ' . s:filename
 	:normal ggdG
-	:silent! vimgrep /^\(unsigned\s\+\)\=\(long\s\+\)\=\w\+[\t ]*\**\w\+(.*)\n/ **/*.c
+	:silent! vimgrep /^\w\+[\t ]*\**\w\+(.*)\n/ **/*.c
 	while 1
 		let linecontent =  getline('.')
 		let func_filename = expand('%')
@@ -168,25 +168,25 @@ function! TryOpenFileUnderCursorName_final(func_name, static)
 	call LastPosMoveDown()
 	call SetCursorPlaceSaveArg('last1', 'last1_pos', 'last1_col', 'last1_top')
 	echo g:last1 . ' ' . g:last1_top
-	if expand('%:e') != 'h' && search('^\(static\s\+\)\=\(unsigned\s\+\)\=\(long\s\+\)\=\w\+[\t ]\+\**' .
+	if expand('%:e') != 'h' && search('^\(static\s\+\)\=\w\+[\t ]\+\**' .
 				\a:func_name . '[\t ]*(.*\(\n.*\)*)', 'b') > 0
 		:normal zt
 	else
 		if findfile(s:filename) == s:filename
 			exe ':e ' . s:filename
-			if search('\(unsigned\s\+\)\=\(long\s\+\)\=\w\+\s\+\**' . a:func_name . '\s*(.*\(\n.*\)*)', 'b') > 0
+			if search('\w\+\s\+\**' . a:func_name . '\s*(.*\(\n.*\)*)', 'b') > 0
 				:normal j
 				:normal gf
-				if search('^\(unsigned\s\+\)\=\(long\s\+\)\=\w\+[\t ]\+\**' . a:func_name .
+				if search('^\w\+[\t ]\+\**' . a:func_name .
 							\'[\t ]*(.*\(\n.*\)*)', 'b') > 0
 					:normal zt
 				endif
 				exe ':bd ' . s:filename
 				return
 			else
-				exe ':silent! vimgrep /^' . a:static . '\(unsigned\s\+\)\=\(long\s\+\)\=\w\+[\t ]\+\**' .
+				exe ':silent! vimgrep /^' . a:static . '\w\+[\t ]\+\**' .
 							\a:func_name .  '[\t ]*(.*\(\n.*\)*)/ **/*.c'
-				if search('^' . a:static . '\(unsigned\s\+\)\=\(long\s\+\)\=\w\+[\t ]\+\**' . a:func_name .
+				if search('^' . a:static . '\w\+[\t ]\+\**' . a:func_name .
 							\'[\t ]*(.*\(\n.*\)*)', 'b') > 0
 					:normal zt
 				else
@@ -201,9 +201,9 @@ function! TryOpenFileUnderCursorName_final(func_name, static)
 							\g:last1_top)
 			endif
 		endif
-		exe ':silent! vimgrep /^' . a:static . '\(unsigned\s\+\)\=\(long\s\+\)\=\w\+[\t ]\+\**' . a:func_name .
+		exe ':silent! vimgrep /^' . a:static . '\w\+[\t ]\+\**' . a:func_name .
 					\'[\t ]*(.*\(\n.*\)*)/ **/*.c'
-		if search('^' . a:static . '\(unsigned\s\+\)\=\(long\s\+\)\=\w\+[\t ]\+\**' . a:func_name .
+		if search('^' . a:static . '\w\+[\t ]\+\**' . a:func_name .
 					\'[\t ]*(.*\(\n.*\)*)', 'b') > 0
 			:normal zt
 		else
