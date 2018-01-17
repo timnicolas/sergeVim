@@ -146,7 +146,7 @@ function! SergeCowAddHeader_center()
 	endif
 	let line_act = line('.')
 	let line_name = line('.')
-	if expand('%:e') == 'c' &&  search('^\(static\s\+\)\=\w\+[\t ]*\**\w\+(.*
+	if expand('%:e') == 'c' &&  search('^\(static\s\+\)\=\(unsigned\s\+\)\=\(long\s\+\)\=\w\+[\t ]*\**\w\+(.*
 				\\(\n.*\)*)\n', 'b') > 0
 		:silent! vimgrep /^\(static\s\+\)\=\(unsigned\s\+\)\=\(long\s\+\)\=\w\+[\t ]*\**\w\+(.*\(\n.*\)*)\n/ %
 		let nb_func = 0
