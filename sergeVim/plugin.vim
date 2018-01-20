@@ -96,7 +96,7 @@ endif
 "	:Push to push
 "	:SergeGit to open git in the first tab
 if g:_enableVimagit == 1
-	command! Push !Git push origin `git branch | grep "*" | cut -c 3-`
+	command! Push !git push origin `git branch | grep "*" | cut -c 3-`
 endif
 command! SergeGit call SergeOpenMagit()
 function! SergeOpenMagit()
@@ -107,4 +107,19 @@ function! SergeOpenMagit()
 		:normal gt
 	endif
 endfunction
+
+if g:_enablesyntastic == 1
+	set statusline+=%#warningmsg#
+	set statusline+=%{SyntasticStatuslineFlag()}
+	set statusline+=%*
+
+	let g:syntastic_always_populate_loc_list = 1
+	let g:syntastic_check_on_open = 1
+	let g:syntastic_check_on_wq = 0
+
+	"height of error windows
+	let g:syntastic_loc_list_height = 5
+	"no highlight text
+	let g:syntastic_enable_highlighting = 0
+endif
 """""""""""""""""""""""""""""""""""""plugin"""""""""""""""""""""""""""""""""""""

@@ -61,6 +61,9 @@ let g:_enablegitgutter=1
 "	vimagit use git in vim
 let g:_enableVimagit=1
 
+"syntastic error windows (0 off, 1 open/close auto, 2 close auto)
+let g:syntastic_auto_loc_list = 1
+
 "taille de la fenetre nerdtree
 let g:NERDTreeWinSize=27
 "pour supprimer les erreurs syntastic preciser tout les dossiers a header
