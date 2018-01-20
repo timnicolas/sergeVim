@@ -33,6 +33,6 @@ save quand on perd le focus
 
 sergesh
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions && echo "source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh" >> ~/.zshrc
-git clone https://github.com/rupa/z ~/.vim/z && echo ". ~/.vim/z/z.sh" >> ~/.zshrc
+git clone https://github.com/rupa/z ~/z && echo ". ~/z/z.sh" >> ~/.zshrc
 
 rm -rf ~/.zsh/zsh-autosuggestions
