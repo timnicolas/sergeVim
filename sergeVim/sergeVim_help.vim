@@ -118,6 +118,18 @@
 "<S-left>			fast move of 5 char left
 "<S-up>				fast move of 5 char up
 "<S-down>			fast move of 5 char down
+
+
+"plugin vimagit
+"	:Magit			to open vimagit in split
+"	:MagitOnly		to open vimagit
+"	R				to reload vimagit
+"	<C-n>			go to next change
+"	S				to add or remove change to commit
+"	CC				to set commit message
+"	CC				to commit
+"	:SergeGit		to open vimagit in new tab (the first tab)
+"	:Push			to push
 """""""""""""""""""""""""""""""""""""shortcut"""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""info"""""""""""""""""""""""""""""""""""""""

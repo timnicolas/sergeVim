@@ -58,13 +58,14 @@ if g:_enablesyntastic == 1
 	Plugin 'vim-syntastic/syntastic'
 endif
 
-"pour avoir des info sur le prog (variable, import...)
-"Plugin 'majutsushi/tagbar'
+"git modif
+if g:_enablegitgutter == 1
+	Plugin 'airblade/vim-gitgutter'
+endif
 
-"pour ouvrir un terminal ds un buffer vim
-"if g:_enableconque == 1
-"	Plugin 'wkentaro/conque.vim'
-"endif
+if g:_enableVimagit == 1
+	Plugin 'jreybert/vimagit'
+endif
 
 call vundle#end()
 
@@ -84,11 +85,26 @@ if g:_enableNERDTree == 1
 	endfunction
 endif
 
-"	Conque
-"		open zsh <leader>z
-"if g:_enableconque == 1
-"	nmap <leader>z :ConqueTerm zsh<CR><up><down>
-	"		open bash <leader>b
-"	nmap <leader>b :ConqueTerm bash<CR><up><down>
-"endif
+"vimagit
+"	:Magit || :MagitOnly to open vimagit
+"	R to reload
+"	<C-n> go to next change
+"	S to add or remove change to commit
+"	CC to set commit message
+"	CC to commit
+"
+"	:Push to push
+"	:SergeGit to open git in the first tab
+if g:_enableVimagit == 1
+	command! Push !Git push origin `git branch | grep "*" | cut -c 3-`
+endif
+command! SergeGit call SergeOpenMagit()
+function! SergeOpenMagit()
+	if g:_enableVimagit == 1
+		:tabnew
+		:MagitOnly
+		:tabm 0
+		:normal gt
+	endif
+endfunction
 """""""""""""""""""""""""""""""""""""plugin"""""""""""""""""""""""""""""""""""""

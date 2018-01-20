@@ -56,6 +56,10 @@ let g:_enablelightline=1
 let g:_enablecolorizer=1
 "	syntastic (correction code)
 let g:_enablesyntastic=1
+"	git-gutter view added and deleted lines in git
+let g:_enablegitgutter=1
+"	vimagit use git in vim
+let g:_enableVimagit=1
 
 "taille de la fenetre nerdtree
 let g:NERDTreeWinSize=27
@@ -91,22 +95,19 @@ let g:_enable_color_all=1
 
 let g:enable_alias1 = 1
 let g:alias1_name = 'valg'
-let g:alias1 = 'alias valg="valgrind --leak-check=full --track-origins=yes
-			\ --show-reachable=no"'
+let g:alias1 = 'alias valg="valgrind --leak-check=full --track-origins=yes --show-reachable=no"'
 
 let g:enable_alias2 = 1
 let g:alias2_name = 'gpush'
-let g:alias2 = "alias gpush='echo -n \"commit message : \" && read msg &&
-			\ git add -A && git commit -m \"$msg\" && git push origin
-			\ `git branch | grep \"*\" | cut -c 3-`'"
+let g:alias2 = "alias gpush='echo -n \"commit message : \" && read msg && git add -A && git commit -m \"$msg\" && git push origin `git branch | grep \"*\" | cut -c 3-`'"
 
 let g:enable_alias3 = 1
 let g:alias3_name = 'bim'
-let g:alias3 = 'alias bim="vim +Line"'
+let g:alias3 = 'alias bim="vim +Line `git config --get remote.origin.url | sed "s/..*/+SergeGit/"`"'
 
 let g:enable_alias4 = 1
 let g:alias4_name = 'vimrc'
-let g:alias4 = 'alias vimrc="vim +12 +Line ~/.vimrc ~/.vim/sergevim/*"'
+let g:alias4 = 'alias vimrc="vim +Line ~/.vimrc ~/.vim/sergevim/*"'
 
 let g:enable_alias5 = 1
 let g:alias5_name = 'serge'
@@ -160,9 +161,9 @@ let g:enable_alias16 = 1
 let g:alias16_name = 'g'
 let g:alias16 = "alias g='gcc -Wall -Wextra'"
 
-let g:enable_alias17 = 0
-let g:alias17_name = ''
-let g:alias17 = ""
+let g:enable_alias17 = 1
+let g:alias17_name = 'zshrc'
+let g:alias17 = "alias zshrc='vim +Line ~/.zshrc'"
 
 let g:enable_alias18 = 0
 let g:alias18_name = ''

@@ -88,23 +88,16 @@ function! SergeUpdateAlias()
 			call SergeUpdateAliasName(g:alias20_name, g:alias20)
 		endif
 		:w
-"		:bd
+"		exe ':bd ' . g:alias_file
 	endif
 endfunction
 function! SergeUpdateAliasName(name, text)
-	if search('^alias.\+' . a:name . '\s*=.*', 'b') > 0
-		exe ':%g/alias.\+' . a:name . '\s*=.*/d'
-		:normal k
+	if search('^alias.\+' . a:name . '\s*=.*', 'c') > 1
+		:normal dd
 	elseif search('#\+alias.\+' . a:name . '\s*=.*', 'b') > 0
 		return
-	else
-		:normal G
 	endif
-	:normal o
-	while col('.') > 1
-		:normal X
-	endwhile
-	:normal x
-	exe ':normal i' . a:text
+	:normal G
+	exe ':normal o' . a:text
 endfunction
 """""""""""""""""""""""""""""""""""""alias""""""""""""""""""""""""""""""""""""""
