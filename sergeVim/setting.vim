@@ -84,7 +84,11 @@ let g:syntastic_c_include_dirs = [
 			\'minilibx',
 			\'../minilibx',
 			\'../../minilibx',
-			\'../../../minilibx'
+			\'../../../minilibx',
+			\'minilibx_macos',
+			\'../minilibx_macos',
+			\'../../minilibx_macos',
+			\'../../../minilibx_macos'
 			\]
 """""""""""""""""""""""""""""""""""""plugin"""""""""""""""""""""""""""""""""""""
 
