@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/12/08 23:32:11 by tnicolas          #+#    #+#              "
-"    Updated: 2018/01/24 12:21:59 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/12/14 21:56:31 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -60,14 +60,20 @@ augroup Syntax
 "	autocmd BufEnter * hi Color_bigFunction ctermbg=DarkGrey
 "	autocmd BufEnter * syn match Color_bigFunction /^{\(\(^}\)\@!.*\n\)\{26}.*/
 "	autocmd BufEnter * syn match Color_bigFunction /^{\(\(^}\)\<@!.*\n\)\{26}\zs.*\ze/
-	autocmd BufEnter * 	hi ExtraWhitespace ctermbg=red guibg=red
+	autocmd BufEnter * 	highlight ExtraWhitespace ctermbg=red guibg=red
 	autocmd BufEnter *	match ExtraWhitespace /\s\+$/
-	autocmd BufEnter * 	syn match Color_function_prototype /\zs\w\+\ze(\(.*\n\)*.*)/
+"	autocmd BufEnter *	syn match Color_hashtag /# *\w\+/
+"	autocmd BufEnter * 	hi Color_hashtag ctermfg=red
+	autocmd BufEnter * 	syn match Color_function_prototype /\zs\w\+\ze(.*)\|
+				\\zs\w\+\ze(.*\n.*)/
 	autocmd BufEnter * 	hi Color_function_prototype ctermfg=Blue
-	autocmd BufEnter * 	syn match Color_define_name /[A-Z_][A-Z_0-9]\+/
+	autocmd BufEnter * 	syn match Color_define_name /[A-Z_][A-Z_]\+/
 	autocmd BufEnter * 	hi Color_define_name ctermfg=LightBlue
-	autocmd BufEnter * 	syn match Color_typedef /\(\w\)\@<!\zs[tseu]_\w\+\ze\|\zs\w\+_t\ze/
+	autocmd BufEnter * 	syn match Color_typedef /\(\w\)\@<!\zst_\w\+\ze/
 	autocmd BufEnter * 	hi Color_typedef ctermfg=LightGreen
+"	autocmd BufEnter * 	syn match Color_includes /<\(\.\.\/\)*\(\w*\/\)*\w\+\.*
+"				\\w*>/
+"	autocmd BufEnter * 	hi Color_includes ctermfg=Magenta
 	autocmd BufEnter * 	syn match Color_operator /&\||\|\w\zs\*\+\ze\|\zs\*\+
 				\\ze\w\|\zs\*\+\ze)\|(\zs\*\+\ze\|\zs\*\+\ze(/
 	" ) )
@@ -78,4 +84,5 @@ augroup Syntax
 	autocmd BufEnter * 	hi Float ctermfg=DarkGreen
 	autocmd BufEnter * endif
 augroup END
+"hi Color_function_prototype guifg=Blue ctermfg=Blue term=bold
 """""""""""""""""""""""""""""""""""""function"""""""""""""""""""""""""""""""""""
