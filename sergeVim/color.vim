@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/12/08 23:32:11 by tnicolas          #+#    #+#              "
-"    Updated: 2018/01/24 12:21:59 by tnicolas         ###   ########.fr        "
+"    Updated: 2018/01/24 12:37:01 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -66,7 +66,7 @@ augroup Syntax
 	autocmd BufEnter * 	hi Color_function_prototype ctermfg=Blue
 	autocmd BufEnter * 	syn match Color_define_name /[A-Z_][A-Z_0-9]\+/
 	autocmd BufEnter * 	hi Color_define_name ctermfg=LightBlue
-	autocmd BufEnter * 	syn match Color_typedef /\(\w\)\@<!\zs[tseu]_\w\+\ze\|\zs\w\+_t\ze/
+	autocmd BufEnter * 	syn match Color_typedef /\(\w\)\@<!\zs[tseu]_\w\+\ze\|\zs\w\+_t\ze\(\w\)\@!/
 	autocmd BufEnter * 	hi Color_typedef ctermfg=LightGreen
 	autocmd BufEnter * 	syn match Color_operator /&\||\|\w\zs\*\+\ze\|\zs\*\+
 				\\ze\w\|\zs\*\+\ze)\|(\zs\*\+\ze\|\zs\*\+\ze(/
