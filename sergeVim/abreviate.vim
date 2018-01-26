@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/11/26 11:56:59 by tnicolas          #+#    #+#              "
-"    Updated: 2018/01/15 18:56:37 by tnicolas         ###   ########.fr        "
+"    Updated: 2018/01/26 18:00:00 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -31,8 +31,7 @@ ab mainn int<tab><tab><tab>main(int ac, char **av)<CR>
 			\}<esc>4=<up>2<down>i
 
 "test file with testt
-ab testt //<d0><CR><left><left><del><del>
-			\#include <stdio.h><CR>
+ab testt #include <stdio.h><CR>
 			\#include <stdlib.h><CR>
 			\#include <unistd.h><CR>
 			\#include <limits.h><CR>
@@ -41,15 +40,14 @@ ab testt //<d0><CR><left><left><del><del>
 			\<CR>
 			\int<tab><tab><tab>main(int ac, char **av)<CR>
 			\{<CR>
-			\int<tab><tab><tab>i;<CR>
+			\int<tab><tab>i;<CR>
 			\<CR>
 			\(void)ac;<CR>
 			\(void)av;<CR>
 			\(void)i;<CR>
 			\<CR>
 			\<tab>return (0);<CR>
-			\}<CR>
-			\//</d0><esc>18=<up>15<down>i
+			\}<esc>16=<up>14<down>i
 
 "{{
 imap {{ {<CR>}<up><CR>
