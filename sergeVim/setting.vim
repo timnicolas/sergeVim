@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/12/05 12:11:26 by tnicolas          #+#    #+#              "
-"    Updated: 2018/01/24 11:12:35 by tnicolas         ###   ########.fr        "
+"    Updated: 2018/01/29 17:12:16 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -112,7 +112,7 @@ let g:alias2 = "alias gpush='echo -n \"commit message : \" && read msg && git ad
 
 let g:enable_alias3 = 1
 let g:alias3_name = 'bim'
-let g:alias3 = 'alias bim="vim +Line `git config --get remote.origin.url | sed "s/..*/+SergeGit/"`"'
+let g:alias3 = 'alias bim="vim +Line +Diff"'
 
 let g:enable_alias4 = 1
 let g:alias4_name = 'vimrc'

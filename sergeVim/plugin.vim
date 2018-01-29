@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/11/26 11:58:30 by tnicolas          #+#    #+#              "
-"    Updated: 2017/12/09 23:55:52 by tnicolas         ###   ########.fr        "
+"    Updated: 2018/01/29 17:14:54 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -58,11 +58,12 @@ if g:_enablesyntastic == 1
 	Plugin 'vim-syntastic/syntastic'
 endif
 
-"git modif
-if g:_enablegitgutter == 1
+"git diff
+if g:_enablegitgutter == 1 
 	Plugin 'airblade/vim-gitgutter'
 endif
 
+"gestion de git dans vim
 if g:_enableVimagit == 1
 	Plugin 'jreybert/vimagit'
 endif
@@ -84,6 +85,10 @@ if g:_enableNERDTree == 1
 		endif
 	endfunction
 endif
+
+"	GitGutter
+nmap <F5> :GitGutterToggle<CR>
+command! Diff :GitGutterEnable
 
 "vimagit
 "	:Magit || :MagitOnly to open vimagit
