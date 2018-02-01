@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/11/26 11:55:07 by tnicolas          #+#    #+#              "
-"    Updated: 2017/11/27 13:28:30 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/12/20 17:45:28 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -26,16 +26,32 @@
 if g:enable_42_header == 0
 	finish
 endif
-"create 42 header <F1> or :Header
+"create 42 header <F1> or :Serge42Header
 nmap <F1> :call Create42Header()<CR>
 imap <F1> <esc>:call Create42Header()<CR>
-command Header exe ':call Create42Header()'
+command! Serge42Header exe ':call Create42Header()'
+"update header <leader><F1>
+nmap <leader><F1> :call Update42Header()<CR>
+command! SergeUpdateHeader call Update42Header()
 "update date if the file is modified
-autocmd BufWriteCmd * if &modified && Create42Header_if_exist() == 1
-autocmd BufWriteCmd *	call Create42Header_update()
-autocmd BufWriteCmd *	:write
-autocmd BufWriteCmd * elseif &modified
-autocmd BufWriteCmd *	:write
+if g:auto_update_42_header == 1
+	augroup headerUpdate
+		autocmd!
+		autocmd BufWriteCmd * if &modified
+		autocmd BufWriteCmd *	silent! call Update42Header()
+		autocmd BufWriteCmd *	:write
+		autocmd BufWriteCmd * endif
+		autocmd BufWriteCmd * :doautoall BufWritePost
+	augroup END
+endif
+function! Update42Header()
+	if Create42Header_if_exist() == 1
+		call Create42Header_update()
+	endif
+	if SergeCowHeader_exist() == 1
+		silent! call SergeCowUpdateHeader()
+	endif
+endfunction
 
 "create a header if we need it
 function! Create42Header()
@@ -49,9 +65,7 @@ endfunction
 
 "check if the header exist
 function! Create42Header_if_exist()
-	let first_line_visible = line('w0') + g:min_number_line_ar_cur
-	let line_before = line('.')
-	let col_before = col('.')
+	call SetCursorPlaceSave()
 	let begin = '# '
 	let end = ' #'
 	let size_c = 1
@@ -95,18 +109,12 @@ function! Create42Header_if_exist()
 			echo 'header not a the top of the file'
 		endif
 	endif
-	exe ':' . first_line_visible
-	:normal zt
-	exe ':' . line_before
-	exe ':normal ' . col_before . '|'
+	call SetCursorPlaceGo()
 	return is_header
 endfunction
 
 "create a header
 function! Create42Header_create()
-	let first_line_visible = line('w0') + g:min_number_line_ar_cur
-	let line_before = line('.')
-	let col_before = col('.')
 	let user = $USER
 	let mail = $MAIL
 	let begin = '# '
@@ -169,18 +177,11 @@ function! Create42Header_create()
 	exe ':11 s/^/' . l:begin . repeat(' ', size_c - 1) .
 				\repeat('*', 78 - 2 * size_c) . repeat(' ', size_c - 1) .
 				\l:end . '\r\r'
-	let line_before += 12
-	exe ':' . first_line_visible
-	:normal zt
-	exe ':' . line_before
-	exe ':normal ' . col_before . '|'
 endfunction
 
 "update date in header
 function! Create42Header_update()
-	let first_line_visible = line('w0') + g:min_number_line_ar_cur
-	let line_before = line('.')
-	let col_before = col('.')
+	call SetCursorPlaceSave()
 	let user = $USER
 	if user == '' || user == 'tim'
 		let user = g:username42
@@ -189,9 +190,6 @@ function! Create42Header_update()
 	let time_act = strftime('%Y\/%m\/%d %H:%M:%S')
 	exe ':9 s/\d\d\d\d\/\d\d\/\d\d \d\d:\d\d:\d\d/' . time_act
 	exe ':9 s/by \zs\w\+\s\+\ze/' . l:user . repeat(' ', 17 - strlen(l:user))
-	exe ':' . first_line_visible
-	:normal zt
-	exe ':' . line_before
-	exe ':normal ' . col_before . '|'
+	call SetCursorPlaceGo()
 endfunction
 """""""""""""""""""""""""""""""""""""42header"""""""""""""""""""""""""""""""""""

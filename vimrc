@@ -63,13 +63,26 @@
 """""""""""""""""""""""""""""""""""""Source"""""""""""""""""""""""""""""""""""""
 let mapleader = ","
 let g:help_vim_file='~/.vim/sergeVim/sergeVim_help.vim'
-source ~/.vim/sergeVim/param.vim
+let g:setting_vim_file='~/.vim/sergeVim/setting.vim'
+"if has("mouse_sgr")
+"	set ttymouse=sgr
+"else
+"	set ttymouse=xterm2
+"endif
+source ~/.vim/sergePwd.vim
+source ~/.vim/sergeVim/setting.vim
 source ~/.vim/sergeVim/basic_function.vim
 source ~/.vim/sergeVim/plugin.vim
 source ~/.vim/sergeVim/abreviate.vim
 source ~/.vim/sergeVim/function.vim
+source ~/.vim/sergeVim/comment.vim
 source ~/.vim/sergeVim/42header.vim
 source ~/.vim/sergeVim/emptyHeader.vim
 source ~/.vim/sergeVim/sergeVimHeader.vim
 source ~/.vim/sergeVim/norm.vim
+source ~/.vim/sergeVim/ctrlD.vim
+source ~/.vim/sergeVim/ctrlO_ctrlP.vim
+source ~/.vim/sergeVim/color.vim
+source ~/.vim/sergeVim/alias.vim
+source ~/.vim/sergeVim/SergeCow.vim
 """""""""""""""""""""""""""""""""""""Source"""""""""""""""""""""""""""""""""""""

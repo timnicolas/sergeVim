@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/11/26 22:43:54 by tnicolas          #+#    #+#              "
-"    Updated: 2017/11/27 11:22:17 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/12/09 18:47:45 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -23,12 +23,11 @@
 " **************************************************************************** "
 
 """""""""""""""""""""""""""""""""""""emptyHeader""""""""""""""""""""""""""""""""
-"create a empty header :EmptyHeader
-command EmptyHeader exe ':call CreateEmptyHeader()'
+"create a empty header :SergeEmptyHeader
+command! SergeEmptyHeader exe ':call CreateEmptyHeader()'
 function! CreateEmptyHeader()
-	let first_line_visible = line('w0') + g:min_number_line_ar_cur
+	call SetCursorPlaceSave()
 	let line_before = line('.')
-	let col_before = col('.')
 	let user = $USER
 	let mail = $MAIL
 	let begin = '# '
@@ -89,10 +88,6 @@ function! CreateEmptyHeader()
 	exe ':' . l:line_s . 's/^/' . l:begin . repeat(' ', size_c - 1) .
 				\repeat('*', 78 - 2 * size_c) . repeat(' ', size_c - 1) .
 				\l:end . '\r'
-	let line_before += 11
-	exe ':' . first_line_visible
-	:normal zt
-	exe ':' . line_before
-	exe ':normal ' . col_before . '|'
+	call SetCursorPlaceGo()
 endfunction
 """""""""""""""""""""""""""""""""""""emptyHeader""""""""""""""""""""""""""""""""

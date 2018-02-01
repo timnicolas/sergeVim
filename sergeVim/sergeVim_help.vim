@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/11/26 12:07:06 by tnicolas          #+#    #+#              "
-"    Updated: 2017/11/27 14:59:15 by tnicolas         ###   ########.fr        "
+"    Updated: 2018/01/29 17:11:15 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -25,18 +25,33 @@
 """""""""""""""""""""""""""""""""""""shortcut"""""""""""""""""""""""""""""""""""
 "leader key:		,
 
+"<leader>h			open help
+":SergeHelp			open help
+"<leader>s			open setting
+":SergeSetting		open setting
+":SergeAlias		update alias
+":SergeUpdate		update sergeVim opt setting ignore setting file
+"						:SergeUpdate setting
+":GitSergeUpdate	update git repository (ADMIN ONLY)
+":SergeCow <arg>	create a cow-mentaire
+
 "<F[x]> command:
 "<F3>				enable/disable relative number
 "<F4>				show actual line
-"<F5>				create session (mksession)
-"<leader><F5>		create session (mksession) and quit
+"<F5>				show git diff
+"<F7>				create session (mksession)
+"<leader><F7>		create session (mksession) and quit
 
 "header
 "<F1>				42header
-":Header			create the 42header
+":Serge42Header		create the 42header
 "<F2>				sergaVim header
 ":SergeHeader		create the sergeHeader
-":EmptyHeader		create a empty header
+":SergeEmptyHeader	create a empty header
+"<leader><F2>		create a cow header
+":SergeCowHeader	create a cow header
+"<leader><F1>		update header
+"SergeUpdateHeader	update header
 
 "abreviate:
 "mainn				create a main
@@ -45,50 +60,83 @@
 
 "norm
 ":WW				check the norm in the file (only on 42 imac)
-":Norm				make norm in the file
-"nn					make norm in the file
+":SergeNorm			make norm in the file
+"<leader>nn			make norm in the file
 
-"<leader> + ... (ex: [normal mode] ',h' open the help)
-"h					open help
-"<tab>				move tab to the right
-"<S-tab>			move tab to the left
+"Makefile
+"<F6>				make exec
+"<leader><F6>		make reexec
+":Make				make
+":MakeEx			make exec
+":MakeRe			make re
+":MakeCl			make clean
+":MakeFc			make fclean
+":MakeNo			make norm
 
-"v					reload vimrc
-"g					open/close file navigator
-"z					open zsh in the current buffer
-"b					open bash in the current buffer
-"mm					disable mouse
-"ma					enable mouse
-"y					copy from vim
-"p					paste in vim
 
-";					put the ';' at the end of prototypes in .h files
-"ff					highlight function prototypes (not static function)
-"yff				copy all prototypes (not static) in buffer a ("ap to paste)
-"/					comment region (visual only)
-"\					uncomment region (visual only)
-"d/d				remove comment (not with ///)
-"dld				remove all lines with //dd
-"d[x]d				remove between the 2 balise <d5> ... </d5>
-"<[x]				create block //<d[x]> (visual mode only)
-" ---- </[x]				comment block //<d[x]>
-" ---- <\[x]				decomment block //<d[x]>
-"[([{'"*]			create block (ex (test)) (visual mode only exept for '{')
-"						* create multiline comment
+"<C-d>				invert sign (+ -, * /, ...)
+"<leader>v			reload vimrc
+"<leader>g			open/close file navigator
+"<leader>mm			disable mouse
+"<leader>ma			enable mouse
+"<leader>y			copy from vim
+"<leader>p			paste in vim
 
-"<C-w><right>		move to buffer right
-"<C-w><left>		move to buffer left
-"<C-w><up>			move to buffer up
-"<C-w><down>		move to buffer down
+"<leader>;			put the ';' at the end of prototypes in .h files
+"<leader>ff			highlight function prototypes (not static function)
+"<leader>yff		copy all prototypes (not static) in buffer a ("ap to paste)
+
+"<leader>z			to quickly call a SergeFunction
+
+"comment
+"<leader>/			comment region (visual only)
+"<leader>\			uncomment region (visual only)
+"<leader>d/d		remove comment (not with ///)
+"<leader>dld		remove all lines with //dd
+"<leader>dl/		comment all lines with //dd
+"<leader>dl\		decomment all lines with //dd
+"<leader>*			create multiline comment
+
+"balise //<d[x]> //</d[x]>
+"<leader>d[x]d		remove between the 2 balise <d5> ... </d5>
+"<leader><[x]		create block //<d[x]> (visual mode only)
+"<leader>[([{'"*]	create block (ex (test)) (visual mode only exept for '{')
+
+"tab/buffer
+":SergeInitCtrlO	create a file where vim is open and set ctrlO faster
+"<C-o>				go to function declaration (name under cursor)
+":SergeCtrlO n [s]	search a function whith name n (search static and no static
+"						with arg static ex :SergeCtrlO ft_search static)
+"<C-p>				go to last <C-o>
+"<leader><tab>		move tab to the right
+"<leader><S-tab>	move tab to the left
+"<C-l>				move to buffer right
+"<C-h>				move to buffer left
+"<C-k>				move to buffer up
+"<C-j>				move to buffer down
 
 "<S-right>			fast move of 5 char right
 "<S-left>			fast move of 5 char left
 "<S-up>				fast move of 5 char up
 "<S-down>			fast move of 5 char down
+
+
+"plugin vimagit
+"	:Magit			to open vimagit in split
+"	:MagitOnly		to open vimagit
+"	R				to reload vimagit
+"	<C-n>			go to next change
+"	S				to add or remove change to commit
+"	CC				to set commit message
+"	CC				to commit
+"	:SergeGit		to open vimagit in new tab (the first tab)
+"	:Push			to push
 """""""""""""""""""""""""""""""""""""shortcut"""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""info"""""""""""""""""""""""""""""""""""""""
 "comment
+" the auto indent of vim has been modified to keep comment in norm (and set
+"   multiple line comment in norm)
 "	ignore delete comment (<leader>nc) with ///
 "	delete all lines of comment (<leader>ndd) //dd
 

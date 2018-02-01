@@ -6,7 +6,7 @@
 #    By: tnicolas <tnicolas@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/26 15:20:39 by tnicolas          #+#    #+#              #
-#    Updated: 2017/11/26 18:37:04 by tnicolas         ###   ########.fr        #
+#    Updated: 2017/12/15 14:20:14 by tnicolas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ echo "\x1b[33m"
 cat sergeHeader
 echo "\x1b[0m"
 echo "update vim config"
-git pull
+git pull origin master
 mkdir -p ~/.vim_backup
 cp -r ~/.vim/sergeVim ~/.vim_backup
 cp ~/.vimrc ~/.vim_backup/vimrc
@@ -35,9 +35,15 @@ cp vimrc ~/.vimrc
 mkdir -p ~/.vim
 mkdir -p ~/.vim/sergeVim
 if [[ $# -eq 1 && "$1" == "--param" ]]; then
-	cp -r sergeVim ~/.vim
+	cp -r `find sergeVim \( -iname "*" -a -not -iname "*setting*" \) | grep "/"` ~/.vim/sergeVim
 else
-	cp -r `find sergeVim \( -iname "*" -a -not -iname "*param*" \) | grep "/"` ~/.vim/sergeVim
+	cp -r sergeVim ~/.vim
 fi
+<<<<<<< HEAD
 vim 'source ~/.vimrc' '+PluginInstall' '+q' '+q'
 exec zsh
+=======
+touch ~/.vim/sergePwd.vim
+echo "let g:pwdGitSergeVim='"`pwd`"'" > ~/.vim/sergePwd.vim
+vim 'source ~/.vimrc' '+PluginInstall' '+q' '+SergeAlias' '+q'
+>>>>>>> 03b78534a8559b4fa97e241ab81bdd5b9ac7d543

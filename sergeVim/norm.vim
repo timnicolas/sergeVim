@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/11/26 11:57:46 by tnicolas          #+#    #+#              "
-"    Updated: 2017/11/26 12:56:04 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/12/08 23:25:22 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -25,17 +25,18 @@
 """""""""""""""""""""""""""""""""""""norm"""""""""""""""""""""""""""""""""""""""
 "norm
 "	norm in the file :WW
-command WW !echo "--------------------------------------------------------"
+command! WW !echo "--------------------------------------------------------"
 			\&& norminette % &&
 			\echo "--------------------------------------------------------"<CR>
-command Ww !echo "--------------------------------------------------------"
+command! Ww !echo "--------------------------------------------------------"
 			\&& norminette % &&
 			\echo "--------------------------------------------------------"<CR>
 
 "	make norm in the file <leader>nn :Norm
 nmap <leader>nn :call NormFile()<CR>
-command Norm exe ':call NormFile()'
+command! SergeNorm exe ':call NormFile()'
 function! NormFile()
+	call SetCursorPlaceSave()
 	let i = 0
 	let max = 15
 	:normal gg=G
@@ -100,5 +101,6 @@ function! NormFile()
 		:silent! 12, $ s/^\n^\n/\r/g
 	endwhile
 	:normal gg=G
+	call SetCursorPlaceGo()
 endfunction
 """""""""""""""""""""""""""""""""""""norm"""""""""""""""""""""""""""""""""""""""

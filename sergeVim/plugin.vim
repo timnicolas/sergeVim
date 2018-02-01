@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/11/26 11:58:30 by tnicolas          #+#    #+#              "
-"    Updated: 2017/11/26 15:33:29 by tnicolas         ###   ########.fr        "
+"    Updated: 2018/02/01 15:47:29 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -28,7 +28,7 @@
 "	:source ~/.vimrc
 "	:PluginInstall
 ":plugin to install plugin
-command Plugin call Plugin_install_()
+command! Plugin call Plugin_install_()
 function! PLugin_install_()
 	:source ~/.vimrc
 	:PluginInstall
@@ -58,21 +58,15 @@ if g:_enablesyntastic == 1
 	Plugin 'vim-syntastic/syntastic'
 endif
 
-"pour avoir des info sur le prog (variable, import...)
-"Plugin 'majutsushi/tagbar'
-
-"pour ouvrir un terminal ds un buffer vim
-if g:_enableconque == 1
-	Plugin 'wkentaro/conque.vim'
+"git diff
+if g:_enablegitgutter == 1 
+	Plugin 'airblade/vim-gitgutter'
 endif
 
-"autocompletion
-"Plugin 'Valloric/YouCompleteMe'
-"Plugin 'marcweber/vim-addon-mw-utils'
-"Plugin 'tomtom/tlib_vim'
-"Plugin 'garbas/vim-snipmate'
-"Plugin 'honza/vim-snippets'
-"Plugin 'othree/vim-autocomplpop'
+"gestion de git dans vim
+if g:_enableVimagit == 1
+	Plugin 'jreybert/vimagit'
+endif
 
 call vundle#end()
 
@@ -92,11 +86,45 @@ if g:_enableNERDTree == 1
 	endfunction
 endif
 
-"	Conque
-"		open zsh <leader>z
-if g:_enableconque == 1
-	nmap <leader>z :ConqueTerm zsh<CR><up><down>
-	"		open bash <leader>b
-	nmap <leader>b :ConqueTerm bash<CR><up><down>
+"	GitGutter
+nmap <F5> :GitGutterToggle<CR>
+command! Diff :GitGutterEnable
+
+"vimagit
+"	:Magit || :MagitOnly to open vimagit
+"	R to reload
+"	<C-n> go to next change
+"	S to add or remove change to commit
+"	CC to set commit message
+"	CC to commit
+"
+"	:Push to push
+"	:SergeGit to open git in the first tab
+if g:_enableVimagit == 1
+	command! Push !git push origin `git branch | grep "*" | cut -c 3-`
+endif
+command! SergeGit call SergeOpenMagit()
+function! SergeOpenMagit()
+	if g:_enableVimagit == 1
+		:tabnew
+		:MagitOnly
+		:tabm 0
+		:normal gt
+	endif
+endfunction
+
+if g:_enablesyntastic == 1
+	set statusline+=%#warningmsg#
+	set statusline+=%{SyntasticStatuslineFlag()}
+	set statusline+=%*
+
+	let g:syntastic_always_populate_loc_list = 1
+	let g:syntastic_check_on_open = 1
+	let g:syntastic_check_on_wq = 0
+
+	"height of error windows
+	let g:syntastic_loc_list_height = 5
+	"no highlight text
+	let g:syntastic_enable_highlighting = 0
 endif
 """""""""""""""""""""""""""""""""""""plugin"""""""""""""""""""""""""""""""""""""
