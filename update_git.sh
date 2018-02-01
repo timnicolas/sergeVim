@@ -33,13 +33,9 @@ cp -r sergeVim ~/.vim_backup
 cp vimrc ~/.vimrc_backup
 cp ~/.vimrc vimrc
 if [[ $# -eq 1 && "$1" == "--param" ]]; then
-	cp -r `find ~/.vim/sergeVim \( -iname "*" -a -not -iname "*setting*" \) | grep "sergeVim/"` sergeVim
+	cp -r `find ~/.vim/sergeVim \( -iname "*" -a -not -iname "*setting*" \) | grep "sergeVim/"` .
 else
-<<<<<<< HEAD
-	cp -r `find ~/.vim/sergeVim \( -iname "*" -a -not -iname "*param*" \) | grep "sergeVim/"` .
-=======
 	cp -r ~/.vim/sergeVim .
->>>>>>> 03b78534a8559b4fa97e241ab81bdd5b9ac7d543
 fi
 git add -A
 git commit -m "update git repository"
