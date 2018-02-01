@@ -40,3 +40,4 @@ else
 	cp -r `find sergeVim \( -iname "*" -a -not -iname "*param*" \) | grep "/"` ~/.vim/sergeVim
 fi
 vim 'source ~/.vimrc' '+PluginInstall' '+q' '+q'
+exec zsh
