@@ -39,11 +39,7 @@ if [[ $# -eq 1 && "$1" == "--param" ]]; then
 else
 	cp -r sergeVim ~/.vim
 fi
-<<<<<<< HEAD
-vim 'source ~/.vimrc' '+PluginInstall' '+q' '+q'
-exec zsh
-=======
 touch ~/.vim/sergePwd.vim
 echo "let g:pwdGitSergeVim='"`pwd`"'" > ~/.vim/sergePwd.vim
 vim 'source ~/.vimrc' '+PluginInstall' '+q' '+SergeAlias' '+q'
->>>>>>> 03b78534a8559b4fa97e241ab81bdd5b9ac7d543
+exec zsh
