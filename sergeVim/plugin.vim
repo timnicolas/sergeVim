@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/11/26 11:58:30 by tnicolas          #+#    #+#              "
-"    Updated: 2018/02/01 15:45:46 by tnicolas         ###   ########.fr        "
+"    Updated: 2018/02/01 15:47:29 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -67,9 +67,6 @@ endif
 if g:_enableVimagit == 1
 	Plugin 'jreybert/vimagit'
 endif
-
-"gestion des buffers
-Plugin 'ctrlpvim/ctrlp.vim'
 
 call vundle#end()
 
