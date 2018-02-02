@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/11/26 12:07:06 by tnicolas          #+#    #+#              "
-"    Updated: 2018/02/02 14:30:26 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/12/16 15:11:54 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -38,9 +38,8 @@
 "<F[x]> command:
 "<F3>				enable/disable relative number
 "<F4>				show actual line
-"<F5>				show git diff
-"<F7>				create session (mksession)
-"<leader><F7>		create session (mksession) and quit
+"<F5>				create session (mksession)
+"<leader><F5>		create session (mksession) and quit
 
 "header
 "<F1>				42header
@@ -81,7 +80,6 @@
 "<leader>ma			enable mouse
 "<leader>y			copy from vim
 "<leader>p			paste in vim
-"<leader>b			show text in binary mode
 
 "<leader>;			put the ';' at the end of prototypes in .h files
 "<leader>ff			highlight function prototypes (not static function)
@@ -120,18 +118,6 @@
 "<S-left>			fast move of 5 char left
 "<S-up>				fast move of 5 char up
 "<S-down>			fast move of 5 char down
-
-
-"plugin vimagit
-"	:Magit			to open vimagit in split
-"	:MagitOnly		to open vimagit
-"	R				to reload vimagit
-"	<C-n>			go to next change
-"	S				to add or remove change to commit
-"	CC				to set commit message
-"	CC				to commit
-"	:SergeGit		to open vimagit in new tab (the first tab)
-"	:Push			to push
 """""""""""""""""""""""""""""""""""""shortcut"""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""info"""""""""""""""""""""""""""""""""""""""

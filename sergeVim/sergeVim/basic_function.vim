@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/12/05 12:11:11 by tnicolas          #+#    #+#              "
-"    Updated: 2018/02/02 14:29:47 by tnicolas         ###   ########.fr        "
+"    Updated: 2017/12/16 15:10:13 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -126,8 +126,6 @@ endfunction
 "call a SergeFunction <C-s>
 nmap <leader>z :Serge
 vmap <leader>z :Serge
-"binary mode
-nmap <leader>b :%!xxd<CR>
 """""""""""""""""""""""""""""""""""""basic function"""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""function"""""""""""""""""""""""""""""""""""
@@ -225,10 +223,10 @@ nmap <leader>c :!cat %<CR>
 
 """""""""""""""""""""""""""""""""""""save/quit""""""""""""""""""""""""""""""""""
 "save and quit option
-"create session <F7>
-nmap <F7> :wa<CR>:mksession!<CR>
-"create session and quit <leader><F7>
-nmap <leader><F7> :wa<CR>:mksession!<CR>:wqa<CR>
+"create session <F5>
+nmap <F5> :wa<CR>:mksession!<CR>
+"create session and quit <leader><F5>
+nmap <leader><F5> :wa<CR>:mksession!<CR>:wqa<CR>
 "easy save
 command! W w
 command! Q q
