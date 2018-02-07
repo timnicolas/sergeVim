@@ -42,4 +42,3 @@ fi
 touch ~/.vim/sergePwd.vim
 echo "let g:pwdGitSergeVim='"`pwd`"'" > ~/.vim/sergePwd.vim
 vim 'source ~/.vimrc' '+PluginInstall' '+q' '+SergeAlias' '+q'
-exec zsh
