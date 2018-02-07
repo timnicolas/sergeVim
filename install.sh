@@ -37,4 +37,3 @@ git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 touch ~/.vim/sergePwd.vim
 echo "let g:pwdGitSergeVim='"`pwd`"'" > ~/.vim/sergePwd.vim
 vim 'source ~/.vimrc' '+PluginInstall' '+q' '+SergeAlias' '+q'
-exec zsh
