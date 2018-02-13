@@ -6,7 +6,7 @@
 "    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2017/12/05 12:11:26 by tnicolas          #+#    #+#              "
-"    Updated: 2018/01/30 11:34:43 by tnicolas         ###   ########.fr        "
+"    Updated: 2018/02/09 17:48:04 by tnicolas         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -70,6 +70,14 @@ let g:NERDTreeWinSize=27
 let g:syntastic_c_include_dirs = [
 			\'../includes',
 			\'includes',
+			\'commun/includes',
+			\'../commun/includes',
+			\'../../commun/includes',
+			\'../../../commun/includes',
+			\'commun',
+			\'../commun',
+			\'../../commun',
+			\'../../../commun',
 			\'*/includes',
 			\'*/*includes',
 			\'../lib/includes',
@@ -82,6 +90,14 @@ let g:syntastic_c_include_dirs = [
 			\'../../libft',
 			\'../../../includes',
 			\'../../../libft/includes',
+			\'../../../libft',
+			\'libft/lib/includes/',
+			\'../libft/lib/includes/',
+			\'../../includes',
+			\'../../libft/lib/includes',
+			\'../../libft',
+			\'../../../includes',
+			\'../../../libft/lib/includes',
 			\'../../../libft',
 			\'minilibx',
 			\'../minilibx',
