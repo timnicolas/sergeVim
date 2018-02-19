@@ -56,6 +56,7 @@ endif
 "correction des erreurs de code
 if g:_enablesyntastic == 1
 	Plugin 'vim-syntastic/syntastic'
+	Plugin 'myint/syntastic-extras'
 endif
 
 "git diff
@@ -126,5 +127,11 @@ if g:_enablesyntastic == 1
 	let g:syntastic_loc_list_height = 5
 	"no highlight text
 	let g:syntastic_enable_highlighting = 0
+
+	"syntastic extra
+	let g:syntastic_c_checkers = ['check']
+	let g:syntastic_cpp_checkers = ['check']
+	let g:syntastic_make_checkers = ['gnumake']
+	let g:syntastic_python_checkers = ['pyflakes_with_warnings']
 endif
 """""""""""""""""""""""""""""""""""""plugin"""""""""""""""""""""""""""""""""""""
