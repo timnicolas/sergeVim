@@ -69,9 +69,6 @@ if g:_enableVimagit == 1
 	Plugin 'jreybert/vimagit'
 endif
 
-
-Plugin 'vimwiki/vimwiki'
-
 call vundle#end()
 
 "	nerdtree
