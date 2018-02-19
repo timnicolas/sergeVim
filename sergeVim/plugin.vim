@@ -69,11 +69,8 @@ if g:_enableVimagit == 1
 	Plugin 'jreybert/vimagit'
 endif
 
-"python shell
-if g:_enableVim_ipython == 1
-	Plugin 'ivanov/vim-ipython'
-endif
 
+Plugin 'vimwiki/vimwiki'
 
 call vundle#end()
 

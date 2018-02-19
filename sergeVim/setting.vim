@@ -60,8 +60,6 @@ let g:_enablesyntastic=1
 let g:_enablegitgutter=1
 "	vimagit use git in vim
 let g:_enableVimagit=1
-"	vim-ipython
-let g:_enableVim_ipython=1
 
 "syntastic error windows (0 off, 1 open/close auto, 2 close auto)
 let g:syntastic_auto_loc_list = 1
