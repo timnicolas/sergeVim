@@ -32,6 +32,7 @@
 ":SergeAlias		update alias
 ":SergeUpdate		update sergeVim opt setting ignore setting file
 "						:SergeUpdate setting
+"SergeReload		reload sergeVim (update/install plugin and update alias)
 ":GitSergeUpdate	update git repository (ADMIN ONLY)
 ":SergeCow <arg>	create a cow-mentaire
 

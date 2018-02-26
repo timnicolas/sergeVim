@@ -78,6 +78,8 @@ command! SergeHelp exe "tabnew " . g:help_vim_file
 nmap <leader>s :exe "tabnew " . g:setting_vim_file<CR>
 command! SergeSetting exe "tabnew " . g:setting_vim_file
 "update SergeVim :SergeUpdate [--param to save your param]
+command! SergeReload !vim 'source ~/.vimrc' '+PluginInstall' '+q' '+SergeAlias' '+q'
+"update SergeVim :SergeUpdate [--param to save your param]
 command! -nargs=* SergeUpdate call SergeUpdateFunction(<f-args>)
 function! SergeUpdateFunction(...)
 	let l:i = 1

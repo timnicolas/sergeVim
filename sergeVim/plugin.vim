@@ -70,7 +70,10 @@ if g:_enableVimagit == 1
 endif
 
 "indentation python
-Plugin 'Vimjas/vim-python-pep8-indent'
+if g:_enablePythonIndent == 1
+	Plugin 'indentpython.vim'
+"	Plugin 'Vimjas/vim-python-pep8-indent'
+endif
 
 call vundle#end()
 
