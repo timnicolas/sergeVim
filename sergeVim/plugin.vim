@@ -69,6 +69,9 @@ if g:_enableVimagit == 1
 	Plugin 'jreybert/vimagit'
 endif
 
+"indentation python
+Plugin 'Vimjas/vim-python-pep8-indent'
+
 call vundle#end()
 
 "	nerdtree
