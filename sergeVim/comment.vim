@@ -32,7 +32,7 @@ function! SergeCommentRegion() range
 		let comment = '\/\/'
 	elseif expand('%:e') == 'vim' || expand('%:t') == '.vimrc'
 		let comment = '"'
-	elseif expand('%:t') == '.emacs'
+	elseif expand('%:t') == '.emacs' || expand('%:e') == 'lisp'
 		let comment = ';'
 	endif
 	exe ':silent!' . a:firstline . ',' . a:lastline . 's/^\(\s*' .
@@ -49,7 +49,7 @@ function! SergeDecommentRegion() range
 		let comment = '\/\/'
 	elseif expand('%:e') == 'vim' || expand('%:t') == '.vimrc'
 		let comment = '"'
-	elseif expand('%:t') == '.emacs'
+	elseif expand('%:t') == '.emacs' || expand('%:e') == 'lisp'
 		let comment = ';'
 	endif
 	exe ':silent!' . a:firstline . ',' . a:lastline . 's/^' . l:comment . '//g'
