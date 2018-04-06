@@ -90,7 +90,7 @@ augroup Syntax
 	autocmd BufEnter * 	syn match Color_function_prototype /\zs\w\+\ze(\(.*\n\)*.*)/
 	autocmd BufEnter * 	hi Color_function_prototype ctermfg=Blue
 	autocmd BufEnter * 	syn match Color_define_name /[A-Z][A-Z_0-9]\+/
-	autocmd BufEnter * 	hi Color_define_name ctermfg=LightBlue cterm=bold
+	autocmd BufEnter * 	hi Color_define_name ctermfg=LightBlue " cterm=bold
 	autocmd BufEnter * 	syn match Color_operator /&\||\|\w\zs\*\+\ze\|\zs\*\+
 				\\ze\w\|\zs\*\+\ze)\|(\zs\*\+\ze\|\zs\*\+\ze(/
 	" ) )
