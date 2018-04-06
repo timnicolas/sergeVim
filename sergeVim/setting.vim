@@ -48,20 +48,20 @@ let g:_enable_color_all = 1
 
 """""""""""""""""""""""""""""""""""""plugin"""""""""""""""""""""""""""""""""""""
 "activer ou desactiver un plugin
-"	NERDTree (navigateur de fichier)
+"   NERDTree (navigateur de fichier)
 let g:_enableNERDTree=1
-"	lightline (barre colore en bas de l'ecran)
+"   lightline (barre colore en bas de l'ecran)
 let g:_enablelightline=1
-"	colorizer (les couleurs se colorent #FF00FF #120499)
+"   colorizer (les couleurs se colorent #FF00FF #120499)
 let g:_enablecolorizer=1
-"	syntastic (correction code)
-let g:_enablesyntastic=1
-"	git-gutter view added and deleted lines in git
+"   syntastic (correction code)
+let g:_enablesyntastic=0 " ENABLE/DISABLE SYNTAX CHECKER
+"   git-gutter view added and deleted lines in git
 let g:_enablegitgutter=1
-"	vimagit use git in vim
+"   vimagit use git in vim
 let g:_enableVimagit=1
-"	auto indent for python
-let g:_enablePythonIndent=1
+"   auto indent for python
+let g:_enablePythonIndent=0
 
 "syntastic error windows (0 off, 1 open/close auto, 2 close auto)
 let g:syntastic_auto_loc_list = 1
@@ -70,46 +70,46 @@ let g:syntastic_auto_loc_list = 1
 let g:NERDTreeWinSize=27
 "pour supprimer les erreurs syntastic preciser tout les dossiers a header
 let g:syntastic_c_include_dirs = [
-			\'../includes',
-			\'includes',
-			\'commun/includes',
-			\'../commun/includes',
-			\'../../commun/includes',
-			\'../../../commun/includes',
-			\'commun',
-			\'../commun',
-			\'../../commun',
-			\'../../../commun',
-			\'*/includes',
-			\'*/*includes',
-			\'../lib/includes',
-			\'lib/includes',
-			\'includes',
-			\'libft/includes/',
-			\'../libft/includes/',
-			\'../../includes',
-			\'../../libft/includes',
-			\'../../libft',
-			\'../../../includes',
-			\'../../../libft/includes',
-			\'../../../libft',
-			\'libft/lib/includes/',
-			\'../libft/lib/includes/',
-			\'../../includes',
-			\'../../libft/lib/includes',
-			\'../../libft',
-			\'../../../includes',
-			\'../../../libft/lib/includes',
-			\'../../../libft',
-			\'minilibx',
-			\'../minilibx',
-			\'../../minilibx',
-			\'../../../minilibx',
-			\'minilibx_macos',
-			\'../minilibx_macos',
-			\'../../minilibx_macos',
-			\'../../../minilibx_macos'
-			\]
+            \'../includes',
+            \'includes',
+            \'commun/includes',
+            \'../commun/includes',
+            \'../../commun/includes',
+            \'../../../commun/includes',
+            \'commun',
+            \'../commun',
+            \'../../commun',
+            \'../../../commun',
+            \'*/includes',
+            \'*/*includes',
+            \'../lib/includes',
+            \'lib/includes',
+            \'includes',
+            \'libft/includes/',
+            \'../libft/includes/',
+            \'../../includes',
+            \'../../libft/includes',
+            \'../../libft',
+            \'../../../includes',
+            \'../../../libft/includes',
+            \'../../../libft',
+            \'libft/lib/includes/',
+            \'../libft/lib/includes/',
+            \'../../includes',
+            \'../../libft/lib/includes',
+            \'../../libft',
+            \'../../../includes',
+            \'../../../libft/lib/includes',
+            \'../../../libft',
+            \'minilibx',
+            \'../minilibx',
+            \'../../minilibx',
+            \'../../../minilibx',
+            \'minilibx_macos',
+            \'../minilibx_macos',
+            \'../../minilibx_macos',
+            \'../../../minilibx_macos'
+            \]
 """""""""""""""""""""""""""""""""""""plugin"""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""alias""""""""""""""""""""""""""""""""""""""

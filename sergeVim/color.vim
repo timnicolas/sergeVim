@@ -43,6 +43,9 @@
 "for 256 colors https://jonasjacek.github.io/colors/
 
 "https://alvinalexander.com/linux/vi-vim-editor-color-scheme-syntax
+
+"to know inforation about the color under cursor:
+" :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"
 """""""""""""""""""""""""""""""""""""info"""""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""function"""""""""""""""""""""""""""""""""""
@@ -55,6 +58,7 @@ hi PreProc ctermfg=red
 "color function
 augroup Syntax
 	autocmd!
+	" C language
 	autocmd BufEnter * if (expand('%:e') == 'h' || expand('%:e') == 'c' ||
 				\expand('%:e') == 'cpp')
 "	autocmd BufEnter * hi Color_bigFunction ctermbg=DarkGrey
@@ -74,6 +78,30 @@ augroup Syntax
 	autocmd BufEnter * 	hi Color_operator ctermfg=Red
 	autocmd BufEnter * 	syn match Color_deleteline /\/\/dd.*\|\/\/d\d.*/
 	autocmd BufEnter * 	hi Color_deleteline ctermfg=DarkRed
+	autocmd BufEnter * 	hi Number ctermfg=DarkGreen
+	autocmd BufEnter * 	hi Float ctermfg=DarkGreen
+	autocmd BufEnter * endif
+
+
+	" python
+	autocmd BufEnter * if (expand('%:e') == 'py')
+	autocmd BufEnter * 	hi ExtraWhitespace ctermbg=red guibg=red
+	autocmd BufEnter *	match ExtraWhitespace /\s\+$/
+	autocmd BufEnter * 	syn match Color_function_prototype /\zs\w\+\ze(\(.*\n\)*.*)/
+	autocmd BufEnter * 	hi Color_function_prototype ctermfg=Blue
+	autocmd BufEnter * 	syn match Color_define_name /[A-Z][A-Z_0-9]\+/
+	autocmd BufEnter * 	hi Color_define_name ctermfg=LightBlue cterm=bold
+	autocmd BufEnter * 	syn match Color_operator /&\||\|\w\zs\*\+\ze\|\zs\*\+
+				\\ze\w\|\zs\*\+\ze)\|(\zs\*\+\ze\|\zs\*\+\ze(/
+	" ) )
+	autocmd BufEnter * 	hi Color_operator ctermfg=Red
+"	autocmd BufEnter * 	syn match Color_parent /\zs\w\+\ze\./
+"	autocmd BufEnter * 	hi Color_parent ctermfg=34
+	
+
+	autocmd BufEnter * 	hi pythonBuiltin ctermfg=Blue cterm=bold
+	autocmd BufEnter * 	hi pythonFunction ctermfg=Blue cterm=bold
+	autocmd BufEnter * 	hi pythonOperator ctermfg=Yellow
 	autocmd BufEnter * 	hi Number ctermfg=DarkGreen
 	autocmd BufEnter * 	hi Float ctermfg=DarkGreen
 	autocmd BufEnter * endif
