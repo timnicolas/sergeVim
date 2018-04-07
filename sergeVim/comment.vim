@@ -28,7 +28,7 @@ vmap <leader>/ :call SergeCommentRegion()<CR>
 nmap <leader>/ :call SergeCommentRegion()<CR>
 function! SergeCommentRegion() range
 	let comment = '#'
-	if expand('%:e') == 'c' || expand('%:e') == 'h' || expand('%:e') == 'cpp'
+	if expand('%:e') == 'c' || expand('%:e') == 'h' || expand('%:e') == 'cpp' || expand('%:e') == 'js'
 		let comment = '\/\/'
 	elseif expand('%:e') == 'vim' || expand('%:t') == '.vimrc'
 		let comment = '"'
@@ -45,7 +45,7 @@ vmap <leader>\ :call SergeDecommentRegion()<CR>
 nmap <leader>\ :call SergeDecommentRegion()<CR>
 function! SergeDecommentRegion() range
 	let comment = '#'
-	if expand('%:e') == 'c' || expand('%:e') == 'h' || expand('%:e') == 'cpp'
+	if expand('%:e') == 'c' || expand('%:e') == 'h' || expand('%:e') == 'cpp' || expand('%:e') == 'js'
 		let comment = '\/\/'
 	elseif expand('%:e') == 'vim' || expand('%:t') == '.vimrc'
 		let comment = '"'
