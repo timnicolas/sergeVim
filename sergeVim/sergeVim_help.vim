@@ -48,6 +48,7 @@
 "						zc - closes fold
 "						zm - increases auto fold depth
 "						zr - reduces auto fold depth
+"						zR - show all
 
 "header
 "<F1>				42header
