@@ -43,6 +43,12 @@
 "<F7>				create session (mksession)
 "<leader><F7>		create session (mksession) and quit
 
+"<F8>				hide all python functions
+"						zo - opens folds
+"						zc - closes fold
+"						zm - increases auto fold depth
+"						zr - reduces auto fold depth
+
 "header
 "<F1>				42header
 ":Serge42Header		create the 42header

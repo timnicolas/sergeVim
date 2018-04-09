@@ -130,6 +130,25 @@ nmap <leader>z :Serge
 vmap <leader>z :Serge
 "binary mode
 nmap <leader>b :%!xxd<CR>
+
+"hide all python functions
+let g:hide_show_python_function = 0
+function! HideAllPythonFunction()
+	if g:hide_show_python_function == 0
+		let g:hide_show_python_function = 1
+		set foldmethod=indent
+		set foldlevel=1
+		set foldclose=all
+	else
+		let g:hide_show_python_function = 0
+		:normal zR
+	endif
+endfunction
+if g:hide_python_function == 1
+	call HideAllPythonFunction()
+endif
+command! Hide call HideAllPythonFunction() | let g:hide_python_function = 1
+nmap <F8> :call HideAllPythonFunction()<CR>
 """""""""""""""""""""""""""""""""""""basic function"""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""function"""""""""""""""""""""""""""""""""""

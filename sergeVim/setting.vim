@@ -39,6 +39,8 @@ let g:enable_mouse=1
 let g:highlight_search=1
 "highlight line
 let g:setHighlightLine=0
+"default hide python function (<F8>)
+let g:hide_python_function = 0
 """""""""""""""""""""""""""""""""""""setting""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""color""""""""""""""""""""""""""""""""""""""

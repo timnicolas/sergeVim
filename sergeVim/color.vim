@@ -102,6 +102,7 @@ augroup Syntax
 	autocmd BufEnter * 	hi pythonOperator ctermfg=Yellow
 	autocmd BufEnter * 	hi Number ctermfg=DarkGreen
 	autocmd BufEnter * 	hi Float ctermfg=DarkGreen
+
 	autocmd BufEnter * endif
 augroup END
 """""""""""""""""""""""""""""""""""""function"""""""""""""""""""""""""""""""""""
