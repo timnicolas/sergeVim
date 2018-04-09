@@ -87,20 +87,18 @@ augroup Syntax
 	autocmd BufEnter * if (expand('%:e') == 'py')
 	autocmd BufEnter * 	hi ExtraWhitespace ctermbg=red guibg=red
 	autocmd BufEnter *	match ExtraWhitespace /\s\+$/
-	autocmd BufEnter * 	syn match Color_function_prototype /\zs\w\+\ze(\(.*\n\)*.*)/
-	autocmd BufEnter * 	hi Color_function_prototype ctermfg=Blue
+"	autocmd BufEnter * 	syn match Color_function_prototype /\zs\w\+\ze(\(.*\n\)*.*)/
+"	autocmd BufEnter * 	hi Color_function_prototype ctermfg=Blue
 	autocmd BufEnter * 	syn match Color_define_name /[A-Z][A-Z_0-9]\+/
 	autocmd BufEnter * 	hi Color_define_name ctermfg=LightBlue " cterm=bold
-	autocmd BufEnter * 	syn match Color_operator /&\||\|\w\zs\*\+\ze\|\zs\*\+
-				\\ze\w\|\zs\*\+\ze)\|(\zs\*\+\ze\|\zs\*\+\ze(/
+"	autocmd BufEnter * 	syn match Color_operator /&\||\|\w\zs\*\+\ze\|\zs\*\+
+"				\\ze\w\|\zs\*\+\ze)\|(\zs\*\+\ze\|\zs\*\+\ze(/
 	" ) )
-	autocmd BufEnter * 	hi Color_operator ctermfg=Red
-"	autocmd BufEnter * 	syn match Color_parent /\zs\w\+\ze\./
-"	autocmd BufEnter * 	hi Color_parent ctermfg=34
+"	autocmd BufEnter * 	hi Color_operator ctermfg=Red
 	
 
-	autocmd BufEnter * 	hi pythonBuiltin ctermfg=Blue cterm=bold
-	autocmd BufEnter * 	hi pythonFunction ctermfg=Blue cterm=bold
+"	autocmd BufEnter * 	hi pythonBuiltin ctermfg=Blue cterm=bold
+"	autocmd BufEnter * 	hi pythonFunction ctermfg=Blue cterm=bold
 	autocmd BufEnter * 	hi pythonOperator ctermfg=Yellow
 	autocmd BufEnter * 	hi Number ctermfg=DarkGreen
 	autocmd BufEnter * 	hi Float ctermfg=DarkGreen

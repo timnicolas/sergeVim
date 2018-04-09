@@ -117,8 +117,6 @@ let g:syntastic_c_include_dirs = [
 let g:enable_alias=1
 "alias file
 let g:alias_file='~/.zshrc'
-"enable syntax color (advanced)
-let g:_enable_color_all=1
 
 let g:enable_alias1 = 1
 let g:alias1_name = 'valg'
