@@ -298,7 +298,7 @@ function! SergeInvertSign()
 			:normal diw
 			:normal iERROR
 		endif
-	elseif char_act =~# '[unsigedtloghrcafs]'
+	elseif char_act =~# '[ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefhijklmnopqrstuvwxyz]'
 		let word = expand("<cword>")
 		if word == 'unsigned'
 			:normal diwx
@@ -348,10 +348,12 @@ function! SergeInvertSign()
 				:normal diwior
 			endif
 		elseif word == 'True' || word == 'False'
-			if word == "True"
-				:normal diwiFalse
+			if word == 'True'
+				:normal diw
+				:normal aFalse
 			elseif word == 'False'
-				:normal diwiTrue
+				:normal diw
+				:normal aTrue
 			endif
 		endif
 	endif
