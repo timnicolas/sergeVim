@@ -341,6 +341,18 @@ function! SergeInvertSign()
 					:normal l
 				endif
 			endif
+		elseif word == 'or' || word == 'and'
+			if word == "or"
+				:normal diwiand
+			elseif word == 'and'
+				:normal diwior
+			endif
+		elseif word == 'True' || word == 'False'
+			if word == "True"
+				:normal diwiFalse
+			elseif word == 'False'
+				:normal diwiTrue
+			endif
 		endif
 	endif
 endfunction
