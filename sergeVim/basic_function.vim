@@ -347,9 +347,9 @@ nmap <S-right> $
 imap <S-right> <esc>A
 vmap <S-right> $
 "	fast move of 5 char left <S-left>
-nmap <S-left> 0
+nmap <S-left> ^
 imap <S-left> <esc>I
-vmap <S-left> 0
+vmap <S-left> ^
 "	fast move of 5 char up <S-up>
 nmap <S-up> :-5<CR>
 imap <S-up> <C-o>:-5<CR>
