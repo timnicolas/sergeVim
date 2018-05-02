@@ -343,13 +343,13 @@ nmap <leader>V <C-o>:so $MYVIMRC<CR>
 
 "fast move of 5 char <S + dir>
 "	fast move of 5 char right <S-right>
-nmap <S-right> <right><right><right><right><right>
-imap <S-right> <right><right><right><right><right>
-vmap <S-right> <right><right><right><right><right>
+nmap <S-right> $
+imap <S-right> <esc>A
+vmap <S-right> $
 "	fast move of 5 char left <S-left>
-nmap <S-left> <left><left><left><left><left>
-imap <S-left> <left><left><left><left><left>
-vmap <S-left> <left><left><left><left><left>
+nmap <S-left> 0
+imap <S-left> <esc>I
+vmap <S-left> 0
 "	fast move of 5 char up <S-up>
 nmap <S-up> :-5<CR>
 imap <S-up> <C-o>:-5<CR>
