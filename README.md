@@ -40,8 +40,7 @@ Les alias se mettent à jour automatiquement lorsque vous mettez à jour sergeVi
 Le fichier dans lequel seront mis les alias peut être modifié dans les paramètres (`:SergeSetting`).
 
 ## Aide
-Pour obtenir de l'aide tapez `,h` en mode normal ou `:SergeHelp` dans vim. Cela ouvrira un fichier d'aide dans un nouvel onglet avec tous les racourcis ajoutés sur sergeVim.
->https://github.com/tnicolas42/sergeVim/blob/master/sergeVim/sergeVim_help.vim
+Pour obtenir de l'aide tapez `,h` en mode normal ou `:SergeHelp` dans vim. Cela ouvrira un fichier d'aide dans un nouvel onglet avec tous les racourcis ajoutés sur sergeVim. ([help](https://github.com/tnicolas42/sergeVim/blob/master/sergeVim/sergeVim_help.vim))
 
 ## Quelques commandes
 ### Navigation de fichier
