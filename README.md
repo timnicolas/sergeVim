@@ -2,12 +2,12 @@
 SergeVim est une config vim faite pour 42 avec des outils pour mettre à la norme et un générateur de header.
 Pour utiliser le header en dehors de 42 il faut modifier les variables PATH USER et MAIL (export USER=name) ou modifier le nom et le mail dans les paramètres (`:SergeSetting`).
 
-![Serge Vim](https://github.com/tarama78/sergeVim/raw/master/img/SergeVim.png)
+![Serge Vim](https://github.com/tnicolas42/sergeVim/raw/master/img/SergeVim.png)
 
 ## Installation
 SergeVim est très simple à installer:
 Entrez la commande suivante dans le shell et attendez que sergeVim soit installé.
->`git clone https://github.com/tarama78/sergeVim && cd sergeVim && ./install.sh`
+>`git clone https://github.com/tnicolas42/sergeVim && cd sergeVim && ./install.sh`
 
 Pour désinstaller sergeVim:
 >`./remove.sh`
@@ -41,7 +41,7 @@ Le fichier dans lequel seront mis les alias peut être modifié dans les paramè
 
 ## Aide
 Pour obtenir de l'aide tapez `,h` en mode normal ou `:SergeHelp` dans vim. Cela ouvrira un fichier d'aide dans un nouvel onglet avec tous les racourcis ajoutés sur sergeVim.
->https://github.com/tarama78/sergeVim/blob/master/sergeVim/sergeVim_help.vim
+>https://github.com/tnicolas42/sergeVim/blob/master/sergeVim/sergeVim_help.vim
 
 ## Quelques commandes
 ### Navigation de fichier
@@ -51,25 +51,25 @@ SergeVim propose différents header.
 #### 42Header
 Le Header de 42 est disponible `<F1>` ou `:Serge42Header`.
 
-![42 header](https://github.com/tarama78/sergeVim/raw/master/img/42Header.png)
+![42 header](https://github.com/tnicolas42/sergeVim/raw/master/img/42Header.png)
 #### SergeVimHeader
 Il existe aussi un SergeVim header `<F2>` ou `:SergeHeader`. /!\ Ce header n'est pas à la norme pour les fichier C. Vous pouvez l'utiliser dans les Makefiles.
 
-![Serge Vim Header](https://github.com/tarama78/sergeVim/raw/master/img/SergeVimHeader.png)
+![Serge Vim Header](https://github.com/tnicolas42/sergeVim/raw/master/img/SergeVimHeader.png)
 #### CowHeader
 Vous pouvez utiliser le CowHeader `,<F2>` ou `:SergeCowHeader`. Ce header pour vos fichiers `.c` indique le nom de vos fonctions et le nombre de lignes par fonctions (s'il y a trop de fonctions ou trop de lignes dans une fonction, le CowHeader vous l'indique).
 
-![Cow Header](https://github.com/tarama78/sergeVim/raw/master/img/SergeCowHeader.png)
+![Cow Header](https://github.com/tnicolas42/sergeVim/raw/master/img/SergeCowHeader.png)
 #### Mise à jour auto
 Par défaut la mise à jour automatique des header (42Header et CowHeader) est désactivée. Vous pouvez les mettre à jour avec `,<F1>` ou `:SergeUpdateHeader`. Vous pouvez aussi activer la mise à jour auto en modifiant les paramètres (voir `Paramètres` ci-dessus).
 
-![Auto Update](https://github.com/tarama78/sergeVim/raw/master/img/autoUpdate.png)
+![Auto Update](https://github.com/tnicolas42/sergeVim/raw/master/img/autoUpdate.png)
 ### Inversion de signes
 SergeVim propose une commande pour inverser des signes (`<C-d>`). Disponible en mode normal ou insertion, elle permet de modifier le texte sous le curseur. Par exemple elle transforme `>` en `<`, `int` en `unsigned int`, `if` en `else if`, `&&` en `||`, `SUCCESS` en `ERROR`, ...
 ### Fichier de test
 Lorsque vous voulez faire un fichier de test, tapez `testt<tab>` en mode insertion.
 
-![Auto Update](https://github.com/tarama78/sergeVim/raw/master/img/testt.png)
+![Auto Update](https://github.com/tnicolas42/sergeVim/raw/master/img/testt.png)
 ### Point virgule auto
 Lorsque vous êtes dans un fichier `.h` vous pouvez taper `,;` et des `;` se mettront automatiquement à la fin des prototypes de fonction qui n'en possèdent pas.
 
