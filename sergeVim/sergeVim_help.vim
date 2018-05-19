@@ -50,6 +50,8 @@
 "						zr - reduces auto fold depth
 "						zR - show all
 
+"Vterm				open terminal in vertical split
+
 "header
 "<F1>				42header
 ":Serge42Header		create the 42header

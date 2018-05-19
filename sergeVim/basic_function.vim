@@ -149,6 +149,8 @@ if g:hide_python_function == 1
 endif
 command! Hide call HideAllPythonFunction() | let g:hide_python_function = 1
 nmap <F8> :call HideAllPythonFunction()<CR>
+
+command Vterm :vs | :term ++curwin
 """""""""""""""""""""""""""""""""""""basic function"""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""function"""""""""""""""""""""""""""""""""""
