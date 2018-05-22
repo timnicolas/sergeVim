@@ -50,6 +50,7 @@
 "						zr - reduces auto fold depth
 "						zR - show all
 
+"<C-L>				termwinkey
 "Vterm				open terminal in vertical split
 
 "header
@@ -167,6 +168,10 @@
 ":tabnew			new tab
 ":tabclose			close tab
 ":bd				close buffer
+
+":term				open term in horizontal split
+":term ++curwin		open term in current split
+"<C-L>:				run command in term
 
 ":bufdo[command]	make command in all buffer (ex :bufdo Header)
 """""""""""""""""""""""""""""""""""""defaut_shortcut""""""""""""""""""""""""""""
