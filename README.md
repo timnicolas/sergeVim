@@ -71,7 +71,7 @@ Lorsque vous voulez faire un fichier de test, tapez `testt<tab>` en mode inserti
 ![Auto Update](https://github.com/tnicolas42/sergeVim/raw/master/img/testt.png)
 ### Point virgule auto
 Lorsque vous êtes dans un fichier `.h` vous pouvez taper `,;` et des `;` se mettront automatiquement à la fin des prototypes de fonction qui n'en possèdent pas.
-
+ 
 ## Coloration syntax
 SergeVim améliore la coloration syntaxique, notamment en mettant les noms de fonctions en bleu, certains signes (`||`, `&&`, ...) en orange, ...
 
