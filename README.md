@@ -81,6 +81,8 @@ Pour initialiser un repo il faut se mettre a la racine de celui-ci puis:
 ```sh
 dans le terminal:
 wget https://raw.githubusercontent.com/tnicolas42/sergeVim/master/init_repo.sh && sh init_repo.sh && rm init_repo.sh
+ou
+vim '+SergeInitRepo'
 ```
 ```
 dans vim:
