@@ -151,6 +151,9 @@ command! Hide call HideAllPythonFunction() | let g:hide_python_function = 1
 nmap <F8> :call HideAllPythonFunction()<CR>
 
 command Vterm :vs | :term ++curwin
+
+"init repo :SergeInitRepo
+command! SergeInitRepo :!wget https://raw.githubusercontent.com/tnicolas42/sergeVim/master/init_repo.sh && sh init_repo.sh && rm init_repo.sh
 """""""""""""""""""""""""""""""""""""basic function"""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""function"""""""""""""""""""""""""""""""""""
