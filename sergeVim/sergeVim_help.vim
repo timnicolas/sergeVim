@@ -145,6 +145,30 @@
 "	:Push			to push
 """""""""""""""""""""""""""""""""""""shortcut"""""""""""""""""""""""""""""""""""
 
+"""""""""""""""""""""""""""""""""""""cscope"""""""""""""""""""""""""""""""""""""
+"cscope (database to search function, includes, ... in C)
+"	init (in terminal):
+"		cscope add **/*.[ch]
+"
+":cs add cscope.out		add default database
+"cscope commands: (:cs <add|find|...> [args])
+"add  : Add a new database             (Usage: add file|dir [pre-path] [flags])
+"find : Query for a pattern            (Usage: find a|c|d|e|f|g|i|s|t name)
+"       a: Find assignments to this symbol
+"       c: Find functions calling this function
+"       d: Find functions called by this function
+"       e: Find this egrep pattern
+"       f: Find this file
+"       g: Find this definition
+"       i: Find files #including this file
+"       s: Find this C symbol
+"       t: Find this text string
+"help : Show this message              (Usage: help)
+"kill : Kill a connection              (Usage: kill #)
+"reset: Reinit all connections         (Usage: reset)
+"show : Show connections               (Usage: show)
+"""""""""""""""""""""""""""""""""""""cscope"""""""""""""""""""""""""""""""""""""
+
 """""""""""""""""""""""""""""""""""""info"""""""""""""""""""""""""""""""""""""""
 "comment
 " the auto indent of vim has been modified to keep comment in norm (and set
