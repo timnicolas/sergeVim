@@ -1,0 +1,4 @@
+*.swp
+*.vim
+.DS_Store
+.cscope.out
