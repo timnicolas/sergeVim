@@ -1,3 +1,5 @@
+
+# added by sergeVim
 *.swp
 *.vim
 .DS_Store
