@@ -62,7 +62,9 @@
 
 """""""""""""""""""""""""""""""""""""Source"""""""""""""""""""""""""""""""""""""
 let mapleader = ","
-set termwinkey=<C-L>
+if has('terminal')
+	set termwinkey=<C-L>
+endif
 let g:help_vim_file='~/.vim/sergeVim/sergeVim_help.vim'
 let g:setting_vim_file='~/.vim/sergeVim/setting.vim'
 "if has("mouse_sgr")
