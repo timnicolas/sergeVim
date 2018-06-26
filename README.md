@@ -75,6 +75,18 @@ Lorsque vous êtes dans un fichier `.h` vous pouvez taper `,;` et des `;` se met
 ## Coloration syntax
 SergeVim améliore la coloration syntaxique, notamment en mettant les noms de fonctions en bleu, certains signes (`||`, `&&`, ...) en orange, ...
 
+## init repo git
+SergeVim permet d'initialiser un repo git (par exemple en ajoutant quelques lignes au .gitignore).
+Pour initialiser un repo il faut se mettre a la racine de celui-ci puis:
+```sh
+dans le terminal:
+wget https://raw.githubusercontent.com/tnicolas42/sergeVim/master/init_repo.sh && sh init_repo.sh && rm init_repo.sh
+```
+```
+dans vim:
+:SergeInitRepo
+```
+
 ## Des questions ?
 Si vous avez des questions, des idées d'amélioration ou si vous trouvez des bugs, contactez-moi `tnicolas@student.42.fr`.
 Si vous êtes à 42, vous pouvez me contacter sur slack: `tnicolas`.
