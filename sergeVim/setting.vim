@@ -57,7 +57,7 @@ let g:_enablelightline=1
 "   colorizer (les couleurs se colorent #FF00FF #120499)
 let g:_enablecolorizer=1
 "   syntastic (correction code)
-let g:_enablesyntastic=1 " ENABLE/DISABLE SYNTAX CHECKER
+let g:_enablesyntastic=0 " ENABLE/DISABLE SYNTAX CHECKER
 "   git-gutter view added and deleted lines in git
 let g:_enablegitgutter=1
 "   vimagit use git in vim
