@@ -43,6 +43,7 @@
 "<F5>				show git diff
 "<F7>				create session (mksession)
 "<leader><F7>		create session (mksession) and quit
+":set invlist       show tabs
 
 "<F8>				hide all python functions
 "						zo - opens folds
