@@ -65,7 +65,8 @@ else
 	set nohlsearch
 endif
 set incsearch "highlight when typing command (not only after)
-set nolist "disable color tab (enable with F5)
+set nolist "disable color tab (enable with set invlist)
+set listchars=tab:>- "draw this instead of tabs
 set backspace=2 "backspace
 set noswapfile "no swap file
 set noignorecase "no ignore case
@@ -360,11 +361,6 @@ imap <F3> <esc>:set invrelativenumber<CR>
 "cursor line <F4>
 nmap <F4> :set invcursorline<CR>
 imap <F4> <esc>:set invcursorline<CR>
-
-"colored tabs <F5>
-set listchars=tab:>-
-nmap <F5> :set invlist<CR>
-imap <F5> <esc>:set invlist<CR>
 
 "reload vimrc <leader>v
 nmap <leader>v :so $MYVIMRC<CR>
